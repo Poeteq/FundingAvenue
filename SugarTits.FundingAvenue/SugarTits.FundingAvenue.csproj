@@ -10,6 +10,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\Products\RealEstate.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Products\PersonalLoans.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Products\UnsecuredLoans.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Products\BusinessEntityCreation.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Shared\_SidePanel.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
