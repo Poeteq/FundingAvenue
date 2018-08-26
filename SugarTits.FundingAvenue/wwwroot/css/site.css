@@ -1,37 +1,101 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
-body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+
+
+/*/* ----- Hero Widget ----- */
+#widget-subscribe-form {
+    display: block;
+    padding: 8px;
+    background-color: #FFF;
+    border: 1px solid #EEE;
+    border-radius: 3px;
+    box-shadow: 0 0 30px 4px rgba(0,0,0,0.15);
+    transition: box-shadow .4s linear;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+#widget-subscribe-form:hover {
+        box-shadow: 0 0 42px 4px rgba(0,0,0,.3) !important;
+    }
+*/
+/* ----- Tab ----- */
+ul.tab-nav:not(.tab-nav-lg) {
+    border-bottom: none;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+ul.tab-nav:not(.tab-nav-lg) li {
+    float: left;
+    border: none;
+    height: auto;
+    text-align: center;
+    list-style: none;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
+.tabs.tabs-alt ul.tab-nav li.ui-tabs-active a {
+    border: none;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+ul.tab-nav:not(.tab-nav-lg) li a {
+    color: #1d2c4c;
+    height: auto;
+    line-height: 1;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 0 0 20px 0;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
+    ul.tab-nav:not(.tab-nav-lg) li a i {
+        display: block;
+        font-size: 42px;
+        margin: 0 0 17px 0;
+        color: #1c85e8;
+    }
+
+ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a {
+    top: 0;
+}
+
+    ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a:after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+        border-radius: 50%;
+        background: #1c85e8;
+    }
+
+.tab-container {
+    margin: 30px 0 0;
+}
+
+
+
+
+/* ----- Tab Responsive ----- */
+.acctitle {
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #444;
+    border-top: 1px dotted #DDD;
+    padding: 12px 0 12px 24px;
+}
+
+.acc_content {
+    padding: 10px 0 25px;
+}
+
+.acctitle i {
+    color: #1c85e8;
+    font-size: 16px;
+    top: 3px;
+}
+
+    .acctitle i.icon-ok-circle,
+    .acctitle i.icon-remove-circle {
         display: none;
     }
-}
+

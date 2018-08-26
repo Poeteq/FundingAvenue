@@ -9074,7 +9074,7 @@ body:not(.device-touch) .social-icon i {
 -----------------------------------------------------------------*/
 
 
-.tabs {
+/*.tabs {
 	position: relative;
 	margin: 0 0 30px 0;
 }
@@ -9114,13 +9114,13 @@ ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a {
 	position: relative;
 	top: 1px;
 	background-color: #FFF;
-}
+}*/
 
 
 /* Tabs - Alternate Nav
 -----------------------------------------------------------------*/
 
-.tabs.tabs-alt ul.tab-nav li { border-color: transparent; }
+/*.tabs.tabs-alt ul.tab-nav li { border-color: transparent; }
 
 .tabs.tabs-alt ul.tab-nav li:first-child { border-left: 0; }
 
@@ -9129,7 +9129,7 @@ ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a {
 .tabs.tabs-alt ul.tab-nav li.ui-tabs-active a {
 	border: 1px solid #DDD;
 	border-bottom: 0;
-}
+}*/
 
 
 /* Tabs - Top Border
