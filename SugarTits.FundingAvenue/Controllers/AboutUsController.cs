@@ -4,7 +4,7 @@
 
 namespace SugarTits.FundingAvenue.Controllers
 {
-    public class CompanyController : Controller
+    public class AboutUsController : Controller
     {
         // GET: /<controller>/
         public IActionResult Index()

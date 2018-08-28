@@ -3079,7 +3079,7 @@ body:not(.stretched) .slider-parallax .slider-parallax-inner { left: auto; }
 .slider-caption h2 {
 	font-size: 4rem;
 	letter-spacing: 2px;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 	font-weight: 700;
 	line-height: 1;
 	margin-bottom: 0;
@@ -3326,16 +3326,16 @@ body:not(.stretched) .slider-parallax .slider-parallax-inner { left: auto; }
 
 #page-title .container { position: relative; }
 
-#page-title h1 {
-	padding: 0;
-	margin: 0;
-	line-height: 1;
-	font-weight: 600;
-	letter-spacing: 1px;
-	color: #333;
-	font-size: 28px;
-	text-transform: uppercase;
-}
+    #page-title h1 {
+        padding: 0;
+        margin: 0;
+        line-height: 1;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: #3333337d;
+        font-size: 28px;
+        text-transform: uppercase;
+    }
 
 #page-title span {
 	display: block;
@@ -3371,12 +3371,12 @@ body.stretched .container-fullwidth .breadcrumb { right: 60px !important; }
 -----------------------------------------------------------------*/
 
 #page-title.page-title-dark {
-	background-color: #333;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.15) !important;
-	border-bottom: none;
+    background-color: #3333337d;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.15) !important;
+    border-bottom: none;
 }
 
-#page-title.page-title-dark h1 { color: rgba(255,255,255,0.9) !important; }
+/*#page-title.page-title-dark h1 { color: rgba(255,255,255,0.9) !important; }*/
 
 #page-title.page-title-dark span { color: rgba(255,255,255,0.7); }
 
@@ -3435,7 +3435,7 @@ body.stretched .container-fullwidth .breadcrumb { right: 60px !important; }
 }
 
 #page-title.page-title-parallax h1 {
-	font-size: 40px;
+	font-size: 34px;
 	font-weight: 600;
 	letter-spacing: 2px;
 }
@@ -9074,7 +9074,7 @@ body:not(.device-touch) .social-icon i {
 -----------------------------------------------------------------*/
 
 
-/*.tabs {
+.tabs {
 	position: relative;
 	margin: 0 0 30px 0;
 }
@@ -9114,7 +9114,7 @@ ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a {
 	position: relative;
 	top: 1px;
 	background-color: #FFF;
-}*/
+}
 
 
 /* Tabs - Alternate Nav
@@ -11117,7 +11117,7 @@ input[type=checkbox]:not(:checked) + label.error { display: block !important; }
 .emphasis-title h2 {
 	margin-bottom: 0;
 	font-weight: 700;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 	letter-spacing: 1px;
 	color: #333;
 }
@@ -11168,7 +11168,7 @@ input[type=checkbox]:not(:checked) + label.error { display: block !important; }
 
 .heading-block:after {
 	content: '';
-	display: block;
+	/*display: block;*/
 	margin-top: 30px;
 	width: 40px;
 	border-top: 2px solid #444;
