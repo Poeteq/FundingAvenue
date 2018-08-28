@@ -488,6 +488,9 @@ textarea.border-form-control {
 
 	#logo { float: left; }
 	#primary-menu { float: left; }
+    .apply-now {
+        float: right !important;
+    }
 
 	#header.transparent-header + #slider,
 	#header.transparent-header + #page-title.page-title-parallax,
