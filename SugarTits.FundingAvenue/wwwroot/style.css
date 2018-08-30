@@ -9074,7 +9074,7 @@ body:not(.device-touch) .social-icon i {
 -----------------------------------------------------------------*/
 
 
-.tabs {
+/*.tabs {
 	position: relative;
 	margin: 0 0 30px 0;
 }
@@ -9083,9 +9083,9 @@ ul.tab-nav:not(.tab-nav-lg) {
 	margin: 0;
 	border-bottom: 1px solid #DDD;
 	list-style: none;
-}
+}*/
 
-ul.tab-nav:not(.tab-nav-lg) li {
+/*ul.tab-nav:not(.tab-nav-lg) li {
 	float: left;
 	border: 1px solid #DDD;
 	border-bottom: 0;
@@ -9108,7 +9108,7 @@ ul.tab-nav:not(.tab-nav-lg) li a {
 	background-color: #F2F2F2;
 	font-size: 14px;
 	font-weight: bold;
-}
+}*/
 
 ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a {
 	position: relative;
@@ -9135,20 +9135,20 @@ ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a {
 /* Tabs - Top Border
 -----------------------------------------------------------------*/
 
-.tabs.tabs-tb ul.tab-nav li.ui-tabs-active a {
+/*.tabs.tabs-tb ul.tab-nav li.ui-tabs-active a {
 	top: -1px;
 	height: 43px;
 	line-height: 38px;
 	border-top: 2px solid #1ABC9C;
 }
 
-.tabs.tabs-alt.tabs-tb ul.tab-nav li.ui-tabs-active a { height: 42px; }
+.tabs.tabs-alt.tabs-tb ul.tab-nav li.ui-tabs-active a { height: 42px; }*/
 
 
 /* Tabs - Bottom Border
 -----------------------------------------------------------------*/
 
-.tabs.tabs-bb ul.tab-nav li {
+/*.tabs.tabs-bb ul.tab-nav li {
 	border: 0;
 	margin: 0;
 }
@@ -9163,7 +9163,7 @@ ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a {
 	top: -2px;
 	height: 44px;
 	line-height: 44px;
-}
+}*/
 
 
 /* Tabs - Navigation Style 2
