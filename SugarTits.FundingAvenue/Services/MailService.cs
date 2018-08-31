@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Linq;
 using System.Net;
 using MailKit.Net.Smtp;
 using SugarTits.FundingAvenue.Models;
 using MimeKit;
-using System.Net.Mail;
 using System.IO;
 
 namespace SugarTits.FundingAvenue.Services
@@ -14,40 +12,64 @@ namespace SugarTits.FundingAvenue.Services
     public class MailService
     {
 
-        public static bool IsValidEmail(ContactForm contactForm)
+        private static bool SendSMTPClient(bool success, MimeMessage message)
         {
-            if (contactForm.Email == null || contactForm.Name == null || contactForm.Message == null)
+            using (var client = new MailKit.Net.Smtp.SmtpClient())
             {
-                return false;
-            } //make sure .js controller already check and return false; 
-
-
-            try
-            {
-                var emailAddress = new MailAddress(contactForm.Email);
-                return emailAddress.Address.Any();
+                client.Connect("smtp.gmail.com", 587);
+                client.AuthenticationMechanisms.Remove("XOQUTH2");
+                client.Authenticate("suzieahn1117@gmail.com", "dorothy1117");
+                client.Send(message);
+                client.Disconnect(true);
+                success = true;
             }
-            catch (FormatException)
-            {
-                return false;
-            }
+
+            return success;
         }
 
-        public static bool SendMail(string fileAttachment, ContactForm contactForm)
+
+        public static bool SendMail(string fileAttachment, ContactForm form)
         {
             var success = false;
 
+            if (form.Email == null || form.Name == null || form.Message == null)
+            {
+                return false;
+            }
+
+
             var message = new MimeMessage();
-            message.From.Add(new MailboxAddress(contactForm.Name, contactForm.Email));
+            message.From.Add(new MailboxAddress(form.Name, form.Email));
             message.To.Add(new MailboxAddress("Suzie", "suzieahn1117@gmail.com"));
-            message.Subject = contactForm.Title;
+            message.Subject = form.Title;
 
             var body = new TextPart("plain")
             {
-                Text = contactForm.Message
+                Text = form.Message
             };
 
-            var attachment = new MimePart("myshit", "xlsx")
+            message.Body = body;
+
+         
+            return SendSMTPClient(success, message);
+        }
+
+        public static bool SendMail(string fileAttachment, ApplicationForm form)
+        {
+            var success = false;
+
+
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress(form.FirstName + form.LastName, form.Email));
+            message.To.Add(new MailboxAddress("Suzie", "suzieahn1117@gmail.com"));
+            message.Subject = "Application Form";
+
+            var body = new TextPart("plain")
+            {
+                Text = "Business Application Form"
+            };
+
+            var attachment = new MimePart("mysheet", "xlsx")
             {
                 Content = new MimeContent(File.OpenRead(fileAttachment), ContentEncoding.Default),
                 ContentDisposition = new ContentDisposition(ContentDisposition.Attachment),
@@ -62,17 +84,7 @@ namespace SugarTits.FundingAvenue.Services
             // now set the multipart/mixed as the message body
             message.Body = multipart;
 
-            using (var client = new MailKit.Net.Smtp.SmtpClient())
-            {
-                client.Connect("smtp.gmail.com", 587);
-                client.AuthenticationMechanisms.Remove("XOQUTH2");
-                client.Authenticate("suzieahn1117@gmail.com", "dorothy1117");
-                client.Send(message);
-                client.Disconnect(true);
-                success = true;
-            }
-
-            return success;
+            return SendSMTPClient(success, message);
         }
     }
 }

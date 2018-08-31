@@ -18,17 +18,9 @@ namespace SugarTits.FundingAvenue.Controllers
         [HttpPost]
         public IActionResult Form([FromBody] ApplicationForm request)
         {
-            var contactForm = new ContactForm
-            {
-                Name = $"{request.FirstName} {request.LastName}",
-                Email = request.Email,
-                PhoneNum = request.PhoneNumber,
-                Title = "(╯°□°）╯︵ ┻━┻",
-                Message = "YOU HAVE A NEW APPLICATION!"
-            };
-            // MOCK CODE
+            
             string excelDoc = _excelService.GenerateClientProfileExcelFile(request);
-            var mailResponse = MailService.SendMail(excelDoc, contactForm);
+            var mailResponse = MailService.SendMail(excelDoc, request);
             return Ok(mailResponse);
         }
     }
