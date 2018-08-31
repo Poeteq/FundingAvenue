@@ -31,7 +31,7 @@ namespace SugarTits.FundingAvenue.Services
                 ws.Cells["B2"].Value = form.LastName;
 
                 FileInfo fileInfo = new FileInfo(file);
-                fileInfo.Attributes = FileAttributes.Temporary;
+                ;//fileInfo.Attributes = FileAttributes.Temporary;
 
                 p.SaveAs(fileInfo);
             }
