@@ -446,7 +446,7 @@ span.middot {
 
 .font-primary { font-family: 'Raleway', sans-serif; }
 
-.font-secondary { font-family: 'Crete Round', serif; }
+.font-secondary { font-family: 'Open Sans', sans-serif; }
 
 .bgicon {
 	display: block;
@@ -10436,12 +10436,16 @@ blockquote.float-right {
 
 .text-rotater > .t-rotate > .animated { display: inline-block; }
 
-
-/* ----------------------------------------------------------------
+.text-rotater {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #888;
+}
+    /* ----------------------------------------------------------------
 	Owl Carousel CSS
 -----------------------------------------------------------------*/
-
-.owl-carousel .animated {
+    .owl-carousel .animated {
 	-webkit-animation-duration: 1000ms;
 	animation-duration: 1000ms;
 	-webkit-animation-fill-mode: both;

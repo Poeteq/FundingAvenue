@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="FundingAvenue">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -74,7 +74,7 @@
         <script src="~/js/site.js" asp-append-version="true"></script>
 
         <!-- External JavaScripts
-    ============================================= -->
+        ============================================= -->
         <script src="~/js/jquery.js"></script>
         <script src="~/js/plugins.js"></script>
         <script src="~/js/functions.js"></script>
@@ -99,6 +99,10 @@
         <script src="~/js/plugins.js"></script>
         <script src="~/js/functions.js"></script>
     </environment>
+
+    <script src="~/app/app.module.js" asp-append-version="true"></script>
+    <script src="~/app/controllers/contact.controller.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
+
 </body>
 </html>

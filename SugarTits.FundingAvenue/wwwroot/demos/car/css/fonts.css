@@ -13,6 +13,7 @@ small,
 .feature-box.fbox-center.fbox-italic p,
 .skills li .progress-percent .counter,
 .nav-tree ul ul a,
+.font-body,
 .entry-meta li,
 .entry-link span,
 .entry blockquote p,
@@ -24,7 +25,10 @@ small,
 .before-heading,
 .wedding-head .first-name span,
 .wedding-head .last-name span,
-.font-body { font-family: 'Open Sans', sans-serif; }
+.font-secondary {
+    font-family: 'Open Sans', sans-serif;
+}
+
 
 h1,
 h2,
@@ -42,9 +46,10 @@ h6,
 .counter,
 label,
 .nav-tree li a,
-.top-cart-item-desc span.top-cart-item-price,
-.top-checkout-price,
-.top-cart-item-desc a,
 .wedding-head .first-name,
 .wedding-head .last-name,
-.font-primary { font-family: 'Mukta Vaani', sans-serif; }
+.testi-content p,
+.font-primary {
+    font-family: 'Poppins', sans-serif;
+}
+
