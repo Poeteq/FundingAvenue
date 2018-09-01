@@ -8,19 +8,18 @@ namespace SugarTits.FundingAvenue.Controllers
     public class ApplicationController : Controller
     {
         private ExcelService _excelService;
-        //private MailService _mailService;
+        private IMailService iservice;
         public ApplicationController()
         {
             _excelService = new ExcelService();
-            //_mailService = new MailService();
+     
         }
 
         [HttpPost]
         public IActionResult Form([FromBody] ApplicationForm request)
         {
-            
             string excelDoc = _excelService.GenerateClientProfileExcelFile(request);
-            var mailResponse = MailService.SendMail(excelDoc, request);
+            var mailResponse = iservice.SendMail(excelDoc, request);
             return Ok(mailResponse);
         }
     }

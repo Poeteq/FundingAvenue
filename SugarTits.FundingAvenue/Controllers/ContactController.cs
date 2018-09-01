@@ -8,6 +8,14 @@ namespace SugarTits.FundingAvenue.Controllers
 {
     public class ContactController : Controller
     {
+
+        private IMailService iservice;
+        public ContactController(IMailService mailService) //Constructor
+        {
+            iservice = mailService;
+        }
+
+
         // GET: /<controller>/
         public IActionResult Index()
         {
@@ -17,7 +25,7 @@ namespace SugarTits.FundingAvenue.Controllers
         [HttpPost]
         public IActionResult SendEmail([FromBody]ContactForm contactForm)
         {
-            bool sent = MailService.SendMail(null, contactForm);
+            bool sent = iservice.SendMail(null, contactForm);
             return Ok(sent);
         }
     }

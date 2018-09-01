@@ -13,7 +13,7 @@ namespace SugarTits.FundingAvenue.Controllers
         public ApplyController()
         {
             _excelService = new ExcelService();
-            _mailService = new MailService();
+            //_mailService = new MailService();
         }
 
         // GET: /<controller>/
