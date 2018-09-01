@@ -20,8 +20,8 @@ namespace SugarTits.FundingAvenue.Controllers
         {
             
             string excelDoc = _excelService.GenerateClientProfileExcelFile(request);
-            var mailResponse = MailService.SendMail(excelDoc, request);
-            return Ok(mailResponse);
+            //var mailResponse = MailService.SendMail(excelDoc, request);
+            return Ok(excelDoc);
         }
     }
 }
