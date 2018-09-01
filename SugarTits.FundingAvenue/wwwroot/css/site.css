@@ -2,6 +2,16 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 
+/*Custom Image Size*/
+.product-image-size{
+    height: 120px;
+    width: 100%;
+
+}
+
+
+
+
 /*/* ----- Hero Widget ----- */
 #widget-subscribe-form {
     display: block;
@@ -486,7 +496,7 @@ ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a {
 }
 
 @media only screen and (min-width: 992px) {
-    [class^="col-"]:last-child .counter-content {
+    [class^=""]:last-child .counter-content {
         border-right: 0;
     }
 }
