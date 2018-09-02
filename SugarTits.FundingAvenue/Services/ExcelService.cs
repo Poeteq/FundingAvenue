@@ -132,9 +132,10 @@ namespace SugarTits.FundingAvenue.Services
 
                 // ********
                 // SECTION: OFFICERS / DIRECTOR
-                // OD >>
+                // OFF/DIR >>
                 // ********
 
+                // OFF/DIR >> 13
                 ws.Cells["A13:J13"].Value = "OFFICERS / DIRECTORS";
                 ws.Cells["A13:J13"].Style.Fill.PatternType = ExcelFillStyle.Solid;
                 ws.Cells["A13:J13"].Style.Fill.BackgroundColor.SetColor(Color.Black);
@@ -143,38 +144,93 @@ namespace SugarTits.FundingAvenue.Services
                 ws.Cells["A13:J13"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 ws.Cells["A13:J13"].Merge = true;
 
-                ws.Cells["A14:E14"].Value = "GUARANTOR INFO";
-                ws.Cells["A14:E14"].Merge = true;
-
-                ws.Cells["A15:B15"].Value = "Full Name:	";
-                ws.Cells["A15:B15"].Merge = true;
-
-                ws.Cells["A17:B17"].Value = "Mailing Address:	";
-                ws.Cells["A17:B17"].Merge = true;
-
-                ws.Cells["A18:B18"].Value = "Mailing Cont.:	";
-                ws.Cells["A18:B18"].Merge = true;
-
-                ws.Cells["A20:B20"].Value = "Social Security Number:	";
-                ws.Cells["A20:B20"].Merge = true;
-
-                ws.Cells["A21:B21"].Value = "Email Address:	";
-                ws.Cells["A21:B21"].Merge = true;
-
-                ws.Cells["A22:B22"].Value = "Home Phone Number:	";
-                ws.Cells["A22:B22"].Merge = true;
-
-                ws.Cells["A23:B23"].Value = "Time at Residence:	";
-                ws.Cells["A23:B23"].Merge = true;
-
-                ws.Cells["A24:B24"].Value = "Drivers License:	";
-                ws.Cells["A24:B24"].Merge = true;
-
+                // OFF/DIR >> 14
                 ws.Cells["A14:E14"].Value = "GUARANTOR INFO";
                 ws.Cells["A14:E14"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 ws.Cells["A14:E14"].Merge = true;
 
+                ws.Cells["G14:H14"].Value = "Industry Experience:";
+                ws.Cells["G14:H14"].Merge = true;
+
+                // OFF/DIR >> 15
+                ws.Cells["A15:B15"].Value = "Full Name:	";
+                ws.Cells["A15:B15"].Merge = true;
+
+                ws.Cells["C15:F15"].Merge = true;
+                ws.Cells["C16:F16"].Value = "First Name";
+                ws.Cells["C16:F16"].Merge = true;
+
+                ws.Cells["G15:I15"].Merge = true;
+                ws.Cells["G16:I16"].Value = "Last Name";
+                ws.Cells["G16:I16"].Merge = true;
+
+                ws.Cells["J16"].Value = "Zip Code";
+
+                // OFF/DIR >> 17
+                ws.Cells["A17:B17"].Value = "Mailing Address:	";
+                ws.Cells["A17:B17"].Merge = true;
+
+                ws.Cells["H17"].Value = "Suite #";
+                ws.Cells["I17:J17"].Merge = true;
+
+                // OFF/DIR >> 18
+                ws.Cells["A18:B18"].Value = "Mailing Cont.:	";
+                ws.Cells["A18:B18"].Merge = true;
+                ws.Cells["C18:J18"].Merge = true;
+
+                // OFF/DIR >> 19
+                ws.Cells["C19:F19"].Value = "City";
+                ws.Cells["C19:F19"].Merge = true;
+                ws.Cells["G19:H19"].Value = "State";
+                ws.Cells["G19:H19"].Merge = true;
+                ws.Cells["I19:J19"].Value = "Zip Code";
+                ws.Cells["I19:J19"].Merge = true;
+
+                // OFF/DIR >> 20
+
+                ws.Cells["A20:B20"].Value = "Social Security Number:	";
+                ws.Cells["A20:B20"].Merge = true;
+
+                ws.Cells["F20:G20"].Value = "Birth Date & Current Age";
+                ws.Cells["F20:G20"].Merge = true;
+                ws.Cells["H20:J20"].Merge = true;
+
+                // OFF/DIR >> 21
+                ws.Cells["A21:B21"].Value = "Email Address:	";
+                ws.Cells["A21:B21"].Merge = true;
+
+                ws.Cells["F21:G21"].Value = "Mother's Maiden Name";
+                ws.Cells["F21:G21"].Merge = true;
+                ws.Cells["H21:J21"].Merge = true;
+
+                // OFF/DIR >> 22
+                ws.Cells["A22:B22"].Value = "Home Phone Number:	";
+                ws.Cells["A22:B22"].Merge = true;
+
+                ws.Cells["F22:G22"].Value = "Cell Number";
+                ws.Cells["F22:G22"].Merge = true;
+                ws.Cells["H22:J22"].Merge = true;
+
+                // OFF/DIR >> 23
+                ws.Cells["A23:B23"].Value = "Time at Residence:	";
+                ws.Cells["A23:B23"].Merge = true;
+
+                ws.Cells["F23:G23"].Value = "Gross Annual Income";
+                ws.Cells["F23:G23"].Merge = true;
+                ws.Cells["H23:J23"].Merge = true;
+
+                // OFF/DIR >> 24
+                ws.Cells["A24:B24"].Value = "Drivers License:	";
+                ws.Cells["A24:B24"].Merge = true;
+
+                ws.Cells["F24:G24"].Value = "Gross Household Income";
+                ws.Cells["F24:G24"].Merge = true;
+                ws.Cells["H24:J24"].Merge = true;
+
+
+                // OFF/DIR >> 25
                 ws.Cells["A25"].Value = "State: ";
+
 
                 ws.Cells["C25"].Value = "Issue Date: ";
 
@@ -182,6 +238,11 @@ namespace SugarTits.FundingAvenue.Services
 
                 ws.Cells["G25:H25"].Value = "Monthly House Payment: ";
                 ws.Cells["G25:H25"].Merge = true;
+
+                // ********
+                // SECTION: BUSINESS QUESTIONS
+                // Q/A >>
+                // ********
 
                 // Section: Business Questions
                 ws.Cells["A27:J27"].Value = "Business Questions:";
