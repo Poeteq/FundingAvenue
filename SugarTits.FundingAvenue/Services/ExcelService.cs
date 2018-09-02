@@ -27,6 +27,7 @@ namespace SugarTits.FundingAvenue.Services
             {
                 var ws = p.Workbook.Worksheets.Add("Client Profile");
 
+                // SECTION: CORPORATION
                 ws.Cells["A1:J1"].Value = "CORPORATION PROFILE";
                 ws.Cells["A1:J1"].Style.Fill.PatternType = ExcelFillStyle.Solid;
                 ws.Cells["A1:J1"].Style.Fill.BackgroundColor.SetColor(Color.Black);
@@ -65,6 +66,7 @@ namespace SugarTits.FundingAvenue.Services
                 ws.Cells["A12:B12"].Value = "Business Gross Income:";
                 ws.Cells["A12:B12"].Merge = true;
 
+                // SECTION: OFFICERS / DIRECTOR
                 ws.Cells["A13:J13"].Value = "OFFICERS / DIRECTORS";
                 ws.Cells["A13:J13"].Style.Fill.PatternType = ExcelFillStyle.Solid;
                 ws.Cells["A13:J13"].Style.Fill.BackgroundColor.SetColor(Color.Black);
@@ -72,7 +74,6 @@ namespace SugarTits.FundingAvenue.Services
                 ws.Cells["A13:J13"].Style.Font.Bold = true; //Font should be bold
                 ws.Cells["A13:J13"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 ws.Cells["A13:J13"].Merge = true;
-
 
                 ws.Cells["A14:E14"].Value = "GUARANTOR INFO";
                 ws.Cells["A14:E14"].Merge = true;
@@ -105,8 +106,84 @@ namespace SugarTits.FundingAvenue.Services
                 ws.Cells["A14:E14"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 ws.Cells["A14:E14"].Merge = true;
 
-                ws.Cells["A25:B25"].Value = "State: ";
-                ws.Cells["A25:B25"].Merge = true;
+                ws.Cells["A25"].Value = "State: ";
+
+                ws.Cells["C25"].Value = "Issue Date: ";
+
+                ws.Cells["E25"].Value = "Expiration: ";
+
+                ws.Cells["G25:H25"].Value = "Monthly House Payment: ";
+                ws.Cells["G25:H25"].Merge = true;
+
+                // Section: Business Questions
+                ws.Cells["A27:J27"].Value = "Business Questions:";
+                ws.Cells["A27:J27"].Merge = true;
+
+                ws.Cells["A28:J28"].Value = "1. Can they recieve mail at business address?";
+                ws.Cells["A28:J28"].Merge = true;
+                ws.Cells["A29:J29"].Merge = true;
+
+                ws.Cells["A30:J30"].Value = "2. Does client have business checking account? What Bank? How much in deposits?";
+                ws.Cells["A30:J30"].Merge = true;
+                ws.Cells["A31:J31"].Merge = true;
+
+                ws.Cells["A32:J32"].Value = "3. Are there business Derrogatories/BK?";
+                ws.Cells["A32:J32"].Merge = true;
+                ws.Cells["A33:J33"].Merge = true;
+
+                ws.Cells["A34:J34"].Value = "4. Are there any existing business accounts?";
+                ws.Cells["A34:J34"].Merge = true;
+                ws.Cells["A35:J35"].Merge = true;
+
+
+                ws.Cells["A36:A36"].Value = "5. If Yes, Need name of Bank, Credit Limits, Balances, Average monthly payment being made, current/delinquent on account";
+                ws.Cells["A36:J36"].Merge = true;
+                ws.Cells["A37:J37"].Merge = true;
+
+                // Section: Personal Questions
+                ws.Cells["A39:J39"].Value = "Personal Questions:";
+                ws.Cells["A39:J39"].Merge = true;
+
+                ws.Cells["A40:J40"].Value = "1. Can they receive mail at personal address?";
+                ws.Cells["A40:J40"].Merge = true;
+                ws.Cells["A41:J41"].Merge = true;
+
+                ws.Cells["A42:J42"].Value = "2. Personal BK in the past?";
+                ws.Cells["A42:J42"].Merge = true;
+                ws.Cells["A43:J43"].Merge = true;
+
+                ws.Cells["A44:J44"].Value = "3. Personal Checking/Saings? What Banks? Currency Deposit Amounts?";
+                ws.Cells["A44:J44"].Merge = true;
+                ws.Cells["A45:J45"].Merge = true;
+
+                ws.Cells["A46:J46"].Value = "4. Vehicles registered under PG (Year, Model, Color)";
+                ws.Cells["A46:J46"].Merge = true;
+                ws.Cells["A47:J47"].Merge = true;
+
+                ws.Cells["A48:J48"].Value = "5. College graduated at? Any Special Degrees/License? (Example: real estate license)";
+                ws.Cells["A48:J48"].Merge = true;
+                ws.Cells["A49:J49"].Merge = true;
+
+                ws.Cells["A50:J50"].Value = "6. Who else lives in the household? Need First, Middle, Last name for everyone in the household along with Date of Birth";
+                ws.Cells["A50:J50"].Merge = true;
+                ws.Cells["A51:J51"].Merge = true;
+
+
+                ws.Cells["A52:J52"].Value = "7. Do they have personal credit cards with BofA/Chase? LAst few purchases made (store name)";
+                ws.Cells["A52:J52"].Merge = true;
+
+                ws.Cells["A54:E54"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells["A54:E54"].Style.Fill.BackgroundColor.SetColor(Color.Black);
+                ws.Cells["A54:E54"].Style.Font.Color.SetColor(Color.White);
+                ws.Cells["A54:E54"].Style.Font.Bold = true; //Font should be bold
+                ws.Cells["A54:E54"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
+                ws.Cells["A54"].Value = "BANK";
+                ws.Cells["B54"].Value = "TYPE";
+                ws.Cells["C54"].Value = "EMAIL";
+                ws.Cells["D54"].Value = "PHONE";
+                ws.Cells["E54"].Value = "LIMIT";
+
 
                 ws.Column(1).Width = 15;
                 ws.Column(2).Width = 15;
