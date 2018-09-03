@@ -156,10 +156,12 @@ namespace SugarTits.FundingAvenue.Services
                 ws.Cells["A15:B15"].Value = "Full Name:	";
                 ws.Cells["A15:B15"].Merge = true;
 
+                ws.Cells["C15:F15"].Value = form.FirstName;
                 ws.Cells["C15:F15"].Merge = true;
                 ws.Cells["C16:F16"].Value = "First Name";
                 ws.Cells["C16:F16"].Merge = true;
 
+                ws.Cells["G15:I15"].Value = form.LastName;
                 ws.Cells["G15:I15"].Merge = true;
                 ws.Cells["G16:I16"].Value = "Last Name";
                 ws.Cells["G16:I16"].Merge = true;
