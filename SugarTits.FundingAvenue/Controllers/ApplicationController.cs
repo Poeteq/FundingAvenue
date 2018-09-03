@@ -19,7 +19,7 @@ namespace SugarTits.FundingAvenue.Controllers
         public IActionResult Form([FromBody] ApplicationForm request)
         {
             string excelDoc = _excelService.GenerateClientProfileExcelFile(request);
-            //bool mailResponse = iservice.SendMail(excelDoc, request);
+            bool mailResponse = iservice.SendMail(excelDoc, request);
             return Ok(excelDoc);
         }
     }

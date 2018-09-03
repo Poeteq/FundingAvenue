@@ -8,49 +8,55 @@
     ApplyController.$inject = ['$scope', '$http'];
 
     function ApplyController($scope, $http) {
+
         $scope.title = 'apply';
 
       
 
         $scope.creditCard = {
-            Lender: '',
-            Balance: '',
-            Limit: ''
+            lender: '',
+            balance: '',
+            limit: ''
         };
 
         $scope.linesOfCredit = {
-            IsSecured: false,
-            Lender: '',
-            Balance: '',
-            Limit: ''
+            isSecured: false,
+            lender: '',
+            balance: '',
+            limit: ''
         };
 
         $scope.applyInfo = {
-            FirstName: '',
-            LastName: '',
-            Address: '',
-            City: '',
-            State: '',
-            ZipCode: '',
-            PhoneNumber: '',
+            firstName: '',
+            lastName: '',
+            address: '',
+            city: '',
+            state: '',
+            zipCode: '',
+            phoneNumber: '',
             //PhoneType: '',
-            Email: '',
-            BusinessName: '',
-            BusinessType: '',
-            BusinessEntityType: '',
-            ApplicationCreatedDate: '',
-            BusinessIncorpDate: '',
-            BusinessCreditCards: [$scope.creditCard],
-            BusinessCreditLines: [$scope.linesOfCredit],
-            AmountRequested: 0.0,
-            HasFiledForBankruptcy: false,
-            HasBeenInForeclosure: false,
-            HasJudgementsCollectionsLiens: false,
-            Comments: '',
+            email: '',
+            businessName: '',
+            businessType: '',
+            businessEntityType: '',
+            applicationCreatedDate: '',
+            businessIncorpDate: '',
+            businessCreditCards: [],
+            businessCreditLines: [],
+            amountRequested: 0.0,
+            hasFiledForBankruptcy: false,
+            hasBeenInForeclosure: false,
+            hasJudgementsCollectionsLiens: false,
+            comments: '',
             
 
         };
 
+        $scope.init = function () { // runs when the controller/compiler is ready //last step
+            $scope.applyInfo.businessCreditCards.push($scope.creditCard);
+            $scope.applyInfo.businessCreditLines.push($scope.linesOfCredit);
+            console.log($scope.applyInfo);
+        };
 
         $scope.SendApplication = function (applyInfo) {
             console.log(applyInfo);

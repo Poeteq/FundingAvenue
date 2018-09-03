@@ -33,15 +33,15 @@
     <div class="row">
         <div class="col-sm-4 form-group">
             <label for="template-contactform-name">Bank/Lender</label>
-            <input type="text" class="sm-form-control required" id="template-contactform-name" placeholder="" ng-model="creditCard.Lender">
+            <input type="text" class="sm-form-control required" id="template-contactform-name" placeholder="" ng-model="applyInfo.BusinessCreditCards[0].Lender">
         </div>
         <div class="col-sm-4">
             <label for="template-contactform-name">Balance</label>
-            <input type="text" class="sm-form-control required" id="template-contactform-name" placeholder="" ng-model="creditCard.Balance">
+            <input type="text" class="sm-form-control required" id="template-contactform-name" placeholder="" ng-model="applyInfo.BusinessCreditCards[0].Balance">
         </div>
         <div class="col-sm-4">
             <label for="template-contactform-name">Limit</label>
-            <input type="text" class="sm-form-control required" id="template-contactform-name" placeholder="" ng-model="creditCard.Limit">
+            <input type="text" class="sm-form-control required" id="template-contactform-name" placeholder="" ng-model="applyInfo.BusinessCreditCards[0].Limit">
         </div>
     </div>
 </div>
@@ -52,20 +52,20 @@
     <label for="template-contactform-name">Other Lines of Credit? <small>*</small></label>
     <div class="row">
         <div class="col-sm-3">
-            <select id="template-contactform-service" name="template-contactform-service" class="sm-form-control" ng-model="linesOfCredit.IsSecured">
+            <select id="template-contactform-service" name="template-contactform-service" class="sm-form-control" ng-model="applyInfo.BusinessCreditLines[0].IsSecured">
                 <option value="">-- Select One --</option>
                 <option value="1">Secured</option>
                 <option value="0">Unsecured</option>
             </select>
         </div>
         <div class="col-sm-3">
-            <input type="text" class="sm-form-control required" id="template-contactform-name" placeholder="Bank/Lender" ng-model="linesOfCredit.Lender">
+            <input type="text" class="sm-form-control required" id="template-contactform-name" placeholder="Bank/Lender" ng-model="applyInfo.BusinessCreditLines[0].Lender">
         </div>
         <div class="col-sm-3">
-            <input type="text" class="sm-form-control required" id="template-contactform-name" placeholder="Balance" ng-model="linesOfCredit.Balance">
+            <input type="text" class="sm-form-control required" id="template-contactform-name" placeholder="Balance" ng-model="applyInfo.BusinessCreditLines[0].Balance">
         </div>
         <div class="col-sm-3">
-            <input type="text" class="sm-form-control required" id="template-contactform-name" placeholder="Limit" ng-model="linesOfCredit.Limit">
+            <input type="text" class="sm-form-control required" id="template-contactform-name" placeholder="Limit" ng-model="applyInfo.BusinessCreditLines[0].Limit">
         </div>
     </div>
 </div>
