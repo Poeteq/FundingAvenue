@@ -1,4 +1,3 @@
-﻿
 using Microsoft.AspNetCore.Mvc;
 using SugarTits.FundingAvenue.Models;
 using SugarTits.FundingAvenue.Services;
@@ -8,19 +7,19 @@ namespace SugarTits.FundingAvenue.Controllers
     public class ApplicationController : Controller
     {
         private ExcelService _excelService;
-        //private MailService _mailService;
-        public ApplicationController()
+        private IMailService iservice;
+        public ApplicationController(IMailService mailService)
         {
             _excelService = new ExcelService();
-            //_mailService = new MailService();
+            iservice = mailService;
+     
         }
 
         [HttpPost]
         public IActionResult Form([FromBody] ApplicationForm request)
         {
-            
             string excelDoc = _excelService.GenerateClientProfileExcelFile(request);
-            //var mailResponse = MailService.SendMail(excelDoc, request);
+            //bool mailResponse = iservice.SendMail(excelDoc, request);
             return Ok(excelDoc);
         }
     }

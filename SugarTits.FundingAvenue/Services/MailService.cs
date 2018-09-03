@@ -9,16 +9,30 @@ using System.IO;
 
 namespace SugarTits.FundingAvenue.Services
 {
-    public class MailService
+    public interface IMailService
     {
+        bool SendSMTPClient(bool success, MimeMessage message);
+        bool SendMail(string fileAttachment, ContactForm form);
+        bool SendMail(string fileAttachment, ApplicationForm form);
+    }
 
-        private static bool SendSMTPClient(bool success, MimeMessage message)
+    public class MailService : IMailService
+    {
+        private IMailConfiguration IMailConfig;
+
+        public MailService(IMailConfiguration mailConfiguration)
+        {
+            IMailConfig = mailConfiguration;
+
+        }
+
+        public bool SendSMTPClient(bool success, MimeMessage message)
         {
             using (var client = new MailKit.Net.Smtp.SmtpClient())
             {
-                client.Connect("smtp.gmail.com", 587);
-                client.AuthenticationMechanisms.Remove("XOQUTH2");
-                client.Authenticate("suzieahn1117@gmail.com", "dorothy1117");
+                client.Connect(IMailConfig.SmtpServer, IMailConfig.SmtpPort);
+                client.AuthenticationMechanisms.Remove(IMailConfig.AuthenticationRemoval);
+                client.Authenticate(IMailConfig.AuthenticatedEmailAddress, IMailConfig.AuthenticatedEmailPassword);
                 client.Send(message);
                 client.Disconnect(true);
                 success = true;
@@ -28,7 +42,7 @@ namespace SugarTits.FundingAvenue.Services
         }
 
 
-        public static bool SendMail(string fileAttachment, ContactForm form)
+        public bool SendMail(string fileAttachment, ContactForm form)
         {
             var success = false;
 
@@ -43,7 +57,7 @@ namespace SugarTits.FundingAvenue.Services
             message.To.Add(new MailboxAddress("Suzie", "suzieahn1117@gmail.com"));
             message.Subject = form.Title;
 
-            var body = new TextPart("plain")
+            var body = new TextPart(IMailConfig.TextStyle)
             {
                 Text = form.Message
             };
@@ -54,14 +68,14 @@ namespace SugarTits.FundingAvenue.Services
             return SendSMTPClient(success, message);
         }
 
-        public static bool SendMail(string fileAttachment, ApplicationForm form)
+        public bool SendMail(string fileAttachment, ApplicationForm form)
         {
             var success = false;
 
 
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress(form.FirstName + form.LastName, form.Email));
-            message.To.Add(new MailboxAddress("Suzie", "suzieahn1117@gmail.com"));
+            message.To.Add(new MailboxAddress(form.FirstName, "suzieahn1117@gmail.com"));
             message.Subject = "Application Form";
 
             var body = new TextPart("plain")

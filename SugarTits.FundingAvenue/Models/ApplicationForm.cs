@@ -12,12 +12,12 @@ namespace SugarTits.FundingAvenue.Models
         public string State { get; set; }
         public string ZipCode { get; set; }
         public string PhoneNumber { get; set; }
-        public string PhoneType { get; set; }
+        //public string PhoneType { get; set; }
         public string Email { get; set; }
         public string BusinessName { get; set; }
         public string BusinessType { get; set; }
         public string BusinessEntityType { get; set; }
-        public string BusinessStartDate { get; set; }
+        public string ApplicationCreatedDate { get; set; }
         public string BusinessIncorpDate { get; set; }
         public List<CreditCard> BusinessCreditCards { get; set; }
         public List<LinesOfCredit> BusinessCreditLines { get; set; }
@@ -26,6 +26,7 @@ namespace SugarTits.FundingAvenue.Models
         public bool HasBeenInForeclosure { get; set; }
         public bool HasJudgementsCollectionsLiens { get; set; }
         public string Comments { get; set; }
+
     }
 
     public class CreditCard

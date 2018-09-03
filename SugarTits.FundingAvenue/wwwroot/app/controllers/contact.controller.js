@@ -9,8 +9,7 @@
 
     function ContactController($scope, $http) {
         $scope.title = 'contact';
-
-        console.log("HELLOO HERE");
+        
         $scope.contactInfo = {
             Name: '',
             Email: '',
