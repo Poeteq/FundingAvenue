@@ -1,6 +1,16 @@
-﻿<!-- Page Title
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+    ViewData["Title"] = "Application Page";
+}
+
+
+
+<!-- Page Title
         ============================================= -->
-<section id="page-title">
+<section id="page-title" ng-controller="ApplyController">
 
     <div class="container clearfix">
         <h1>Apply Now</h1>
@@ -37,7 +47,7 @@
 </div><!-- #page-menu end -->
 <!-- Contact Form & Map Overlay Section
 ============================================= -->
-<section id="map-overlay">
+<section id="map-overlay" ng-controller="ApplyController">
 
     <div class="container clearfix">
 
@@ -55,7 +65,7 @@
 
                 <!-- Contact Form
                 ============================================= -->
-                <form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail.php" method="post">
+                <form class="nobottommargin" id="template-contactform" name="template-contactform" method="post" ng-model="applyInfo">
 
                     <partial name="_PersonalSection" />
                     <div class="line"></div>
@@ -64,7 +74,7 @@
                     <partial name="_BottomSection" />
 
                     <div class="col_full">
-                        <button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Send Message</button>
+                        <button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit" ng-click="SendApplication(applyInfo)">Send Application</button>
                     </div>
 
                 </form>
@@ -89,18 +99,6 @@
             </div><!-- Contact Info End -->
             <!-- Testimonails
             ============================================= -->
-            <div class="col_two_third col_last nobottommargin">
-
-                <div class="fslider customjs testimonial twitter-scroll twitter-feed" data-username="envato" data-count="4" data-animation="slide" data-arrows="false">
-                    <i class="i-plain color icon-twitter nobottommargin" style="margin-right: 15px;"></i>
-                    <div class="flexslider" style="width: auto;">
-                        <div class="slider-wrap">
-                            <div class="slide"></div>
-                        </div>
-                    </div>
-                </div>
-
-            </div><!-- Testimonials End -->
 
         </div><!-- Contact Form Overlay End -->
 

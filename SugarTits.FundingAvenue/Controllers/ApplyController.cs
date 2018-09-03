@@ -9,11 +9,11 @@ namespace SugarTits.FundingAvenue.Controllers
     public class ApplyController : Controller
     {
         private ExcelService _excelService;
-        private MailService _mailService;
-        public ApplyController()
+        private IMailService _mailService;
+        public ApplyController(IMailService mail_service)
         {
             _excelService = new ExcelService();
-            //_mailService = new MailService();
+            _mailService = mail_service;
         }
 
         // GET: /<controller>/
@@ -22,13 +22,14 @@ namespace SugarTits.FundingAvenue.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public IActionResult Form([FromBody] ApplicationForm applicationFormRequest)
-        //{
-        //    // MOCK CODE
-        //    var excelDoc = _excelService.GenerateClientProfile(applicationFormRequest);
-        //    var mailResponse = _mailService.SendMail(excelDoc);
-        //    return Ok(mailResponse);
-        //}
+        [HttpPost]
+        public IActionResult Form([FromBody] ApplicationForm applicationFormRequest)
+        {
+            // MOCK CODE
+            string excelDoc = _excelService.GenerateClientProfileExcelFile(applicationFormRequest);
+            
+            bool mailResponse = _mailService.SendMail(excelDoc, applicationFormRequest);
+            return Ok(mailResponse);
+        }
     }
 }
