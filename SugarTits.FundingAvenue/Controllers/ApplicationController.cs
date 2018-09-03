@@ -18,6 +18,9 @@ namespace SugarTits.FundingAvenue.Controllers
         [HttpPost]
         public IActionResult Form([FromBody] ApplicationForm request)
         {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
             string excelDoc = _excelService.GenerateClientProfileExcelFile(request);
             bool mailResponse = iservice.SendMail(excelDoc, request);
             return Ok(excelDoc);
