@@ -64,9 +64,11 @@
             $http.post("Application/Form", applyInfo)
                 .then(function (response) {
                     console.log(response);
-            
+                }, function (error) {
+                    console.log(error);
+                }
+                );
 
-                });
             //$http.post("apply/form", applyInfo)
             //    .then(function (response) {
             //        console.log("yasss");
