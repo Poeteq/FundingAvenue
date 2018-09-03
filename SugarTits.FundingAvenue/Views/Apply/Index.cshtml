@@ -65,7 +65,7 @@
 
                 <!-- Contact Form
                 ============================================= -->
-                <form class="nobottommargin" id="template-contactform" name="template-contactform" method="post" ng-model="applyInfo">
+                <form class="nobottommargin" id="template-contactform" name="template-contactform" ng-submit="sendApplication();">
 
                     <partial name="_PersonalSection" />
                     <div class="line"></div>
@@ -74,7 +74,7 @@
                     <partial name="_BottomSection" />
 
                     <div class="col_full">
-                        <button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit" ng-click="SendApplication(applyInfo)">Send Application</button>
+                        <button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Send Application</button>
                     </div>
 
                 </form>
