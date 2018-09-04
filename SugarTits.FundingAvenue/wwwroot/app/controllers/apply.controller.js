@@ -58,21 +58,15 @@
             console.log($scope.applyInfo);
         };
 
-        $scope.SendApplication = function (applyInfo) {
-            console.log(applyInfo);
-          
-            $http.post("Application/Form", applyInfo)
+        $scope.sendApplication = function () {
+            console.log($scope.applyInfo);
+            
+            $http.post("Application/Form", $scope.applyInfo)
                 .then(function (response) {
                     console.log(response);
                 }, function (error) {
                     console.log(error);
-                }
-                );
-
-            //$http.post("apply/form", applyInfo)
-            //    .then(function (response) {
-            //        console.log("yasss");
-            //    });
+                });
         };
 
         
