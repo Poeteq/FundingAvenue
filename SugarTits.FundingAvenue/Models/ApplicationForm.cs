@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace SugarTits.FundingAvenue.Models
 {
     public class ApplicationForm
     {
+        [Required]
         public string FirstName { get; set; }
+        [Required]
         public string LastName { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
@@ -13,6 +16,7 @@ namespace SugarTits.FundingAvenue.Models
         public string ZipCode { get; set; }
         public string PhoneNumber { get; set; }
         //public string PhoneType { get; set; }
+        [Required]
         public string Email { get; set; }
         public string BusinessName { get; set; }
         public string BusinessType { get; set; }

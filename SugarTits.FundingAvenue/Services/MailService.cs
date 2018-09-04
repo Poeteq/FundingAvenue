@@ -13,7 +13,7 @@ namespace SugarTits.FundingAvenue.Services
     {
         bool SendSMTPClient(bool success, MimeMessage message);
         bool SendMail(string fileAttachment, ContactForm form);
-        bool SendMail(string fileAttachment, ApplicationForm form);
+        string SendMail(string fileAttachment, ApplicationForm form);
     }
 
     public class MailService : IMailService
@@ -44,6 +44,8 @@ namespace SugarTits.FundingAvenue.Services
 
         public bool SendMail(string fileAttachment, ContactForm form)
         {
+
+
             var success = false;
 
             if (form.Email == null || form.Name == null || form.Message == null)
@@ -65,41 +67,54 @@ namespace SugarTits.FundingAvenue.Services
 
             message.Body = body;
 
-         
+
             return SendSMTPClient(success, message);
         }
 
-        public bool SendMail(string fileAttachment, ApplicationForm form)
+        public string SendMail(string fileAttachment, ApplicationForm form)
         {
-            var success = false;
-
-
-            var message = new MimeMessage();
-            message.From.Add(new MailboxAddress(form.FirstName + form.LastName, form.Email));
-            message.To.Add(new MailboxAddress(form.FirstName, "suzieahn1117@gmail.com"));
-            message.Subject = "Application Form";
-
-            var body = new TextPart("plain")
+            try
             {
-                Text = "Business Application Form"
-            };
+                var success = false;
 
-            var attachment = new MimePart("mysheet", "xlsx")
+
+                var message = new MimeMessage();
+                message.From.Add(new MailboxAddress(form.FirstName + form.LastName, form.Email));
+                message.To.Add(new MailboxAddress(form.FirstName, "suzieahn1117@gmail.com"));
+                message.Subject = "Application Form";
+
+                var body = new TextPart("plain")
+                {
+                    Text = "Business Application Form"
+                };
+
+                var attachment = new MimePart("mysheet", "xlsx")
+                {
+                    Content = new MimeContent(File.OpenRead(fileAttachment), ContentEncoding.Default),
+                    ContentDisposition = new ContentDisposition(ContentDisposition.Attachment),
+                    ContentTransferEncoding = ContentEncoding.Base64,
+                    FileName = Path.GetFileName(fileAttachment)
+                };
+
+                var multipart = new Multipart("mixed");
+                multipart.Add(body);
+                multipart.Add(attachment);
+
+                // now set the multipart/mixed as the message body
+                message.Body = multipart;
+
+                if (SendSMTPClient(success, message) == true)
+                    return "Application email successfully sent!";
+                else
+                    return "Application email failed to send...";
+
+
+            }
+
+            catch (Exception ex)
             {
-                Content = new MimeContent(File.OpenRead(fileAttachment), ContentEncoding.Default),
-                ContentDisposition = new ContentDisposition(ContentDisposition.Attachment),
-                ContentTransferEncoding = ContentEncoding.Base64,
-                FileName = Path.GetFileName(fileAttachment)
-            };
-
-            var multipart = new Multipart("mixed");
-            multipart.Add(body);
-            multipart.Add(attachment);
-
-            // now set the multipart/mixed as the message body
-            message.Body = multipart;
-
-            return SendSMTPClient(success, message);
+                return ex.Message;
+            }
         }
     }
 }

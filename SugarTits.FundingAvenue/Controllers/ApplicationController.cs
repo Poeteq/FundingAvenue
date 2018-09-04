@@ -21,9 +21,21 @@ namespace SugarTits.FundingAvenue.Controllers
             if (!ModelState.IsValid)
                 return BadRequest();
 
+            var response = new ApplicationResponse { };
+
             string excelDoc = _excelService.GenerateClientProfileExcelFile(request);
-            bool mailResponse = iservice.SendMail(excelDoc, request);
-            return Ok(excelDoc);
+            response.ExcelMessage = excelDoc;
+
+            string mailResponse = iservice.SendMail(excelDoc, request);
+            response.MailMessage = mailResponse;
+
+            return Ok(response);
         }
+    }
+
+    public class ApplicationResponse
+    {
+        public string ExcelMessage { get; set; }
+        public string MailMessage { get; set; }
     }
 }

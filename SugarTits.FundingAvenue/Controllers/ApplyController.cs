@@ -22,14 +22,14 @@ namespace SugarTits.FundingAvenue.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Form([FromBody] ApplicationForm applicationFormRequest)
-        {
-            // MOCK CODE
-            string excelDoc = _excelService.GenerateClientProfileExcelFile(applicationFormRequest);
+        //[HttpPost]
+        //public IActionResult Form([FromBody] ApplicationForm applicationFormRequest)
+        //{
+        //    // MOCK CODE
+        //    string excelDoc = _excelService.GenerateClientProfileExcelFile(applicationFormRequest);
             
-            bool mailResponse = _mailService.SendMail(excelDoc, applicationFormRequest);
-            return Ok(mailResponse);
-        }
+        //    bool mailResponse = _mailService.SendMail(excelDoc, applicationFormRequest);
+        //    return Ok(mailResponse);
+        //}
     }
 }
