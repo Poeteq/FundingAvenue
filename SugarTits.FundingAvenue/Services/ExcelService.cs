@@ -16,7 +16,7 @@ namespace SugarTits.FundingAvenue.Services
             string fileName = string.Empty;
 
             if (form.FirstName != null && form.LastName != null)
-                fileName = $"{form.FirstName}-{form.LastName}_clientprofile.xlsx";
+                fileName = $"{form.FirstName}-{form.LastName}-app.xlsx";
             else
                 fileName = Path.GetTempFileName();
 
@@ -44,22 +44,29 @@ namespace SugarTits.FundingAvenue.Services
                 // CORP >> 2
                 ws.Cells["A2:B2"].Value = "Business Name:";
                 ws.Cells["A2:B2"].Merge = true;
+                ws.Cells["C2:J2"].Value = form.BusinessName;
                 ws.Cells["C2:J2"].Merge = true;
 
                 // CORP >> 3
                 ws.Cells["A3:B3"].Value = "Mailing Address:";
                 ws.Cells["A3:B3"].Merge = true;
+                ws.Cells["C3:G3"].Value = form.Address;
                 ws.Cells["C3:G3"].Merge = true;
 
                 ws.Cells["H3"].Value = "Suite #";
                 ws.Cells["I3:J3"].Merge = true;
 
-                // CORP >> 4
+                // CORP >> 4, 5
                 ws.Cells["A4:B4"].Value = "Mailing Cont.:";
                 ws.Cells["A4:B4"].Merge = true;
-                ws.Cells["C4:J4"].Merge = true;
 
-                // CORP >> 5
+                ws.Cells["C4:F4"].Value = form.City;
+                ws.Cells["C4:F4"].Merge = true;
+                ws.Cells["G4:H4"].Value = form.State;
+                ws.Cells["G4:H4"].Merge = true;
+                ws.Cells["I4:J4"].Value = form.ZipCode;
+                ws.Cells["I4:J4"].Merge = true;
+
                 ws.Cells["C5:F5"].Value = "City";
                 ws.Cells["C5:F5"].Merge = true;
                 ws.Cells["G5:H5"].Value = "State";
@@ -79,15 +86,18 @@ namespace SugarTits.FundingAvenue.Services
                 // CORP >> 7
                 ws.Cells["A7:B7"].Value = "Phone Number:";
                 ws.Cells["A7:B7"].Merge = true;
+                ws.Cells["C7:E7"].Value = form.PhoneNumber;
                 ws.Cells["C7:E7"].Merge = true;
 
                 ws.Cells["F7:G7"].Value = "Email Address";
                 ws.Cells["F7:G7"].Merge = true;
+                ws.Cells["H7:J7"].Value = form.Email;
                 ws.Cells["H7:J7"].Merge = true;
 
                 // CORP >> 8
                 ws.Cells["A8:B8"].Value = "Type of Entity:";
                 ws.Cells["A8:B8"].Merge = true;
+                ws.Cells["C8:E8"].Value = form.BusinessEntityType;
                 ws.Cells["C8:E8"].Merge = true;
 
                 ws.Cells["F8:G8"].Value = "Email Password";
@@ -101,15 +111,18 @@ namespace SugarTits.FundingAvenue.Services
 
                 ws.Cells["F9:G9"].Value = "Nature of Business";
                 ws.Cells["F9:G9"].Merge = true;
+                ws.Cells["H9:J9"].Value = form.BusinessType;
                 ws.Cells["H9:J9"].Merge = true;
 
                 // CORP >> 10
                 ws.Cells["A10:B10"].Value = "Business Incorp Date:";
                 ws.Cells["A10:B10"].Merge = true;
+                ws.Cells["C10:E10"].Value = form.BusinessIncorpDate;
                 ws.Cells["C10:E10"].Merge = true;
 
                 ws.Cells["F10:G10"].Value = "Business Start Date";
                 ws.Cells["F10:G10"].Merge = true;
+                ws.Cells["H10:J10"].Value = form.BusinessIncorpDate;
                 ws.Cells["H10:J10"].Merge = true;
 
                 // CORP >> 11
@@ -166,11 +179,12 @@ namespace SugarTits.FundingAvenue.Services
                 ws.Cells["G16:I16"].Value = "Last Name";
                 ws.Cells["G16:I16"].Merge = true;
 
-                ws.Cells["J16"].Value = "Zip Code";
+                ws.Cells["J16"].Value = "M.I.";
 
                 // OFF/DIR >> 17
                 ws.Cells["A17:B17"].Value = "Mailing Address:	";
                 ws.Cells["A17:B17"].Merge = true;
+                ws.Cells["C17:G17"].Value = form.Address;
 
                 ws.Cells["H17"].Value = "Suite #";
                 ws.Cells["I17:J17"].Merge = true;
@@ -178,7 +192,13 @@ namespace SugarTits.FundingAvenue.Services
                 // OFF/DIR >> 18
                 ws.Cells["A18:B18"].Value = "Mailing Cont.:	";
                 ws.Cells["A18:B18"].Merge = true;
-                ws.Cells["C18:J18"].Merge = true;
+
+                ws.Cells["C18:F18"].Value = form.City;
+                ws.Cells["C18:F18"].Merge = true;
+                ws.Cells["G18:H18"].Value = form.State;
+                ws.Cells["G19:H18"].Merge = true;
+                ws.Cells["I18:J18"].Value = form.ZipCode;
+                ws.Cells["I18:J18"].Merge = true;
 
                 // OFF/DIR >> 19
                 ws.Cells["C19:F19"].Value = "City";
@@ -200,6 +220,8 @@ namespace SugarTits.FundingAvenue.Services
                 // OFF/DIR >> 21
                 ws.Cells["A21:B21"].Value = "Email Address:	";
                 ws.Cells["A21:B21"].Merge = true;
+                ws.Cells["C21:E21"].Value = form.Email;
+                ws.Cells["C21:E21"].Merge = true;
 
                 ws.Cells["F21:G21"].Value = "Mother's Maiden Name";
                 ws.Cells["F21:G21"].Merge = true;
@@ -315,6 +337,117 @@ namespace SugarTits.FundingAvenue.Services
                 ws.Cells["D54"].Value = "PHONE";
                 ws.Cells["E54"].Value = "LIMIT";
 
+                // ********
+                // SECTION: CREDIT LOGIN
+                // CL >>
+                // ********
+
+                // CL >> 1
+                var CL_CREDIT_LOGIN = "K1:L1";
+                ws.Cells[CL_CREDIT_LOGIN].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells[CL_CREDIT_LOGIN].Style.Fill.BackgroundColor.SetColor(Color.Black);
+                ws.Cells[CL_CREDIT_LOGIN].Style.Font.Color.SetColor(Color.White);
+                ws.Cells[CL_CREDIT_LOGIN].Style.Font.Bold = true; //Font should be bold
+                ws.Cells[CL_CREDIT_LOGIN].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                ws.Cells[CL_CREDIT_LOGIN].Value = "CREDIT LOGIN";
+                ws.Cells[CL_CREDIT_LOGIN].Merge = true;
+
+                // CL >> 2
+                var CL_USERNAME = "K2";
+                ws.Cells[CL_USERNAME].Value = "Username";
+
+                // CL >> 3
+                var CL_PASSWORD = "K3";
+                ws.Cells[CL_PASSWORD].Value = "Password";
+
+                // ********
+                // SECTION: RING CENTRAL
+                // RC >>
+                // ********
+
+                // RC >> 4
+                var RC_NUM = "K4:L4";
+                ws.Cells[RC_NUM].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells[RC_NUM].Style.Fill.BackgroundColor.SetColor(Color.Black);
+                ws.Cells[RC_NUM].Style.Font.Color.SetColor(Color.White);
+                ws.Cells[RC_NUM].Style.Font.Bold = true; //Font should be bold
+                ws.Cells[RC_NUM].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                ws.Cells[RC_NUM].Value = "RING CENTRAL #:";
+                ws.Cells[RC_NUM].Merge = true;
+
+                // RC >> 5
+                var RC_NUMBER = "K5";
+                ws.Cells[RC_NUMBER].Value = "#:";
+
+                // ********
+                // SECTION: DOCUMENTS
+                // DOCS >>
+                // ********
+
+                var DOCUMENTS_TITLES = "K6:N6";
+                ws.Cells[DOCUMENTS_TITLES].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells[DOCUMENTS_TITLES].Style.Fill.BackgroundColor.SetColor(Color.Black);
+                ws.Cells[DOCUMENTS_TITLES].Style.Font.Color.SetColor(Color.White);
+                ws.Cells[DOCUMENTS_TITLES].Style.Font.Bold = true; //Font should be bold
+                ws.Cells[DOCUMENTS_TITLES].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
+                ws.Cells["K6"].Value = "DOCUMENTS";
+                ws.Cells["L6"].Value = "HOME OR BUSINESS";
+                ws.Cells["M6"].Value = "PG NAME";
+                ws.Cells["N6"].Value = "VERIFICATION CHECKLIST";
+
+
+                // ********
+                // SECTION: PAY DOWN
+                // PAY DOWN >>
+                // ********
+
+                var PAY_DOWN = "K13:M13";
+                ws.Cells[PAY_DOWN].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells[PAY_DOWN].Style.Fill.BackgroundColor.SetColor(Color.Black);
+                ws.Cells[PAY_DOWN].Style.Font.Color.SetColor(Color.White);
+                ws.Cells[PAY_DOWN].Style.Font.Bold = true; //Font should be bold
+                ws.Cells[PAY_DOWN].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                ws.Cells[PAY_DOWN].Merge = true;
+                ws.Cells[PAY_DOWN].Value = "PAY DOWN";
+
+                ws.Cells["K14"].Value = "Bank";
+                ws.Cells["L14"].Value = "Amount";
+
+                // ********
+                // SECTION: NEEDED ITEMS
+                // NEED >>
+                // ********
+                var NEEDED_ITEMS = "K20:M20";
+                ws.Cells[NEEDED_ITEMS].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells[NEEDED_ITEMS].Style.Fill.BackgroundColor.SetColor(Color.Black);
+                ws.Cells[NEEDED_ITEMS].Style.Font.Color.SetColor(Color.White);
+                ws.Cells[NEEDED_ITEMS].Style.Font.Bold = true; //Font should be bold
+                ws.Cells[NEEDED_ITEMS].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                ws.Cells[NEEDED_ITEMS].Merge = true;
+                ws.Cells[NEEDED_ITEMS].Value = "Needed Items Before Beginning File		";
+
+                ws.Cells["K21"].Value = "1";
+                ws.Cells["K22"].Value = "2";
+                ws.Cells["K23"].Value = "3";
+                ws.Cells["K24"].Value = "4";
+                ws.Cells["K25"].Value = "5";
+                ws.Cells["K26"].Value = "6";
+                ws.Cells["K27"].Value = "7";
+                ws.Cells["K28"].Value = "8";
+                ws.Cells["K29"].Value = "9";
+                ws.Cells["K30"].Value = "10";
+
+                ws.Cells["L21:M21"].Merge = true;
+                ws.Cells["L22:M22"].Merge = true;
+                ws.Cells["L23:M23"].Merge = true;
+                ws.Cells["L24:M24"].Merge = true;
+                ws.Cells["L25:M25"].Merge = true;
+                ws.Cells["L26:M26"].Merge = true;
+                ws.Cells["L27:M27"].Merge = true;
+                ws.Cells["L28:M28"].Merge = true;
+                ws.Cells["L29:M29"].Merge = true;
+                ws.Cells["L30:M30"].Merge = true;
 
                 ws.Column(1).Width = 15;
                 ws.Column(2).Width = 15;
