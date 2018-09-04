@@ -196,7 +196,7 @@ namespace SugarTits.FundingAvenue.Services
                 ws.Cells["C18:F18"].Value = form.City;
                 ws.Cells["C18:F18"].Merge = true;
                 ws.Cells["G18:H18"].Value = form.State;
-                ws.Cells["G19:H18"].Merge = true;
+                ws.Cells["G18:H18"].Merge = true;
                 ws.Cells["I18:J18"].Value = form.ZipCode;
                 ws.Cells["I18:J18"].Merge = true;
 
