@@ -3332,7 +3332,7 @@ body:not(.stretched) .slider-parallax .slider-parallax-inner { left: auto; }
         line-height: 1;
         font-weight: 600;
         letter-spacing: 1px;
-        color: #3333337d;
+        color: ghostwhite;
         font-size: 28px;
         text-transform: uppercase;
     }
@@ -3341,7 +3341,7 @@ body:not(.stretched) .slider-parallax .slider-parallax-inner { left: auto; }
 	display: block;
 	margin-top: 10px;
 	font-weight: 300;
-	color: #777;
+	color: ghostwhite;
 	font-size: 18px;
 }
 
