@@ -11195,7 +11195,7 @@ input[type=checkbox]:not(:checked) + label.error { display: block !important; }
 /* Emphasis Title
 -----------------------------------------------------------------*/
 
-.emphasis-title { margin: 0 0 50px; }
+.emphasis-title { margin: 0 0 20px; }
 
 .emphasis-title h1,
 .emphasis-title h2 {

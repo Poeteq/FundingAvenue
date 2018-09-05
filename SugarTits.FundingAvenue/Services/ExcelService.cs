@@ -257,12 +257,8 @@ namespace SugarTits.FundingAvenue.Services
 
                     // OFF/DIR >> 25
                     ws.Cells["A25"].Value = "State: ";
-
-
                     ws.Cells["C25"].Value = "Issue Date: ";
-
                     ws.Cells["E25"].Value = "Expiration: ";
-
                     ws.Cells["G25:H25"].Value = "Monthly House Payment: ";
                     ws.Cells["G25:H25"].Merge = true;
 
