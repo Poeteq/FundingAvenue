@@ -11846,6 +11846,10 @@ button.toast-close-button {
 		padding: 15px 20px;
 		width: 25em;
 	}
+
+    #logo a.standard-logo {
+        width: 50%;
+    }
 }
 
 
