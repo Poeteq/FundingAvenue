@@ -11,7 +11,7 @@
 
         $scope.title = 'apply';
 
-      
+
 
         $scope.creditCard = {
             lender: '',
@@ -34,7 +34,6 @@
             state: '',
             zipCode: '',
             phoneNumber: '',
-            //PhoneType: '',
             email: '',
             businessName: '',
             businessType: '',
@@ -48,10 +47,11 @@
             hasBeenInForeclosure: false,
             hasJudgementsCollectionsLiens: false,
             comments: '',
-            
+
 
         };
 
+       
         $scope.init = function () { // runs when the controller/compiler is ready //last step
             $scope.applyInfo.businessCreditCards.push($scope.creditCard);
             $scope.applyInfo.businessCreditLines.push($scope.linesOfCredit);
@@ -60,7 +60,6 @@
 
         $scope.sendApplication = function () {
             console.log($scope.applyInfo);
-            
             $http.post("Application/Form", $scope.applyInfo)
                 .then(function (response) {
                     console.log(response);
