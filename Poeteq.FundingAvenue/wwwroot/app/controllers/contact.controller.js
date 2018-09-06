@@ -23,7 +23,7 @@
             $http.post("Contact/SendEmail", contactInfo)
                 .then(function (response) {
                     console.log(response.data);
-                    window.alert("Message Sent!");
+                    window.alert("Message Sent");
                 });
         };
     }
