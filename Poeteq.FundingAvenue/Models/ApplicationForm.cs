@@ -17,6 +17,7 @@ namespace Poeteq.FundingAvenue.Models
         public string PhoneNumber { get; set; }
         //public string PhoneType { get; set; }
         [Required]
+        [EmailAddress]
         public string Email { get; set; }
         public string BusinessName { get; set; }
         public string BusinessType { get; set; }
@@ -25,7 +26,7 @@ namespace Poeteq.FundingAvenue.Models
         public string BusinessIncorpDate { get; set; }
         public List<CreditCard> BusinessCreditCards { get; set; }
         public List<LinesOfCredit> BusinessCreditLines { get; set; }
-        public double AmountRequested { get; set; }
+        public string AmountRequested { get; set; }
         public bool HasFiledForBankruptcy { get; set; }
         public bool HasBeenInForeclosure { get; set; }
         public bool HasJudgementsCollectionsLiens { get; set; }

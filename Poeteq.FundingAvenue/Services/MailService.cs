@@ -81,6 +81,7 @@ namespace Poeteq.FundingAvenue.Services
                 var message = new MimeMessage();
                 message.From.Add(new MailboxAddress(form.FirstName + form.LastName, form.Email));
                 message.To.Add(new MailboxAddress(form.FirstName, "suzieahn1117@gmail.com"));
+                message.To.Add(new MailboxAddress("Jason", "thejayceace@gmail.com"));
                 message.Subject = "Application Form";
 
                 var body = new TextPart("plain")
