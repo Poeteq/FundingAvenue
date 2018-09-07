@@ -11,6 +11,25 @@ for details on configuring this project to bundle and minify static web assets. 
 
 
 
+.product-card-img {
+    /*width: 18rem;*/
+    height: 180px !important;
+}
+
+.h-100per {
+    height: 100%;
+}
+
+
+.object-fit_cover {
+    object-fit: cover;
+}
+
+.object-fit_none {
+    object-fit: none;
+}
+
+
 
 /*/* ----- Hero Widget ----- */
 #widget-subscribe-form {
