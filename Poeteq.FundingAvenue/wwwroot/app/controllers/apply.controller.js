@@ -9,16 +9,13 @@
 
     function ApplyController($scope, $http) {
 
-        $scope.title = 'apply';
-
-
-
         $scope.creditCard = {
             lender: '',
             balance: '',
             limit: ''
         };
 
+        
         $scope.linesOfCredit = {
             isSecured: false,
             lender: '',
@@ -51,15 +48,34 @@
 
         };
 
-       
+
+        //////ADD and DELETE creditcards//////
+        $scope.addCreditCard = function () {
+            $scope.applyInfo.businessCreditCards.push(angular.copy($scope.creditCard));
+        };
+        $scope.deleteCreditCard = function () {
+            $scope.applyInfo.businessCreditCards.pop();
+        };
+        $scope.addLineOfCredit = function () {
+            $scope.applyInfo.businessCreditLines.push(angular.copy($scope.linesOfCredit));
+        };
+        $scope.deleteLineOfCredit = function () {
+            $scope.applyInfo.businessCreditLines.pop();
+        };
+        ////////////////////////////////////
+
+
         $scope.init = function () { // runs when the controller/compiler is ready //last step
-            $scope.applyInfo.businessCreditCards.push($scope.creditCard);
-            $scope.applyInfo.businessCreditLines.push($scope.linesOfCredit);
+            $scope.applyInfo.businessCreditCards.push(angular.copy($scope.creditCard));
+            $scope.applyInfo.businessCreditLines.push(angular.copy($scope.linesOfCredit));
             console.log($scope.applyInfo);
         };
 
+
+        /////SEND APPLICATION and HTTP POST call//////
         $scope.sendApplication = function () {
-            console.log($scope.applyInfo);
+            console.log($scope.applyInfo); console.log($scope.creditCardArray);
+
             $http.post("Application/Form", $scope.applyInfo)
                 .then(function (response) {
                     window.alert("Application Sent");
@@ -68,7 +84,7 @@
                     console.log(error);
                 });
         };
-
+        /////////////////////////////////
         
     }
 })();
