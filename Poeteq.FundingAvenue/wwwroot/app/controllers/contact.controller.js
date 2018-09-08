@@ -5,8 +5,8 @@
         .module('FundingAvenue')
         .controller('ContactController', ContactController);
 
-   // contact.$inject = ['$scope'];
-
+    // contact.$inject = ['$scope'];
+    /* @ngInject */
     function ContactController($scope, $http) {
         $scope.title = 'contact';
         

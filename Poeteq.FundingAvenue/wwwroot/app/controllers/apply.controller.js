@@ -5,8 +5,8 @@
         .module('FundingAvenue')
         .controller('ApplyController', ApplyController);
 
-    ApplyController.$inject = ['$scope', '$http'];
-
+    //ApplyController.$inject = ['$scope', '$http'];
+    /* @ngInject */
     function ApplyController($scope, $http) {
 
         $scope.creditCard = {
