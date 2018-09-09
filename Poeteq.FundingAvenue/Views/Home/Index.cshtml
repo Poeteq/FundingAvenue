@@ -1,233 +1,233 @@
 ﻿@{
     ViewData["Title"] = "Get Money Fast for Your Businesses";
 }
+<div ng-controller="HomeController as vm">
 
-<section id="slider" class="slider-element clearfix" style="height: 500px; background: url('/images/background/HomePage2.jpg') center center no-repeat; background-size: cover;">
-    <div class="vertical-middle">
-        <div class="container clearfix">
+    <section id="slider" class="slider-element clearfix" style="height: 500px; background: url('/images/background/HomePage2.jpg') center center no-repeat; background-size: cover;">
+        <div class="vertical-middle">
+            <div class="container clearfix">
 
-            <div class="clearfix center divcenter" style="max-width: 700px;">
-                <div class="emphasis-title">
-                    <h1 class="font-secondary" style="color: #FFF; font-size: 56px; font-weight: 900; text-shadow: 0 7px 10px rgba(0,0,0,0.07), 0 4px 4px rgba(0,0,0,0.2);">Your Money Is Our Priority</h1>
+                <div class="clearfix center divcenter" style="max-width: 700px;">
+                    <div class="emphasis-title">
+                        <h1 class="font-secondary" style="color: #FFF; font-size: 56px; font-weight: 900; text-shadow: 0 7px 10px rgba(0,0,0,0.07), 0 4px 4px rgba(0,0,0,0.2);">Your Money Is Our Priority</h1>
+                    </div>
+                    <button onclick="window.location = '/apply'" class="button t400" style="border-radius: 3px;">Apply Now</button>
                 </div>
-                <button onclick="window.location = '/apply'" class="button t400" style="border-radius: 3px;">Apply Now</button>
-            </div>
 
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="content">
+    <section id="content">
 
-    <div class="nobottompadding" style="z-index: 1;padding-top:30px;">
+        <div class="nobottompadding" style="z-index: 1;padding-top:30px;">
 
-        <div class="container topmargin clearfix">
+            <div class="container topmargin clearfix">
 
-            <!-- What We Do
-            ============================================= -->
-            <div class="heading-block center noborder" data-heading="W">
-                <h3>What We Do</h3>
+                <!-- What We Do
+                ============================================= -->
+                <div class="heading-block center noborder" data-heading="W">
+                    <h3>What We Do</h3>
+                </div>
+                <div class="row clearfix">
+                    <div class="center col-lg-8 offset-lg-2 bottommargin">
+                        <h3 class="text-rotater font-secondary" data-separator="," data-rotate="fadeInRight" data-speed="3500">
+                            What loan product is right for you, and how do you qualify for it?
+                            <br>We're here to walk you through the whole <span class="t-rotate color">Business,Personal,Real Estate</span> Loan Application Process
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="clear"></div>
             </div>
-            <div class="row clearfix">
-                <div class="center col-lg-8 offset-lg-2 bottommargin">
-                    <h3 class="text-rotater font-secondary" data-separator="," data-rotate="fadeInRight" data-speed="3500">
-                        What loan product is right for you, and how do you qualify for it?
-                        <br>We're here to walk you through the whole <span class="t-rotate color">Business,Personal,Real Estate</span> Loan Application Process
+        </div>
+    </section>
+
+    <div class="container clearfix">
+        <div class="col_one_third nobottomborder">
+            <div class="feature-box media-box">
+                <div class="fbox-media hover-shadow" ng-click="vm.navigateToTier1()">
+                    <img class="product-card-img object-fit_cover" src="~/images/background/UnsecuredLoanHomePage.jpg" alt="Alt A" />
+                </div>
+                <div class="fbox-desc">
+                    <h3>
+                        <a href="/program/tier1" class="title-link">Business Revolving Credit Lines</a><span class="subtitle">Tier 1</span>
                     </h3>
+                    <p>
+                        Build your business credit history and gain access to funding or business acquisitions, working capital, and start-up funds.
+                    </p>
                 </div>
             </div>
-
-            <div class="clear"></div>
         </div>
-    </div>
-</section>
-
-<div class="container clearfix">
-    <div class="col_one_third nobottomborder">
-        <div class="feature-box media-box">
-            <div class="fbox-media">
-                <img class="product-card-img object-fit_cover" src="~/images/background/UnsecuredLoanHomePage.jpg" alt="Alt A" />
-            </div>
-            <div class="fbox-desc">
-                <h3>
-                    Business Revolving Credit Lines<span class="subtitle">Tier 1</span>
-                </h3>
-                <p>
-                    Build your business credit history and gain access to funding or business acquisitions, working capital, and start-up funds.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="col_one_third nobottomborder">
-        <div class="feature-box media-box">
-            <div class="fbox-media">
-                <img class="product-card-img object-fit_cover" src="~/images/background/PersonalLoanHomePage.jpg" alt="Alt B" />
-            </div>
-            <div class="fbox-desc">
-                <h3>
-                    Personal Revolving Credit Lines<span class="subtitle">Tier 2</span>
-                </h3>
-                <p>
-                    Alternative funding through our network of lending sources for business acquisition, working capital, and start-up funds.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="col_one_third nobottomborder col_last">
-        <div class="feature-box media-box">
-            <div class="fbox-media">
-                <img class="product-card-img object-fit_cover" src="~/images/background/BusinessEntityHomePage.jpg" alt="Alt C" />
-            </div>
-            <div class="fbox-desc">
-                <h3>
-                    Personal Cash Loans<span class="subtitle">Tier 3</span>
-                </h3>
-                <p>
-                    Cash loan for debt consolidation, immediate working capital (payroll), business capital, start-up funds.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="clear"></div>
-</div>
-
-<div class="row nopadding common-height">
-    <div class="col-lg-4 dark col-padding ohidden" style="background-color: rgb(26, 188, 156); height: 406px;">
-        <div>
-            <h3 class="uppercase" style="font-weight: 600;">Alt A</h3>
-            <p style="line-height: 1.8;font-size:20px;">Combination of both Business and Personal Revolving Credit Lines</p>
-            <a href="/program/AltA" class="button button-border button-light button-rounded uppercase nomargin">Learn More</a>
-            <i class="icon-bulb bgicon"></i>
-        </div>
-    </div>
-    <div class="col-lg-4 dark col-padding ohidden" style="background-color: rgb(52, 73, 94); height: 406px;">
-        <div>
-            <h3 class="uppercase" style="font-weight: 600;">Alt B</h3>
-            <p style="line-height: 1.8; font-size:18px;">
-                Business or Personal Revolving Credit Lines and Personal Cash Loans
-            </p>
-            <a href="/program/AltB" class="button button-border button-light button-rounded uppercase nomargin">Learn More</a>
-            <i class="icon-cog bgicon"></i>
-        </div>
-    </div>
-    <div class="col-lg-4 dark col-padding ohidden" style="background-color: rgb(231, 76, 60); height: 406px;">
-        <div>
-            <h3 class="uppercase" style="font-weight: 600;">Alt C</h3>
-            <p style="line-height: 1.8;font-size:20px;">
-                Business and Personal Revolving Credit Lines and Personal Cash Loans
-            </p>
-            <a href="/program/AltC" class="button button-border button-light button-rounded uppercase nomargin">Learn More</a>
-            <i class="icon-thumbs-up bgicon"></i>
-        </div>
-    </div>
-</div>
-
-<div>
-    <div class="nobg topmargin-lg nobottommargin">
-        <div class="container clearfix">
-            <div class="col_half nobottommargin center">
-                <img src="~/images/stock/business-cartoon.png" alt="Image" data-animate="fadeInLeft" class="fadeInLeft animated">
-            </div>
-            <div class="col_half nobottommargin col_last">
-                <div class="heading-block" style="padding-top: 40px;">
-                    <h2>Take Control of Your Finances</h2>
+        <div class="col_one_third nobottomborder">
+            <div class="feature-box media-box">
+                <div class="fbox-media hover-shadow" ng-click="vm.navigateToTier2()">
+                    <img class="product-card-img object-fit_cover" src="~/images/background/PersonalLoanHomePage.jpg" alt="Alt B" />
                 </div>
-                <p>Accessing small business funding shouldn't be complicated or time-consuming, so we developed a simple way to get up to $100,000 in minutes</p>
-                <a href="/apply" class="button button-border button-large button-rounded topmargin-sm noleftmargin">Get Started</a>
+                <div class="fbox-desc">
+                    <h3>
+                        <a href="/program/tier2" class="title-link">Personal Revolving Credit Lines</a><span class="subtitle">Tier 2</span>
+                    </h3>
+                    <p>
+                        Alternative funding through our network of lending sources for business acquisition, working capital, and start-up funds.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col_one_third nobottomborder col_last">
+            <div class="feature-box media-box">
+                <div class="fbox-media hover-shadow" ng-click="vm.navigateToTier3()">
+                    <img class="product-card-img object-fit_cover" src="~/images/background/BusinessEntityHomePage.jpg" alt="Alt C" />
+                </div>
+                <div class="fbox-desc">
+                    <h3>
+                        <a href="/program/tier3" class="title-link">Personal Cash Loans</a><span class="subtitle">Tier 3</span>
+                    </h3>
+                    <p>
+                        Cash loan for debt consolidation, immediate working capital (payroll), business capital, start-up funds.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="row nopadding common-height">
+        <div class="col-lg-4 dark col-padding ohidden" style="background-color: rgb(26, 188, 156); height: 406px;">
+            <div>
+                <h3 class="uppercase" style="font-weight: 600;">Alt A</h3>
+                <p style="line-height: 1.8;font-size:20px;">Combination of both Business and Personal Revolving Credit Lines</p>
+                <a href="/program/AltA" class="button button-border button-light button-rounded uppercase nomargin">Learn More</a>
+                <i class="icon-bulb bgicon"></i>
+            </div>
+        </div>
+        <div class="col-lg-4 dark col-padding ohidden" style="background-color: rgb(52, 73, 94); height: 406px;">
+            <div>
+                <h3 class="uppercase" style="font-weight: 600;">Alt B</h3>
+                <p style="line-height: 1.8; font-size:18px;">
+                    Business or Personal Revolving Credit Lines and Personal Cash Loans
+                </p>
+                <a href="/program/AltB" class="button button-border button-light button-rounded uppercase nomargin">Learn More</a>
+                <i class="icon-cog bgicon"></i>
+            </div>
+        </div>
+        <div class="col-lg-4 dark col-padding ohidden" style="background-color: rgb(231, 76, 60); height: 406px;">
+            <div>
+                <h3 class="uppercase" style="font-weight: 600;">Alt C</h3>
+                <p style="line-height: 1.8;font-size:20px;">
+                    Business and Personal Revolving Credit Lines and Personal Cash Loans
+                </p>
+                <a href="/program/AltC" class="button button-border button-light button-rounded uppercase nomargin">Learn More</a>
+                <i class="icon-thumbs-up bgicon"></i>
             </div>
         </div>
     </div>
-</div>
 
-<section>
-    <div class="section nomargin">
-        <div class="container clearfix">
-            <div class="col_one_fourth nobottommargin center" data-animate="bounceIn">
-                <i class="i-plain i-xlarge divcenter icon-line2-directions"></i>
-                <div class="counter counter-lined"><span data-from="100" data-to="846" data-refresh-interval="50" data-speed="2000"></span>K+</div>
-                <h5>Raised Funds</h5>
-            </div>
-
-            <div class="col_one_fourth nobottommargin center" data-animate="bounceIn" data-delay="200">
-                <i class="i-plain i-xlarge divcenter nobottommargin icon-line2-graph"></i>
-                <div class="counter counter-lined"><span data-from="3000" data-to="15360" data-refresh-interval="100" data-speed="2500"></span>+</div>
-                <h5>No. of Companies</h5>
-            </div>
-
-            <div class="col_one_fourth nobottommargin center" data-animate="bounceIn" data-delay="400">
-                <i class="i-plain i-xlarge divcenter nobottommargin icon-line2-layers"></i>
-                <div class="counter counter-lined"><span data-from="10" data-to="408" data-refresh-interval="25" data-speed="3500"></span>*</div>
-                <h5>No. of Credit Union Partners </h5>
-            </div>
-
-            <div class="col_one_fourth nobottommargin center col_last" data-animate="bounceIn" data-delay="600">
-                <i class="i-plain i-xlarge divcenter nobottommargin icon-line2-clock"></i>
-                <div class="counter counter-lined"><span data-from="60" data-to="1200" data-refresh-interval="30" data-speed="2700"></span>+</div>
-                <h5>24/7 Support</h5>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<div class="section bgcolor dark m-0">
-    <div class="container">
-        <div class="row center justify-content-center">
-            <div class="col-md-8">
-                <h2 class="t700 text-white mb-3">Fast funding for your business is just the beginning.</h2>
-            </div>
-            <div class="col-md-8">
-                <a href="#" class="button center bg-white color button-light button-rounded button-large ml-0">Check Eligibility</a>
+    <div>
+        <div class="nobg topmargin-lg nobottommargin">
+            <div class="container clearfix">
+                <div class="col_half nobottommargin center">
+                    <img src="~/images/stock/business-cartoon.png" alt="Image" data-animate="fadeInLeft" class="fadeInLeft animated">
+                </div>
+                <div class="col_half nobottommargin col_last">
+                    <div class="heading-block" style="padding-top: 40px;">
+                        <h2>Take Control of Your Finances</h2>
+                    </div>
+                    <p>Accessing small business funding shouldn't be complicated or time-consuming, so we developed a simple way to get up to $100,000 in minutes</p>
+                    <a href="/apply" class="button button-border button-large button-rounded topmargin-sm noleftmargin">Get Started</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<section id="content">
-    <div class="content-wrap" style="">
+    <section>
+        <div class="section nomargin">
+            <div class="container clearfix">
 
-        <div class="container clearfix">
-            <h3 class="center">What <span>Clients</span> Say</h3>
+                <div class="col_one_fourth nobottommargin center" data-animate="bounceIn">
+                    <i class="i-plain i-xlarge divcenter icon-line2-directions"></i>
+                    <div class="counter counter-lined"><span data-from="100" data-to="846" data-refresh-interval="50" data-speed="2000"></span>K+</div>
+                    <h5>Raised Funds</h5>
+                </div>
 
-            <div class="row clearfix">
+                <div class="col_one_fourth nobottommargin center" data-animate="bounceIn" data-delay="200">
+                    <i class="i-plain i-xlarge divcenter nobottommargin icon-line2-graph"></i>
+                    <div class="counter counter-lined"><span data-from="3000" data-to="15360" data-refresh-interval="100" data-speed="2500"></span>+</div>
+                    <h5>No. of Companies</h5>
+                </div>
 
-                <div class="fslider testimonial testimonial-full noshadow noborder nopadding divcenter" data-animation="fade" data-arrows="false" style="max-width: 700px;">
-                    <div class="flexslider">
-                        <div class="slider-wrap">
-                            <div class="slide">
-                                <div class="testi-content">
-                                    <p>Funding Avenue was very helpful in getting my restaurant off the ground. Could not have done it without them. I found the process to be fairly quick and painless and would not hesitate to repeat it.</p>
-                                    <div class="testi-meta">
-                                        Fanny Mae
-                                        <span>Some Company Inc.</span>
+                <div class="col_one_fourth nobottommargin center" data-animate="bounceIn" data-delay="400">
+                    <i class="i-plain i-xlarge divcenter nobottommargin icon-line2-layers"></i>
+                    <div class="counter counter-lined"><span data-from="10" data-to="408" data-refresh-interval="25" data-speed="3500"></span>*</div>
+                    <h5>No. of Credit Union Partners </h5>
+                </div>
+
+                <div class="col_one_fourth nobottommargin center col_last" data-animate="bounceIn" data-delay="600">
+                    <i class="i-plain i-xlarge divcenter nobottommargin icon-line2-clock"></i>
+                    <div class="counter counter-lined"><span data-from="60" data-to="1200" data-refresh-interval="30" data-speed="2700"></span>+</div>
+                    <h5>24/7 Support</h5>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="section bgcolor dark m-0">
+        <div class="container">
+            <div class="row center justify-content-center">
+                <div class="col-md-8">
+                    <h2 class="t700 text-white mb-3">Fast funding for your business is just the beginning.</h2>
+                </div>
+                <div class="col-md-8">
+                    <a href="#" class="button center bg-white color button-light button-rounded button-large ml-0">Check Eligibility</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="content">
+        <div class="content-wrap" style="">
+            <div class="container clearfix">
+                <h3 class="center">What <span>Clients</span> Say</h3>
+                <div class="row clearfix">
+                    <div class="fslider testimonial testimonial-full noshadow noborder nopadding divcenter" data-animation="fade" data-arrows="false" style="max-width: 700px;">
+                        <div class="flexslider">
+                            <div class="slider-wrap">
+                                <div class="slide">
+                                    <div class="testi-content">
+                                        <p>Funding Avenue was very helpful in getting my restaurant off the ground. Could not have done it without them. I found the process to be fairly quick and painless and would not hesitate to repeat it.</p>
+                                        <div class="testi-meta">
+                                            Fanny Mae
+                                            <span>Some Company Inc.</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="slide">
-                                <div class="testi-content">
-                                    <p>It was great working with Funding Avenue. They were very patient with me and always explained whenever I got confused. I would definitly recommend them to anyone I know for sure.</p>
-                                    <div class="testi-meta">
-                                        Marilyn Monroe
-                                        <span>Playboy Inc.</span>
+                                <div class="slide">
+                                    <div class="testi-content">
+                                        <p>It was great working with Funding Avenue. They were very patient with me and always explained whenever I got confused. I would definitly recommend them to anyone I know for sure.</p>
+                                        <div class="testi-meta">
+                                            Marilyn Monroe
+                                            <span>Playboy Inc.</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="slide">
-                                <div class="testi-content">
-                                    <p>
-                                        I needed cash for my business in a timely manner, and they delivered. They went above and beyond to expedite important paperwork and prevent unnecessary delays.
-                                    </p>
-                                    <div class="testi-meta">
-                                        Johnny Dept
-                                        <span>My Acting Career Inc.</span>
+                                <div class="slide">
+                                    <div class="testi-content">
+                                        <p>
+                                            I needed cash for my business in a timely manner, and they delivered. They went above and beyond to expedite important paperwork and prevent unnecessary delays.
+                                        </p>
+                                        <div class="testi-meta">
+                                            Johnny Dept
+                                            <span>My Acting Career Inc.</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+</div>

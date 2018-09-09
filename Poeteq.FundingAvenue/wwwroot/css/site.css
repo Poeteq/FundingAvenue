@@ -2,6 +2,24 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 
+.title-link {
+    color: black;
+}
+
+    .title-link:hover {
+        color: #1ABC9C !important;
+    }
+
+.hover-shadow {
+    cursor: pointer;
+    border-radius: .2rem;
+}
+.hover-shadow:hover {
+    opacity: .9;
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
+
 /*Custom Image Size*/
 .product-image-size{
     height: 120px;
