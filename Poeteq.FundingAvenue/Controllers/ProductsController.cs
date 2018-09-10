@@ -7,6 +7,37 @@ namespace Poeteq.FundingAvenue.Controllers
     public class ProductsController : Controller
     {
         // GET: /<controller>/
+
+        public IActionResult Tier1()
+        {
+            return View();
+        }
+
+        public IActionResult Tier2()
+        {
+            return View();
+        }
+
+        public IActionResult Tier3()
+        {
+            return View();
+        }
+
+        public IActionResult AltA()
+        {
+            return View();
+        }
+
+        public IActionResult AltB()
+        {
+            return View();
+        }
+
+        public IActionResult AltC()
+        {
+            return View();
+        }
+
         public IActionResult UnsecuredLoans()
         {
             return View();
