@@ -30,8 +30,8 @@
 
 <div class="form-group">
     <label for="template-contactform-name">Any Business Credit Cards?</label>
-    <button type="button" class="btn btn-outline-secondary btn-sm" ng-click="addCreditCard()">+</button>
-    <button type="button" class="btn btn-outline-secondary btn-sm" ng-click="deleteCreditCard()">-</button>
+    <i class="far fa-plus-square" ng-click="addCreditCard()"></i>
+    <i class="far fa-minus-square" ng-click="deleteCreditCard()"></i>
     <div class="row" ng-repeat="creditCard in applyInfo.businessCreditCards">
 
         <div class="col-sm-4 form-group">
@@ -54,8 +54,8 @@
 
 <div class="form-group">
     <label for="template-contactform-name">Other Lines of Credit? <small>*</small></label>
-    <button type="button" class="btn btn-outline-secondary btn-sm" ng-click="addLineOfCredit()">+</button>
-    <button type="button" class="btn btn-outline-secondary btn-sm" ng-click="deleteLineOfCredit()">-</button>
+    <i class="far fa-plus-square" ng-click="addLineOfCredit()"></i>
+    <i class="far fa-minus-square" ng-click="deleteLineOfCredit()"></i>
     <div class="row" ng-repeat="creditLine in applyInfo.businessCreditLines">
         <div class="col-sm-3">
             <select id="template-contactform-service" name="template-contactform-service" class="sm-form-control" ng-model="creditLine.isSecured">
