@@ -91,13 +91,13 @@
             console.log($scope.applyInfo); 
 
 
-            //$http.post("Application/Form", $scope.applyInfo)
-            //    .then(function (response) {
-            //        window.alert("Application Sent");
-            //        console.log(response);
-            //    }, function (error) {
-            //        console.log(error);
-            //    });
+            $http.post("Application/Form", $scope.applyInfo)
+                .then(function (response) {
+                    window.alert("Application Sent");
+                    console.log(response);
+                }, function (error) {
+                    console.log(error);
+                });
         };
         /////////////////////////////////
 

@@ -3,9 +3,9 @@
 
     angular
         .module('FundingAvenue')
-        .directive('ngcurrency', ngCurrency);
+        .directive('facurrency', faCurrency);
 
-    function ngCurrency() {
+    function faCurrency() {
         return {
             restrict: 'A',
             require: 'ngModel',
