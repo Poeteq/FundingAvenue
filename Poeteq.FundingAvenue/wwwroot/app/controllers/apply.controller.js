@@ -49,7 +49,7 @@
         };
 
 
-        //////ADD and DELETE creditcards//////
+        //////ADD and DELETE Button creditcards/lines of credits //////
         $scope.addCreditCard = function () {
             $scope.applyInfo.businessCreditCards.push(angular.copy($scope.creditCard));
         };
@@ -65,26 +65,43 @@
         ////////////////////////////////////
 
 
+
+        ///////Number Validation/////////
+
+
+
+
+
+        ///////////////////////////////
+
+
+
         $scope.init = function () { // runs when the controller/compiler is ready //last step
             $scope.applyInfo.businessCreditCards.push(angular.copy($scope.creditCard));
             $scope.applyInfo.businessCreditLines.push(angular.copy($scope.linesOfCredit));
             console.log($scope.applyInfo);
+            console.log($scope.applyInfo.amountRequested);
         };
+
+
 
 
         /////SEND APPLICATION and HTTP POST call//////
         $scope.sendApplication = function () {
-            console.log($scope.applyInfo); console.log($scope.creditCardArray);
+            console.log($scope.applyInfo); 
 
-            $http.post("Application/Form", $scope.applyInfo)
-                .then(function (response) {
-                    window.alert("Application Sent");
-                    console.log(response);
-                }, function (error) {
-                    console.log(error);
-                });
+
+            //$http.post("Application/Form", $scope.applyInfo)
+            //    .then(function (response) {
+            //        window.alert("Application Sent");
+            //        console.log(response);
+            //    }, function (error) {
+            //        console.log(error);
+            //    });
         };
         /////////////////////////////////
+
+
         
     }
 })();

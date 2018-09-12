@@ -76,12 +76,12 @@
     </div>
 </div>
 
-<hr>
 
 <div class="form-group row">
     <label for="inputEmail3" class="col-sm-4 col-form-label">How Much Business Capital Do You Seek? <small>*</small></label>
     <div class="col-sm-8">
-        <input type="text" class="sm-form-control required" id="template-contactform-name" placeholder="$100k" ng-model="applyInfo.amountRequested">
+        <span class="sm-form-control required" >$ <input type="text" id="template-contactform" ng-model="applyInfo.amountRequested" 
+        style="border: none;" ngcurrency required> </span>
     </div>
 </div>
 
