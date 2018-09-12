@@ -19,34 +19,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Views\Products\AltA.cshtml">
+    <Content Update="Views\Product\AlternativeFunding.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Products\AltB.cshtml">
+    <Content Update="Views\Product\BusinessCreditLines.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Products\AltC.cshtml">
+    <Content Update="Views\Product\PersonalCreditLines.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Products\Tier1.cshtml">
+    <Content Update="Views\Product\RealEstate.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Products\Tier3.cshtml">
+    <Content Update="Views\Product\PersonalLoans.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Products\Tier2.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\Products\RealEstate.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\Products\PersonalLoans.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\Products\UnsecuredLoans.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\Products\BusinessEntityCreation.cshtml">
+    <Content Update="Views\Product\BusinessEntityCreation.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Views\Shared\_SidePanel.cshtml">

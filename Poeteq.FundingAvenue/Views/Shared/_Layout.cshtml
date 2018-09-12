@@ -4,11 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Funding Avenue</title>
+    @RenderSection("styles", false);
+
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 
         <!-- Stylesheets
-    ============================================= -->
+        ============================================= -->
         <link href="http://fonts.googleapis.com/css?family=Mukta+Vaani:300,400,500,600,700|Open+Sans:300,400,600,700,800,900" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="~/css/site.css" type="text/css" />
         <link rel="stylesheet" href="~/style.css" type="text/css" />
@@ -28,6 +30,7 @@
         <link rel="stylesheet" href="~/demos/car/css/car-icons/style.css" type="text/css" />
         <!-- / -->
 
+
         <link rel="stylesheet" href="~/css/font-icons.css" type="text/css" />
         <link rel="stylesheet" href="~/css/animate.css" type="text/css" />
         <link rel="stylesheet" href="~/css/magnific-popup.css" type="text/css" />
@@ -44,7 +47,7 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
 
         <!-- Stylesheets
-    ============================================= -->
+        ============================================= -->
         <link href="http://fonts.googleapis.com/css?family=Mukta+Vaani:300,400,500,600,700|Open+Sans:300,400,600,700,800,900" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="~/css/site.css" type="text/css" />
         <link rel="stylesheet" href="~/style.css" type="text/css" />
@@ -62,6 +65,7 @@
         <!-- car Specific Stylesheet -->
         <link rel="stylesheet" href="~/demos/car/car.css" type="text/css" />
         <link rel="stylesheet" href="~/demos/car/css/car-icons/style.css" type="text/css" />
+        <link rel="stylesheet" href="~/css/components/ion.rangeslider.css" type="text/css" />
         <!-- / -->
 
         <link rel="stylesheet" href="~/css/font-icons.css" type="text/css" />
@@ -106,10 +110,12 @@
         <script src="~/js/site.js" asp-append-version="true"></script>
 
         <!-- External JavaScripts
-        ============================================= -->
+    ============================================= -->
         @*<script src="~/js/jquery.js"></script>*@
         <script src="~/js/plugins.js"></script>
         <script src="~/js/functions.js"></script>
+        @*<script src="~/js/components/rangeslider.min.js"></script>*@
+
         @*<script src="~/js/components/moment.js"></script>*@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
     </environment>
@@ -133,10 +139,11 @@
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
         <!-- External JavaScripts
-        ============================================= -->
+    ============================================= -->
         <script src="~/js/plugins.js"></script>
         <script src="~/js/functions.js"></script>
         <script src="~/js/components/moment.js"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
     </environment>
 
