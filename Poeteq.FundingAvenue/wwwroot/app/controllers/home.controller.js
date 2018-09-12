@@ -14,17 +14,16 @@
         vm.navigateToTier3 = navigateToTier3;
 
         function navigateToTier1() {
-            $window.location.href = "/program/tier1";
+            $window.location.href = "/products/tier1";
         }
 
         function navigateToTier2() {
-            $window.location.href = "/program/tier2";
-
+            $window.location.href = "/products/tier2";
         }
 
         function navigateToTier3() {
-            $window.location.href = "/program/tier3";
+            $window.location.href = "/products/tier3";
         }
-
     }
+
 })();

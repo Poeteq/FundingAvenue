@@ -4,10 +4,16 @@
 
 namespace Poeteq.FundingAvenue.Controllers
 {
-    public class ProductsController : Controller
+    public class ProductController : Controller
     {
         // GET: /<controller>/
-        public IActionResult UnsecuredLoans()
+
+        public IActionResult BusinessCreditLines()
+        {
+            return View();
+        }
+
+        public IActionResult PersonalCreditLines()
         {
             return View();
         }
@@ -17,6 +23,11 @@ namespace Poeteq.FundingAvenue.Controllers
             return View();
         }
 
+        public IActionResult AlternativeFunding()
+        {
+            return View();
+        }
+        
         public IActionResult BusinessEntityCreation()
         {
             return View();
