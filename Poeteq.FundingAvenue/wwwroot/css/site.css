@@ -2,6 +2,24 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 
+.white-color {
+    color: white !important;
+}
+
+.alt-product-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
+
+.alt-product-card-selected {
+    transform: translateY(-25px) !important;
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
+
+.alt-product-card-selected i .h4 .p  {
+    color: white;
+}
+
 .title-link {
     color: black;
 }
