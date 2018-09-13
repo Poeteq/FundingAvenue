@@ -696,3 +696,13 @@ ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a {
     border: 1px solid lightgray;
     padding-bottom: 10px;
 }
+
+
+.content-wrap-custom {
+ 
+    padding: 80px 0px 30px 0px;
+}
+
+.custom-body {
+    color: #e1e1e6;
+}

@@ -8970,16 +8970,16 @@ body:not(.device-touch) .social-icon i {
 .accordion { margin-bottom: 20px; }
 
 .acctitle {
-	display: block;
-	position: relative;
-	line-height: 24px;
-	margin: 0;
-	font-size: 14px;
-	font-weight: bold;
-	color: #444;
-	cursor: pointer;
-	border-top: 1px dotted #DDD;
-	padding: 10px 0 10px 20px;
+    display: block;
+    position: relative;
+    line-height: 24px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ddd;
+    cursor: pointer;
+    border-top: 1px dotted #DDD;
+    padding: 10px 0 10px 20px;
 }
 
 .acctitlec { cursor: auto; }
@@ -9066,7 +9066,7 @@ body:not(.device-touch) .social-icon i {
 	line-height: 64px;
 }
 
-.accordion.accordion-lg .acc_content { padding: 10px 0 30px 30px; }
+.accordion.accordion-lg .acc_content { padding: 0px 0 10px 66px; }
 
 
 /* ----------------------------------------------------------------
