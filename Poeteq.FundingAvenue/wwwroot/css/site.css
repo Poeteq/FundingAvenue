@@ -696,3 +696,65 @@ ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a {
     border: 1px solid lightgray;
     padding-bottom: 10px;
 }
+
+
+
+.progress.skills-animated:after {
+    content: "\e095";
+    font-family: 'lined-icons';
+    color: #1ABC9C;
+    position: absolute;
+    right: -5px;
+    top: -26px;
+    font-size: 36px;
+}
+
+.progress:before {
+    width: 20px;
+    height: 20px;
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 0;
+    background-color: #FFF;
+    border: 4px solid var(--themecolor);
+    border-radius: 50%;
+}
+
+.progress-percent:before {
+    display: none;
+}
+
+.progress-percent:after {
+    background-color: #fff;
+    border: none;
+    position: absolute;
+    z-index: 2;
+    width: 8px;
+    height: 8px;
+    content: ' ';
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+    -webkit-transform: translateX(-14%) translateY(-69%) rotate(45deg);
+    transform: translateX(-14%) translateY(-69%) rotate(45deg);
+    border-radius: 2px;
+    left: 50%;
+    -webkit-box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.24);
+    box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.24);
+    bottom: -1.8px;
+}
+
+.skills li .progress-percent {
+    top: -50px;
+    right: -20px;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: #FFF;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24);
+    height: auto;
+    font-size: 15px;
+    line-height: 16px;
+    text-shadow: none;
+    color: #232D41;
+}
