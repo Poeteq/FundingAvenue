@@ -700,9 +700,29 @@ ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a {
 
 .content-wrap-custom {
  
-    padding: 80px 0px 30px 0px;
+    padding: 100px 0px 40px 0px;
 }
 
 .custom-body {
     color: #e1e1e6;
+}
+
+
+
+.counter-custom {
+    margin: 25px 0; 
+    font-size: 42px;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+}
+
+    .counter-custom + h5 {
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 10px;
+    }
+
+.section-custom-dark {
+    background-color:#282828bf; 
 }
