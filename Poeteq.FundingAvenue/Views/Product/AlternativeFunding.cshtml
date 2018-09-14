@@ -16,54 +16,363 @@
                     <h4 class="divcenter font-body center" style="margin-bottom:0;">Alternative Funding</h4>
                     <div ng-hide="vm.recommendation">
                         <h2 class="divcenter font-body center" style="max-width: 700px; font-size: 40px;">Select the suite of products that best suit your needs.</h2>
-                        <div class="center bottommargin"><a href="#" class="button button-border button-circle t600">Learn More</a></div>
+                        <div class="center bottommargin">
+                            <a href="#" class="button button-border button-circle t600" style="margin-right: 15px;">Learn More</a>
+                            <a href="#" class="hero-action-link" data-lightbox="iframe" style="margin-left: 15px;">Apply Now <i class="icon-chevron-right" style="position:relative;margin-left:4px;top:2px;"></i></a>
+                        </div>
                     </div>
 
                     <div ng-show="vm.recommendation">
-                            <h2 class="divcenter font-body center" style="max-width: 700px; font-size: 40px;">Your Selection <br /><span>{{ vm.recommendation }}</span></h2>
-                            <div class="center bottommargin"><a href="#" class="button button-border button-circle t600">Apply Now</a></div>
+                        <h2 class="divcenter font-body center" style="max-width: 700px; font-size: 40px;">Your Selection <br /><span>{{ vm.recommendation }}</span></h2>
+                        <div class="center bottommargin">
+                            <a href="#" class="button button-border button-circle t600" style="margin-right: 15px;">Learn More</a>
+                            <a href="#" class="hero-action-link" data-lightbox="iframe" style="margin-left: 15px;">Apply Now <i class="icon-chevron-right" style="position:relative;margin-left:4px;top:2px;"></i></a>
                         </div>
+                    </div>
 
                     <div id="slider-services" class="row">
 
-                        <div class="col-4 intro-services center col-padding alt-product-card" style="background-color: #FFF;"
-                             ng-class="{ 'alt-product-card-selected dark bgcolor' : vm.products.one}" 
-                             ng-click="vm.toggleProduct(1)">
-                            <i class="i-plain i-xlarge icon-building inline-block" ng-class="{ 'color' : !vm.products.one }" style="margin-bottom: 15px;"></i>
-                            <div class="heading-block nobottomborder" style="margin-bottom: 15px;">
-                                <h4>Business Credit Lines</h4>
-                                <p>Can obtain $20,000 - $150,000</p>
+                        <div class="col-4">
+                            <div class="intro-services center col-padding alt-product-card" style="background-color: #FFF;"
+                                 ng-class="{ 'alt-product-card-selected dark bgcolor' : vm.products.one}"
+                                 ng-click="vm.toggleProduct(1)">
+                                <i class="i-plain i-xlarge icon-building inline-block" ng-class="{ 'color' : !vm.products.one }" style="margin-bottom: 15px;"></i>
+                                <div class="heading-block nobottomborder" style="margin-bottom: 15px;">
+                                    <h4>Business Credit Lines</h4>
+                                    <p>Can obtain $20,000 - $150,000</p>
+                                </div>
+                                <div><a href="#" ng-class="{'button-black': vm.products.one}" class="button button-red button-rounded button-small t600">{{ vm.products.one ?  'Remove Me' : 'Add Me' }}</a></div>
                             </div>
-                            <div><a href="#" ng-class="{'button-black': vm.products.one}" class="button button-red button-rounded button-small t600">{{ vm.products.one ?  'Remove Me' : 'Add Me' }}</a></div>
                         </div>
 
-                        <div class="col-4 intro-services center col-padding alt-product-card" style="background-color: #FFF;"
-                             ng-class="{ 'alt-product-card-selected dark bgcolor' : vm.products.two === true}" 
-                             ng-click="vm.toggleProduct(2)">
-                            <i class="i-plain color i-xlarge icon-line2-credit-card inline-block" ng-class="{ 'color' : !vm.products.two }" style="margin-bottom: 15px;"></i>
-                            <div class="heading-block nobottomborder" style="margin-bottom: 15px;">
-                                <h4>Personal Credit Lines</h4>
-                                <p>Can obtain $10,000 - $100,000</p>
-                            </div>
-                            <div><a href="#" ng-class="{'button-black': vm.products.two}" class="button button-red button-rounded button-small t600">{{ vm.products.two ?  'Remove Me' : 'Add Me' }}</a></div>
-                        </div>
+                        <div class="col-4">
 
-                        <div class="col-4 intro-services center col-padding alt-product-card" style="background-color: #FFF;" 
-                             ng-class="{ 'alt-product-card-selected dark bgcolor' : vm.products.three === true}"
-                             ng-click="vm.toggleProduct(3)">
-                            <i class="i-plain color i-xlarge icon-money inline-block" ng-class="{ 'color' : !vm.products.three }" style="margin-bottom: 15px;"></i>
-                            <div class="heading-block nobottomborder" style="margin-bottom: 15px;">
-                                <h4>Personal Cash Loans</h4>
-                                <p>Can obtain $5,000 - $150,000</p>
+                            <div class="intro-services center col-padding alt-product-card" style="background-color: #FFF;"
+                                 ng-class="{ 'alt-product-card-selected dark bgcolor' : vm.products.two === true}"
+                                 ng-click="vm.toggleProduct(2)">
+                                <i class="i-plain color i-xlarge icon-line2-credit-card inline-block" ng-class="{ 'color' : !vm.products.two }" style="margin-bottom: 15px;"></i>
+                                <div class="heading-block nobottomborder" style="margin-bottom: 15px;">
+                                    <h4>Personal Credit Lines</h4>
+                                    <p>Can obtain $10,000 - $100,000</p>
+                                </div>
+                                <div><a href="#" ng-class="{'button-black': vm.products.two}" class="button button-red button-rounded button-small t600">{{ vm.products.two ?  'Remove Me' : 'Add Me' }}</a></div>
                             </div>
-                            <div><a href="#" ng-class="{'button-black': vm.products.three}" class="button button-red button-rounded button-small t600">{{ vm.products.three ?  'Remove Me' : 'Add Me' }}</a></div>
+                        </div>
+                        <div class="col-4">
+                            <div class="intro-services center col-padding alt-product-card" style="background-color: #FFF;"
+                                 ng-class="{ 'alt-product-card-selected dark bgcolor' : vm.products.three === true}"
+                                 ng-click="vm.toggleProduct(3)">
+                                <i class="i-plain color i-xlarge icon-money inline-block" ng-class="{ 'color' : !vm.products.three }" style="margin-bottom: 15px;"></i>
+                                <div class="heading-block nobottomborder" style="margin-bottom: 15px;">
+                                    <h4>Personal Cash Loans</h4>
+                                    <p>Can obtain $5,000 - $150,000</p>
+                                </div>
+                                <div><a href="#" ng-class="{'button-black': vm.products.three}" class="button button-red button-rounded button-small t600">{{ vm.products.three ?  'Remove Me' : 'Add Me' }}</a></div>
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </div>
+
+            <div class="section nobg" style="padding: 80px 0">
+                <div class="container">
+                    <div class="heading-block divcenter nobottomborder center" style="max-width: 600px">
+                        <i class="icon-et-bike d-block h1 mb-4 text-black"></i>
+                        <small class="text-black-50 uppercase ls3 t600">Maximize Your Financial Potential</small>
+                        <h2 class="nott t600 mb-2" style="font-size: 36px; letter-spacing: -1px">
+                            <span class="counter counter-inherit text-dark inline-block">
+                                More than
+                                <code class="color" style="font-size:100%;margin-right:-12px;">
+                                    $<span data-from="0" data-to="846" data-refresh-interval="10" data-speed="1100"></span>k
+                                </code>funded for businesses across America.
+                            </span> 
+                        </h2>
+                        <p class="lead">Obtain as much funding as possible for your needs.</p>
+                    </div>
+                    <ul class="skills divcenter" style="max-width: 600px">
+                        <li data-percent="75">
+                            <div class="progress">
+                                <div class="progress-percent">
+                                    <div class="counter-inherit counter-instant">$<span data-from="0" data-to="846" data-refresh-interval="10" data-speed="1100"></span>k</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
+
+        <!-- Alternative A Section
+        ============================================= -->
+        <div class="container clearfix">
+
+            <div class="row clearfix topmargin bottommargin">
+
+                <div class="col-lg-6 col-md-6 topmargin bottommargin-sm">
+
+                    <div class="heading-block nobottomborder">
+                        <h2 class="nott ls0" style="font-size: 44px; line-height: 1.2">Alternative A</h2>
+                    </div>
+                    <span style="color: #BBB;">Eum nihil pretium quas aliqua, laboris ipsam diam congue natoque mollitia occaecati! Cubilia pede, numquam fringilla proident dis? Molestias repellat.<br><br>Quas perferendis urna, officiis necessitatibus deserunt recusandae urna ullamco hac do beatae cubilia iste dolorum, facilisi? Sit, hic, varius! Sollicitudin.<br><br>Nostrum feugiat beatae proident porro eleifend adipiscing nostrud aliquid sit.</span>
+                    <div class="clear"></div>
+                    <a href="demos/car/car-single.html" class="button button-rounded button-black button-dark noleftmargin topmargin-sm clearfix">Know More</a>
+
+                </div>
+
+                <div class="col-lg-6 col-md-6 topmargin bottommargin-sm">
+                    <div class="feature-box fbox-plain topmargin">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-car-battery"></i></a>
+                        </div>
+                        <h3>Long Battery Life</h3>
+                        <p>Canvas provides support for Native HTML5 Videos that can be added to a Background.</p>
+                    </div>
+
+                    <div class="feature-box fbox-plain topmargin">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-car-cogs2"></i></a>
+                        </div>
+                        <h3>24x7 Service</h3>
+                        <p>Complete control on each &amp; every element that provides endless customization.</p>
+                    </div>
+
+                    <div class="feature-box fbox-plain topmargin">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-car-pump"></i></a>
+                        </div>
+                        <h3>Petrol, Diesel &amp; LPG</h3>
+                        <p>Change your Website's Primary Scheme instantly by simply adding the dark class.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- Alternative A Area End -->
+        <!-- Alternative B Section
+        ============================================= -->
+        <div class="container clearfix">
+
+            <div class="row clearfix topmargin bottommargin">
+
+
+                <div class="col-lg-6 col-md-6 topmargin bottommargin-sm">
+                    <div class="feature-box fbox-plain topmargin">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-car-battery"></i></a>
+                        </div>
+                        <h3>Long Battery Life</h3>
+                        <p>Canvas provides support for Native HTML5 Videos that can be added to a Background.</p>
+                    </div>
+
+                    <div class="feature-box fbox-plain topmargin">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-car-cogs2"></i></a>
+                        </div>
+                        <h3>24x7 Service</h3>
+                        <p>Complete control on each &amp; every element that provides endless customization.</p>
+                    </div>
+
+                    <div class="feature-box fbox-plain topmargin">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-car-pump"></i></a>
+                        </div>
+                        <h3>Petrol, Diesel &amp; LPG</h3>
+                        <p>Change your Website's Primary Scheme instantly by simply adding the dark class.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 topmargin bottommargin-sm">
+
+                    <div class="heading-block nobottomborder">
+                        <h2 class="nott ls0" style="font-size: 44px; line-height: 1.2">Alternative B</h2>
+                    </div>
+                    <span style="color: #BBB;">Eum nihil pretium quas aliqua, laboris ipsam diam congue natoque mollitia occaecati! Cubilia pede, numquam fringilla proident dis? Molestias repellat.<br><br>Quas perferendis urna, officiis necessitatibus deserunt recusandae urna ullamco hac do beatae cubilia iste dolorum, facilisi? Sit, hic, varius! Sollicitudin.<br><br>Nostrum feugiat beatae proident porro eleifend adipiscing nostrud aliquid sit.</span>
+                    <div class="clear"></div>
+                    <a href="demos/car/car-single.html" class="button button-rounded button-black button-dark noleftmargin topmargin-sm clearfix">Know More</a>
+
+                </div>
+
+            </div>
+
+        </div> <!-- Alternative B Area End -->
+        <!-- Featured Section
+        ============================================= -->
+        <div class="section nomargin clearfix" style="background: #FFF url('demos/car/images/features/section-bg.jpg') left bottom no-repeat; background-size: cover; padding: 140px 0">
+            <div class="container clearfix">
+                <div class="row clearfix">
+                    <div class="col-lg-6 col-md-9">
+                        <div class="heading-block">
+                            <h3 style="font-size: 58px; line-height: 56px; letter-spacing: -2px">Alternative C<br />Fully Loaded</h3>
+                        </div>
+                        <p>Assertively iterate enterprise-wide portals through synergistic products. Efficiently build adaptive schemas after transparent quality vectors. Phosfluorescently optimize competitive resources after extensive convergence. Rapidiously optimize high-quality meta-services via distributed architectures. Credibly deliver 24/365.</p>
+
+                        <div class="row topmargin clearfix">
+                            <div class="col-md-6">
+                                <div class="feature-box fbox-plain media-box">
+                                    <div class="fbox-icon" style="position: relative;">
+                                        <a href="#"><i class="icon-car-service2"></i></a>
+                                    </div>
+                                    <div class="fbox-desc" style="margin-top: 25px">
+                                        <h3>Skilled Professionals.</h3>
+                                        <p class="t300" style="color: #666;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi rem, facilis nobis voluptatum est perspiciatis mollitia.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-box fbox-plain media-box">
+                                    <div class="fbox-icon" style="position: relative;">
+                                        <a href="#"><i class="icon-car-crane"></i></a>
+                                    </div>
+                                    <div class="fbox-desc" style="margin-top: 25px">
+                                        <h3>Skilled Professionals.</h3>
+                                        <p class="t300" style="color: #666;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi rem, facilis nobis voluptatum est perspiciatis mollitia.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div> <!-- Featured end -->
+
+        <div class="content-wrap">
+
+            <div class="section nomargin nopadding" style="background: url('demos/gym/images/section/bg-2.jpg') center center no-repeat; background-size: cover;">
+
+
+                <div class="section nomargin nobg">
+                    <div class="container clearfix">
+
+                        <div id="pricing-switch" class="pricing row bottommargin-sm clearfix">
+
+                            <div class="col-lg-4 col-md-6">
+
+                                <div class="pricing-box" style="margin: 0 20px;padding: 30px;background-color: #fff;box-shadow: 0 0 9px 0 rgba(0,0,0,.08)">
+                                    <div>
+                                        <h3>Alternative A</h3>
+                                    </div>
+                                    <div class="pricing-features">
+                                        <ul>
+                                            <li><strong>All Items</strong> Access</li>
+                                            <li><strong>5</strong> Days Access</li>
+                                            <li><strong>1</strong> User Valid</li>
+                                            <li>No<strong> Locker-Room</strong></li>
+                                            <li>No<strong> Steam</strong> Room</li>
+                                        </ul>
+                                    </div>
+                                    <div class="pricing-action">
+                                        <a href="#" data-pricing-plan="Starter Plan" class="button button-large button-dark button-rounded capitalize button-circle ls0">Get Started</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-4 col-md-6">
+
+                                <div class="pricing-box" style="margin: 0 20px;padding: 30px;background-color: #fff;box-shadow: 0 0 9px 0 rgba(0,0,0,.08)">
+                                    <div>
+                                        <h3>Alternative B</h3>
+                                    </div>
+                                    <div class="pricing-features">
+                                        <ul>
+                                            <li><strong>All Items</strong> Access</li>
+                                            <li class="pts-switch-content-left"><strong>1</strong> Month Access</li>
+                                            <li><strong>1</strong> User Valid</li>
+                                            <li><strong>Locker-Room</strong> Available</li>
+                                            <li><strong>Steam</strong> Available</li>
+                                        </ul>
+                                    </div>
+                                    <div class="pricing-action">
+                                        <div class="pts-switch-content-left"><a href="#" data-pricing-plan="Professional Monthly Plan" class="button button-large button-circle button-dark capitalize ls0">Get Started</a></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
+
+                                <div class="pricing-box" style="margin: 0 20px;padding: 30px;background-color: #fff;box-shadow: 0 0 9px 0 rgba(0,0,0,.08)">
+                                    <div>
+                                        <h3>Alternative C</h3>
+                                    </div>
+                                    <div class="pricing-features">
+                                        <ul>
+                                            <li><strong>All Items</strong> Access</li>
+                                            <li class="pts-switch-content-left"><strong>1</strong> Month Access</li>
+                                            <li>1 <strong>Personal Trainer</strong></li>
+                                            <li><strong>Locker-Room</strong> Available</li>
+                                            <li><strong>Steam</strong> Available</li>
+                                        </ul>
+                                    </div>
+                                    <div class="pricing-action">
+                                        <div class="pts-switch-content-left"><a href="#" data-pricing-plan="Business Monthly Plan" class="button button-large button-circle button-dark capitalize ls0">Get Started</a></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="section nomargin" style="background: rgba(0,0,0,0.3);">
+                <div class="container clearfix">
+                    <div class="heading-block dark nobottomborder nobottommargin center">
+                        <h2 style="font-size: 40px;" class="nott t700 ls1">
+                            Frequently Asked Questions
+                        </h2>
+                        @*<span style="font-size: 16px;" class="t300 capitalize ls1">Efficiently network state of the art markets for scalable applications. Professionally engineer business e-tailers for resource sucking e-commerce.</span>*@
+                    </div>
+                </div>
+            </div>
+
+            <div class="container clearfix">
+                <div class="row topmargin-lg clearfix">
+                    <div class="col-md-5 offset-md-1 col-sm-6 mb-5">
+                        <div class="media">
+                            <i class="h3 icon-line2-check color mr-3"></i>
+                            <div class="media-body">
+                                <h4 class="mb-3 font-body">How do I become an author?</h4>
+                                <p class="mb-0">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-6 mb-5">
+                        <div class="media">
+                            <i class="h3 icon-line2-check color mr-3"></i>
+                            <div class="media-body">
+                                <h4 class="mb-3 font-body">How do I become an author?</h4>
+                                <p class="mb-0">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-6 offset-md-1 mb-sm-0 mb-5">
+                        <div class="media">
+                            <i class="h3 icon-line2-check color mr-3"></i>
+                            <div class="media-body">
+                                <h4 class="mb-3 font-body">How much money can I make?</h4>
+                                <p class="mb-0 ">Credibly evolve client-focused convergence rather than leveraged quality vectors. Authoritatively provide access to market-driven manufactured products with standardized initiatives.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-6">
+                        <div class="media">
+                            <i class="h3 icon-line2-check color mr-3"></i>
+                            <div class="media-body">
+                                <h4 class="mb-3 font-body">Can I offer my items for free on a promotional basis?</h4>
+                                <p class="mb-0">Laboriosam iusto quia nulla ad voluptatibus iste beatae voluptas corrupti facilis accusamus recusandae sequi debitis reprehenderit quibusdam. Facilis eligendi a exercitationem nisi et placeat excepturi velit!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
     </section><!-- #content end -->
 
 </div>

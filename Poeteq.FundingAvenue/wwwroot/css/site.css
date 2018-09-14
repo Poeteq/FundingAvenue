@@ -689,3 +689,20 @@ ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a {
 
 
 
+
+.review-box {
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+    margin: 20px auto 20px auto;
+    border: 1px solid lightgray;
+    padding-bottom: 10px;
+}
+
+
+.content-wrap-custom {
+ 
+    padding: 80px 0px 30px 0px;
+}
+
+.custom-body {
+    color: #e1e1e6;
+}
