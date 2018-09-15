@@ -3,10 +3,10 @@
 
     angular
         .module('FundingAvenue')
-        .directive('datepicker', datePicker);
+        .directive('faDatepicker', DatePicker);
 
     /* @ngInject */
-    function datePicker() {
+    function DatePicker() {
         return {
             restrict: "A",
             require: "ngModel",

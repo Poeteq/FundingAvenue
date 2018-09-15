@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Shared\_ScriptsPartial.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove=".DS_Store" />
     <None Remove="._.DS_Store" />
   </ItemGroup>
@@ -48,6 +52,11 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="Amazon.ElasticBeanstalk.Tools" Version="1.1.4" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="Views\Shared\_ScriptsPartial.cshtml" />
   </ItemGroup>
 </Project>
 
