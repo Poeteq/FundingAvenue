@@ -1,6 +1,9 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 
+.light-box-shadow {
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
 
 .white-color {
     color: white !important;
@@ -933,4 +936,85 @@ ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a {
 
 .col-padding-custom{
     padding:40px 60px 0px 60px;
+}
+
+
+/* ----------------------------------------------------------------
+	Slider
+-----------------------------------------------------------------*/
+.slider-element .heading-block p {
+    text-transform: uppercase;
+    font-style: normal;
+    letter-spacing: 5px;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.slider-element .slider-product-desc {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    width: 65%;
+    z-index: 2;
+}
+
+    .slider-element .slider-product-desc [class^='col-'] {
+        background-color: #353535;
+        padding: 30px;
+    }
+
+
+    .slider-element .slider-product-desc [class^='col-'] {
+        padding: 50px;
+    }
+
+
+.slider-element .vertical-middle .container {
+    top: -60px;
+}
+
+.play-icon {
+    position: relative;
+    display: block;
+    font-size: 18px;
+    margin: 20px 0 0 0;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    color: #FFF !important;
+    border: 2px solid #EEE;
+    text-align: center;
+    -webkit-transition: transform .3s ease;
+    -o-transition: transform .3s ease;
+    transition: transform .3s ease;
+}
+
+    .play-icon i {
+        position: relative;
+        left: 2px;
+    }
+
+    .play-icon:hover {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+.heading-block h3 {
+    font-weight: 800;
+    text-transform: none;
+    font-size: 2.3rem;
+    letter-spacing: 0;
+}
+
+.edge-underline h3,
+.product:hover .product-title h3 {
+    text-decoration: underline;
+    text-decoration-skip: edges;
 }
