@@ -750,6 +750,12 @@ ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a {
         color: gold;
     }
 
+    .rating-stars-sm i {
+        font-size: 15px;
+        margin: 0 2px;
+        color: gold;
+    }
+
 .review-date {
     font-size: 16px;
     font-weight: 300;
