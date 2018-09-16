@@ -41,7 +41,7 @@
                 <div class="clear"></div>
                 <div class="row">
                     <div class="col-sm-3 bottommargin-sm">
-                        <div class="card" style="width: 18rem" ng-click="vm.navigateToBusinessCreditLines()">
+                        <div class="card product-card pointer" style="width: 18rem" ng-click="vm.navigateToProduct('BusinessCreditLines')">
                             <div class="product-card-img">
                                 <img class="card-img-top object-fit_cover h-100per" src="~/images/background/BusinessEntityHomePage.jpg" alt="personal loan product image" />
                             </div>
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                     <div class="col-sm-3 bottommargin-sm">
-                        <div class="card" style="width: 18rem" href="/products/unsecuredloans">
+                        <div class="card product-card pointer" style="width: 18rem" ng-click="vm.navigateToProduct('PersonalCreditLines')">
                             <div class="product-card-img">
                                 <img class="card-img-top object-fit_cover h-100per" src="~/images/background/UnsecuredLoanHomePage.jpg" alt="unsecured loan product image" />
                             </div>
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     <div class="col-sm-3 bottommargin-sm">
-                        <div class="card" style="width: 18rem" href="/products/personalloans">
+                        <div class="card product-card pointer" style="width: 18rem" ng-click="vm.navigateToProduct('PersonalLoans')">
                             <div class="product-card-img">
                                 <img class="card-img-top object-fit_cover h-100per" src="~/images/background/PersonalLoanHomePage.jpg" alt="personal loan product image" />
                             </div>
@@ -86,7 +86,7 @@
                         </div>
                     </div>
                     <div class="col-sm-3 bottommargin-sm">
-                        <div class="card" style="width: 18rem">
+                        <div class="card product-card pointer" style="width: 18rem" ng-click="vm.navigateToProduct('RealEstate')">
                             <div class="product-card-img">
                                 <img class="card-img-top object-fit_cover h-100per" src="~/images/background/RealEstateHomePage.jpeg" alt="personal loan product image" />
                             </div>
@@ -123,7 +123,7 @@
             <div class="divcenter center" style="max-width: 900px;">
                 <h3 class="nobottommargin t400 nott ls0 h5">
                     We will help you form your entity to start your road to success
-                    <a href="#" class="button button-border button-circle button-fill fill-from-bottom button-white button-light nott t400" style="position: relative; top: 12px; margin-left: 35px;"><span>Learn More</span></a>
+                    <a href="/product/businessentitycreation" class="button button-border button-circle button-fill fill-from-bottom button-white button-light nott t400" style="position: relative; top: 12px; margin-left: 35px;"><span>Learn More</span></a>
                 </h3>
             </div>
         </div>
@@ -162,7 +162,7 @@
     </section>
 
 
-    <div class="section parallax nobottommargin notopborder clearfix skrollable skrollable-between nomargin" style="background-image: url('http://themes.semicolonweb.com/html/canvas/demos/business/images/sections/2.jpg'); background-size: cover; background-position: 0px 194.257px;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
+    <div class="section parallax nobottommargin notopborder clearfix skrollable skrollable-between nomargin" style="background-image: url('/images/background/testimonials.jpg'); background-size: cover; background-position: 0px 194.257px;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
         <div class="container clearfix">
             <div class="row cleafix">
                 <div class="col-md-6 dark">
@@ -170,7 +170,7 @@
                     <div class="heading-block bottommargin-sm noborder">
                         <h3 class="nott" style="font-size: 46px; font-weight: 700; letter-spacing: -2px; line-height: 58px">Collections from Our Customers.</h3>
                     </div>
-                    <a href="#" class="section-more-link">Learn More <i class="icon-angle-right"></i></a>
+                    <a href="/review" class="section-more-link">Read More <i class="icon-angle-right"></i></a>
                 </div>
                 <div class="topmargin d-block d-lg-none d-xl-block"></div>
 
@@ -326,7 +326,7 @@
                     <h2 class="t700 text-white mb-3">Fast funding for your business is just the beginning.</h2>
                 </div>
                 <div class="col-md-8">
-                    <a href="#" class="button center bg-white color button-light button-rounded button-large ml-0">Check Eligibility</a>
+                    <a href="/apply" class="button center bg-white color button-light button-rounded button-large ml-0">Check Eligibility</a>
                 </div>
             </div>
         </div>
