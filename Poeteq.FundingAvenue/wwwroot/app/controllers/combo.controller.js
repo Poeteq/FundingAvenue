@@ -3,10 +3,10 @@
 
     angular
         .module('FundingAvenue')
-        .controller('AlternativeController', AlternativeController);
+        .controller('ComboController', ComboController);
 
     /* @ngInject */
-    function AlternativeController() {
+    function ComboController() {
         var vm = this;
 
         vm.recommendation = null;
@@ -49,12 +49,12 @@
                 vm.isAlternative = false;
             }
             else if (vm.products.one && vm.products.two && !vm.products.three) {
-                vm.recommendation = "Alternative A";
+                vm.recommendation = "Combo A";
                 vm.isAlternative = true;
                 vm.id = "#alt-a";
             }
             else if ((vm.products.one && !vm.products.two && vm.products.three) || (!vm.products.one && vm.products.two && vm.products.three)) {
-                vm.recommendation = "Alternative B";
+                vm.recommendation = "Combo B";
                 vm.isAlternative = true;
                 vm.id = "#alt-b";
             }
@@ -63,7 +63,7 @@
             //    vm.isAlternative = false;
             //}
             else if (vm.products.one && vm.products.two && vm.products.three) {
-                vm.recommendation = "Alternative C";
+                vm.recommendation = "Combo C";
                 vm.isAlternative = true;
                 vm.id = "#alt-c";
             }

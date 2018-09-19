@@ -1,8 +1,8 @@
 ﻿@{
-    ViewData["Title"] = "Alternative Funding";
+    ViewData["Title"] = "Combo Funding";
 }
 
-<div ng-controller="AlternativeController as vm">
+<div ng-controller="ComboController as vm">
     <!-- Content
     ============================================= -->
     <section id="content">
@@ -13,7 +13,7 @@
 
                 <div class="container clearfix">
 
-                    <h4 class="divcenter font-body center" style="margin-bottom:0;">Alternative Funding</h4>
+                    <h4 class="divcenter font-body center" style="margin-bottom:0;">Combo Funding</h4>
                     <div ng-hide="vm.recommendation">
                         <h2 class="divcenter font-body center" style="max-width: 700px; font-size: 40px;">Select a Suite of Products,<br /> and Suit Your Needs</h2>
                         <div class="center bottommargin">
@@ -25,8 +25,8 @@
                     <div ng-show="vm.recommendation">
                         <h2 class="divcenter font-body center" style="max-width: 700px; font-size: 40px;">Your Selection <br /><span>{{ vm.recommendation }}</span></h2>
                         <div class="center bottommargin">
-                            <a href="#" ng-show="vm.isAlternative" data-scrollto="{{vm.id}}" class="button button-border button-circle t600" style="margin-right: 15px;">Learn More</a>
-                            <a href="{{vm.productLink}}" ng-show="!vm.isAlternative" data-scrollto="{{vm.id}}" class="button button-border button-circle t600" style="margin-right: 15px;">Learn More</a>
+                            <a href="#" ng-show="vm.isCombo" data-scrollto="{{vm.id}}" class="button button-border button-circle t600" style="margin-right: 15px;">Learn More</a>
+                            <a href="{{vm.productLink}}" ng-show="!vm.isCombo" data-scrollto="{{vm.id}}" class="button button-border button-circle t600" style="margin-right: 15px;">Learn More</a>
                             <a href="/apply" class="hero-action-link" data-lightbox="iframe" style="margin-left: 15px;">Apply Now <i class="icon-chevron-right" style="position:relative;margin-left:4px;top:2px;"></i></a>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
 
         <div class="line nomargin"></div>
 
-        <!-- Alternative A Section
+        <!-- Combo A Section
     ============================================= -->
         <div id="alt-a" class="container clearfix">
 
@@ -115,9 +115,9 @@
                 <div class="col-lg-6 col-md-6 topmargin bottommargin-sm">
 
                     <div class="heading-block nobottomborder">
-                        <h2 class="nott ls0" style="font-size: 44px; line-height: 1.2">Alternative A</h2>
+                        <h2 class="nott ls0" style="font-size: 44px; line-height: 1.2">Combo A</h2>
                     </div>
-                    <span style="color: #BBB;">Alternative A is a combination of our Business and Personal Revolving Credit Lines into one package to utilize your network lending sources.<br><br>Combining our Tier 1 and Tier 2 products allows you to obtain maximum funds through our revolving credit lines.<br><br>Take advantage of this maximizing your lines of credit for your start-up funds, working capital, or potential business acquisition.</span>
+                    <span style="color: #BBB;">Combo A is a combination of our Business and Personal Revolving Credit Lines into one package to utilize your network lending sources.<br><br>Combining our Tier 1 and Tier 2 products allows you to obtain maximum funds through our revolving credit lines.<br><br>Take advantage of this maximizing your lines of credit for your start-up funds, working capital, or potential business acquisition.</span>
                     <div class="clear"></div>
                     @*<a href="demos/car/car-single.html" class="button button-rounded button-black button-dark noleftmargin topmargin-sm clearfix">Know More</a>*@
 
@@ -150,11 +150,11 @@
                 </div>
             </div>
 
-        </div> <!-- Alternative A Area End -->
+        </div> <!-- Combo A Area End -->
 
         <div class="line nomargin"></div>
 
-        <!-- Alternative B Section
+        <!-- Combo B Section
     ============================================= -->
         <div id="alt-b" class="container clearfix">
 
@@ -190,10 +190,10 @@
                 <div class="col-lg-6 col-md-6 topmargin bottommargin-sm">
 
                     <div class="heading-block nobottomborder">
-                        <h2 class="nott ls0" style="font-size: 44px; line-height: 1.2">Alternative B</h2>
+                        <h2 class="nott ls0" style="font-size: 44px; line-height: 1.2">Combo B</h2>
                     </div>
                     <span style="color: #BBB;">
-                        Alternative B is a combination of our Business or Personal Revolving Credit Lines along with a Cash Loan into one package to cover short-term and long-term expenses.
+                        Combo B is a combination of our Business or Personal Revolving Credit Lines along with a Cash Loan into one package to cover short-term and long-term expenses.
                         <br><br>Combining our Tier 1 or Tier 2 products with a Cash Loan allows you to obtain both revolving credit lines for future continual/future usage business usage and a cash loan for immediate business expenses.<br><br>Take advantage of this maximizing a line of credit along with a personal cash loan for your start-up funds, working capital, or potential business acquisition.
                     </span>
                     <div class="clear"></div>
@@ -203,7 +203,7 @@
 
             </div>
 
-        </div> <!-- Alternative B Area End -->
+        </div> <!-- Combo B Area End -->
 
         <div class="line nomargin"></div>
 
@@ -215,7 +215,7 @@
                 <div class="row clearfix">
                     <div class="col-lg-6 offset-lg-3 col-md-9">
                         <div class="heading-block">
-                            <h3 style="font-size: 58px; line-height: 56px; letter-spacing: -2px">Alternative C<br />Fully Loaded</h3>
+                            <h3 style="font-size: 58px; line-height: 56px; letter-spacing: -2px">Combo C<br />Fully Loaded</h3>
                         </div>
                         <p>An all inclusive solution to obtain as much funding as possible for your business needs. We package a combination of our Business and Personal Revolving Credit Lines along with a Personal Cash Loan to maximize your financial potential.</p>
 
@@ -265,7 +265,7 @@
 
                                 <div class="pricing-box" style="margin: 0 20px;padding: 30px;background-color: #fff;box-shadow: 0 0 9px 0 rgba(0,0,0,.08)">
                                     <div>
-                                        <h3 class="nomargin">Alternative A</h3>
+                                        <h3 class="nomargin">Combo A</h3>
                                     </div>
                                     <div class="pricing-features">
                                         <ul>
@@ -287,7 +287,7 @@
 
                                 <div class="pricing-box" style="margin: 0 20px;padding: 30px;background-color: #fff;box-shadow: 0 0 9px 0 rgba(0,0,0,.08)">
                                     <div>
-                                        <h3 class="nomargin">Alternative B</h3>
+                                        <h3 class="nomargin">Combo B</h3>
                                     </div>
                                     <div class="pricing-features">
                                         <ul>
@@ -309,7 +309,7 @@
 
                                 <div class="pricing-box" style="margin: 0 20px;padding: 30px;background-color: #fff;box-shadow: 0 0 9px 0 rgba(0,0,0,.08)">
                                     <div>
-                                        <h3 class="nomargin">Alternative C</h3>
+                                        <h3 class="nomargin">Combo C</h3>
                                     </div>
                                     <div class="pricing-features">
                                         <ul>
