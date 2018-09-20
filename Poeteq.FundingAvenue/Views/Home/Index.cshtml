@@ -26,11 +26,14 @@
 
                 <!-- What We Do
                 ============================================= -->
+                <div class="clearfix center divcenter bottommargin-sm">
+                    <img src="~/images/logo/dark.png" style="height:184px; margin:4px;" alt="Canvas Logo">
+                </div>
                 <div class="heading-block center noborder" data-heading="W">
-                    <h3>What We Do</h3>
+                    <h3 class="">What We Do</h3>
                 </div>
                 <div class="row clearfix">
-                    <div class="center col-lg-8 offset-lg-2 bottommargin">
+                    <div class="center col-lg-8 offset-lg-2 bottommargin-sm">
                         <h3 class="text-rotater font-secondary" data-separator="," data-rotate="fadeInRight" data-speed="3500">
                             What loan product is right for you, and how do you qualify for it?
                             <br>We're here to walk you through the whole <span class="t-rotate color">Business,Personal,Real Estate</span> Loan Application Process
@@ -41,7 +44,7 @@
                 <div class="clear"></div>
                 <div class="row">
                     <div class="col-sm-3 bottommargin-sm">
-                        <div class="card product-card pointer" style="width: 18rem" ng-click="vm.navigateToProduct('BusinessCreditLines')">
+                        <div class="card product-card pointer" style="width: 100%" ng-click="vm.navigateToProduct('BusinessCreditLines')">
                             <div class="product-card-img">
                                 <img class="card-img-top object-fit_cover h-100per" src="~/images/background/BusinessEntityHomePage.jpg" alt="personal loan product image" />
                             </div>
@@ -56,7 +59,7 @@
                         </div>
                     </div>
                     <div class="col-sm-3 bottommargin-sm">
-                        <div class="card product-card pointer" style="width: 18rem" ng-click="vm.navigateToProduct('PersonalCreditLines')">
+                        <div class="card product-card pointer" style="width: 100%" ng-click="vm.navigateToProduct('PersonalCreditLines')">
                             <div class="product-card-img">
                                 <img class="card-img-top object-fit_cover h-100per" src="~/images/background/UnsecuredLoanHomePage.jpg" alt="unsecured loan product image" />
                             </div>
@@ -71,7 +74,7 @@
                         </div>
                     </div>
                     <div class="col-sm-3 bottommargin-sm">
-                        <div class="card product-card pointer" style="width: 18rem" ng-click="vm.navigateToProduct('PersonalLoans')">
+                        <div class="card product-card pointer" style="width: 100%" ng-click="vm.navigateToProduct('PersonalLoans')">
                             <div class="product-card-img">
                                 <img class="card-img-top object-fit_cover h-100per" src="~/images/background/PersonalLoanHomePage.jpg" alt="personal loan product image" />
                             </div>
@@ -86,7 +89,7 @@
                         </div>
                     </div>
                     <div class="col-sm-3 bottommargin-sm">
-                        <div class="card product-card pointer" style="width: 18rem" ng-click="vm.navigateToProduct('RealEstate')">
+                        <div class="card product-card pointer" style="width: 100%" ng-click="vm.navigateToProduct('RealEstate')">
                             <div class="product-card-img">
                                 <img class="card-img-top object-fit_cover h-100per" src="~/images/background/RealEstateHomePage.jpeg" alt="personal loan product image" />
                             </div>
@@ -113,7 +116,7 @@
                 <small class="text-black-50 uppercase ls3 t600">Mix and Match</small>
                 <h2 class="capitalize t600 mb-2" style="font-size: 36px; letter-spacing: -1px">Looking for an all inclusive solution?</h2>
                 <p class="mb-3">We'll set you up with everything you need to get started.</p>
-                <div class="center"><a href="/product/alternativefunding" class="button ls0 button-rounded button-border nott t400 ">Pick and Choose</a></div>
+                <div class="center"><a href="/product/combofunding" class="button ls0 button-rounded button-border nott t400 ">Pick and Choose</a></div>
             </div>
         </div>
     </section>
@@ -133,29 +136,29 @@
         <div class="section nomargin">
             <div class="container clearfix">
 
-                <div class="col_one_fourth nobottommargin center" data-animate="bounceIn">
+                <div class="col_one_third nobottommargin center" data-animate="bounceIn">
                     <i class="i-plain i-xlarge divcenter icon-line2-directions"></i>
                     <div class="counter counter-lined"><span data-from="1" data-to="50" data-refresh-interval="30" data-speed="2000"></span>M+</div>
-                    <h5>Raised Fund</h5>
+                    <h5 class="nobottommargin">Raised Fund</h5>
                 </div>
 
-                <div class="col_one_fourth nobottommargin center" data-animate="bounceIn" data-delay="200">
+                <div class="col_one_third nobottommargin center" data-animate="bounceIn" data-delay="200">
                     <i class="i-plain i-xlarge divcenter nobottommargin icon-line2-graph"></i>
                     <div class="counter counter-lined"><span data-from="1" data-to="15" data-refresh-interval="3" data-speed="2500"></span>K+</div>
-                    <h5>No. of Companies</h5>
+                    <h5 class="nobottommargin">No. of Companies</h5>
                 </div>
 
-                <div class="col_one_fourth nobottommargin center" data-animate="bounceIn" data-delay="400">
+                <div class="col_one_third nobottommargin center col_last" data-animate="bounceIn" data-delay="400">
                     <i class="i-plain i-xlarge divcenter nobottommargin icon-line2-layers"></i>
                     <div class="counter counter-lined"><span data-from="10" data-to="205" data-refresh-interval="25" data-speed="3500"></span>+</div>
-                    <h5>Partnering Lending Institutions </h5>
+                    <h5 class="nobottommargin">Partnering Lending Institutions </h5>
                 </div>
 
-                <div class="col_one_fourth nobottommargin center col_last" data-animate="bounceIn" data-delay="600">
+                @*<div class="col_one_fourth nobottommargin center col_last" data-animate="bounceIn" data-delay="600">
                     <i class="i-plain i-xlarge divcenter nobottommargin icon-line2-clock"></i>
                     <div class="counter counter-lined"><span data-from="60" data-to="1200" data-refresh-interval="30" data-speed="2700"></span>+</div>
                     <h5>Fast Response</h5>
-                </div>
+                </div>*@
 
             </div>
         </div>

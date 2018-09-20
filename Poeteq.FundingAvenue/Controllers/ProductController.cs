@@ -23,7 +23,7 @@ namespace Poeteq.FundingAvenue.Controllers
             return View();
         }
 
-        public IActionResult AlternativeFunding()
+        public IActionResult ComboFunding()
         {
             return View();
         }
