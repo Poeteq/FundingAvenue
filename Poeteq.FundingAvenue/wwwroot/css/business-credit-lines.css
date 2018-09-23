@@ -529,7 +529,7 @@ body.top-search-open #header .button {
 .owl-stage-outer:before,
 .owl-stage-outer:after {
     position: absolute;
-    content: '';
+    /*content: '';*/
     top: 0;
     left: 0;
     width: 300px;
