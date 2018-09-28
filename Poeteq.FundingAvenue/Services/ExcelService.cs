@@ -61,32 +61,45 @@ namespace Poeteq.FundingAvenue.Services
 
 
             // CORP >> 1
-            ws.Cells["A1:J1"].Value = "CORPORATION PROFILE";
-            ws.Cells["A1:J1"].Style.Fill.PatternType = ExcelFillStyle.Solid;
-            ws.Cells["A1:J1"].Style.Fill.BackgroundColor.SetColor(Color.Black);
-            ws.Cells["A1:J1"].Style.Font.Color.SetColor(Color.White);
-            ws.Cells["A1:J1"].Style.Font.Bold = true; //Font should be bold
-            ws.Cells["A1:J1"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-            ws.Cells["A1:J1"].Merge = true;
+            string CorpProfile = "A1:J1";
+            ws.Cells[CorpProfile].Value = "CORPORATION PROFILE";
+            ws.Cells[CorpProfile].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            ws.Cells[CorpProfile].Style.Fill.BackgroundColor.SetColor(Color.Black);
+            ws.Cells[CorpProfile].Style.Font.Color.SetColor(Color.White);
+            ws.Cells[CorpProfile].Style.Font.Bold = true; //Font should be bold
+            ws.Cells[CorpProfile].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+            ws.Cells[CorpProfile].Merge = true;
 
             // CORP >> 2
-            ws.Cells["A2:B2"].Value = "Business Name:";
-            ws.Cells["A2:B2"].Merge = true;
+            string BusinessName = "A2:B2";
+            ws.Cells[BusinessName].Value = "Business Name:";
+            ws.Cells[BusinessName].Merge = true;
+            ws.Cells[BusinessName].Style.Font.Bold = true;
             ws.Cells["C2:J2"].Value = form.BusinessName;
             ws.Cells["C2:J2"].Merge = true;
+            ws.Cells["C2:J2"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            ws.Cells["C2:J2"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
 
             // CORP >> 3
             ws.Cells["A3:B3"].Value = "Mailing Address:";
             ws.Cells["A3:B3"].Merge = true;
+            ws.Cells["A3:B3"].Style.Font.Bold = true; //Font should be bold
             ws.Cells["C3:G3"].Value = form.Address;
             ws.Cells["C3:G3"].Merge = true;
+            ws.Cells["C3:G3"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            ws.Cells["C3:G3"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
 
             ws.Cells["H3"].Value = "Suite #";
+            ws.Cells["H3"].Style.Font.Bold = true;
             ws.Cells["I3:J3"].Merge = true;
+            ws.Cells["I3:J3"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            ws.Cells["I3:J3"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
 
             // CORP >> 4, 5
             ws.Cells["A4:B4"].Value = "Mailing Cont.:";
+            ws.Cells["A4:B4"].Style.Font.Bold = true;
             ws.Cells["A4:B4"].Merge = true;
+            
 
             ws.Cells["C4:F4"].Value = form.City;
             ws.Cells["C4:F4"].Merge = true;
@@ -94,82 +107,131 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["G4:H4"].Merge = true;
             ws.Cells["I4:J4"].Value = form.ZipCode;
             ws.Cells["I4:J4"].Merge = true;
+            ws.Cells["C4:J4"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            ws.Cells["c4:J4"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
 
             ws.Cells["C5:F5"].Value = "City";
             ws.Cells["C5:F5"].Merge = true;
+            ws.Cells["C5:F5"].Style.Font.Bold = true;
             ws.Cells["G5:H5"].Value = "State";
             ws.Cells["G5:H5"].Merge = true;
+            ws.Cells["G5:H5"].Style.Font.Bold = true;
             ws.Cells["I5:J5"].Value = "Zip Code";
+            ws.Cells["I5:J5"].Style.Font.Bold = true;
             ws.Cells["I5:J5"].Merge = true;
 
             // CORP >> 6
             ws.Cells["A6:B6"].Value = "Tax Identification No.:";
             ws.Cells["A6:B6"].Merge = true;
+            ws.Cells["A6:B6"].Style.Font.Bold = true;
             ws.Cells["C6:E6"].Merge = true;
+            ws.Cells["C6:E6"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            ws.Cells["C6:E6"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
 
             ws.Cells["F6:G6"].Value = "# of Employees";
+            ws.Cells["F6:G6"].Style.Font.Bold = true;
             ws.Cells["F6:G6"].Merge = true;
             ws.Cells["H6:J6"].Merge = true;
+            ws.Cells["H6:J6"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            ws.Cells["H6:J6"].Style.Fill.BackgroundColor.SetColor(Color.Red);
 
             // CORP >> 7
             ws.Cells["A7:B7"].Value = "Phone Number:";
+            ws.Cells["A7:B7"].Style.Font.Bold = true;
             ws.Cells["A7:B7"].Merge = true;
             ws.Cells["C7:E7"].Value = form.PhoneNumber;
             ws.Cells["C7:E7"].Merge = true;
+            ws.Cells["C7:E7"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            ws.Cells["C7:E7"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
 
             ws.Cells["F7:G7"].Value = "Email Address";
+            ws.Cells["F7:G7"].Style.Font.Bold = true;
             ws.Cells["F7:G7"].Merge = true;
             ws.Cells["H7:J7"].Value = form.Email;
             ws.Cells["H7:J7"].Merge = true;
+            ws.Cells["H7:J7"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            ws.Cells["H7:J7"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
 
             // CORP >> 8
             ws.Cells["A8:B8"].Value = "Type of Entity:";
+            ws.Cells["A8:B8"].Style.Font.Bold = true;
             ws.Cells["A8:B8"].Merge = true;
             ws.Cells["C8:E8"].Value = form.BusinessEntityType;
             ws.Cells["C8:E8"].Merge = true;
+            ws.Cells["C8:E8"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            ws.Cells["C8:E8"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
 
             ws.Cells["F8:G8"].Value = "Email Password";
+            ws.Cells["F8:G8"].Style.Font.Bold = true;
             ws.Cells["F8:G8"].Merge = true;
             ws.Cells["H8:J8"].Merge = true;
+            ws.Cells["H8:J8"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            ws.Cells["H8:J8"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
 
             // CORP >> 9
             ws.Cells["A9:B9"].Value = "State of Incorporation:";
             ws.Cells["A9:B9"].Merge = true;
             ws.Cells["C9:E9"].Merge = true;
+            ws.Cells["C9:E9"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            ws.Cells["C9:E9"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
 
             ws.Cells["F9:G9"].Value = "Nature of Business";
+            ws.Cells["F9:G9"].Style.Font.Bold = true;
             ws.Cells["F9:G9"].Merge = true;
             ws.Cells["H9:J9"].Value = form.BusinessType;
             ws.Cells["H9:J9"].Merge = true;
+            ws.Cells["H9:J9"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            ws.Cells["H9:J9"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
 
             // CORP >> 10
             ws.Cells["A10:B10"].Value = "Business Incorp Date:";
+            ws.Cells["A10:B10"].Style.Font.Bold = true;
             ws.Cells["A10:B10"].Merge = true;
             ws.Cells["C10:E10"].Value = form.BusinessIncorpDate;
             ws.Cells["C10:E10"].Merge = true;
+            ws.Cells["C10:E10"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            ws.Cells["C10:E10"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
 
             ws.Cells["F10:G10"].Value = "Business Start Date";
+            ws.Cells["F10:G10"].Style.Font.Bold = true;
             ws.Cells["F10:G10"].Merge = true;
             ws.Cells["H10:J10"].Value = form.BusinessIncorpDate;
             ws.Cells["H10:J10"].Merge = true;
+            ws.Cells["H10:J10"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            ws.Cells["H10:J10"].Style.Fill.BackgroundColor.SetColor(Color.Red);
+
+
+
 
             // CORP >> 11
             ws.Cells["A11:B11"].Value = "Regional:";
+            ws.Cells["A11:B11"].Style.Font.Bold = true;
             ws.Cells["A11:B11"].Merge = true;
             ws.Cells["C11:E11"].Merge = true;
+            ws.Cells["C11:E11"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            ws.Cells["C11:E11"].Style.Fill.BackgroundColor.SetColor(Color.Lavender);
 
             ws.Cells["F11:G11"].Value = "# of Locations";
+            ws.Cells["F11:G11"].Style.Font.Bold = true;
             ws.Cells["F11:G11"].Merge = true;
             ws.Cells["H11:J11"].Merge = true;
+            ws.Cells["H11:J11"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            ws.Cells["H11:J11"].Style.Fill.BackgroundColor.SetColor(Color.Red);
 
             // CORP >> 12
             ws.Cells["A12:B12"].Value = "Business Gross Income:";
+            ws.Cells["A12:B12"].Style.Font.Bold = true;
             ws.Cells["A12:B12"].Merge = true;
             ws.Cells["C12:E12"].Merge = true;
+            ws.Cells["C12:E12"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            ws.Cells["C12:E12"].Style.Fill.BackgroundColor.SetColor(Color.Red);
 
             ws.Cells["F12:G12"].Value = "Net Profit";
+            ws.Cells["F12:G12"].Style.Font.Bold = true;
             ws.Cells["F12:G12"].Merge = true;
             ws.Cells["H12:J12"].Merge = true;
+            ws.Cells["H12:J12"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            ws.Cells["H12:J12"].Style.Fill.BackgroundColor.SetColor(Color.Red);
 
             // ********
             // SECTION: OFFICERS / DIRECTOR
