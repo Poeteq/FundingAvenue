@@ -6,7 +6,28 @@
         .controller('ApplyController', ApplyController);
 
     ApplyController.$inject = ['$scope', '$http'];
+
     function ApplyController($scope, $http) {
+
+
+
+        $scope.applicationType;
+        $scope.toHide;
+     
+
+        $scope.menuSelected = function (appType) {
+
+            if (appType == "2" || appType == "3" || appType == "6") {
+               
+                $scope.toHide = true;
+
+            }
+
+            if ( appType == "1" || appType == "4" || appType == "5") {
+                $scope.toHide = false;
+            }
+
+        };
 
         $scope.creditCard = {
             lender: '',
@@ -64,9 +85,7 @@
         ////////////////////////////////////
 
 
-
-        ///////Number Validation/////////
-
+        
 
 
 
