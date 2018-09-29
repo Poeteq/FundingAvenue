@@ -33,7 +33,7 @@ namespace Poeteq.FundingAvenue.Services
                     var worksheet2 = p.Workbook.Worksheets.Add("Funding Status");
                     var worksheet3 = p.Workbook.Worksheets.Add("Contact Log");
 
-                    BuildClientProfile(worksheet1, form);
+                    BuildBusinessProfile(worksheet1, form);
                     BuildFundingStatus(worksheet2, form);
                     BuildContactLog(worksheet3);
 
@@ -51,8 +51,13 @@ namespace Poeteq.FundingAvenue.Services
             }
         }
 
+        public string BuildPersonalProfile(ExcelWorksheet ws, ApplicationException form)
+        {
+            return "";
+        }
 
-        private void BuildClientProfile(ExcelWorksheet ws, ApplicationForm form)
+
+        private void BuildBusinessProfile(ExcelWorksheet ws, ApplicationForm form)
         {
             // ********
             // SECTION: CORPORATION
@@ -79,6 +84,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["C2:J2"].Merge = true;
             ws.Cells["C2:J2"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["C2:J2"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["C2:J2"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["C2:J2"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             // CORP >> 3
             ws.Cells["A3:B3"].Value = "Mailing Address:";
@@ -88,12 +95,16 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["C3:G3"].Merge = true;
             ws.Cells["C3:G3"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["C3:G3"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["C3:G3"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["C3:G3"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["H3"].Value = "Suite #";
             ws.Cells["H3"].Style.Font.Bold = true;
             ws.Cells["I3:J3"].Merge = true;
             ws.Cells["I3:J3"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["I3:J3"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["I3:J3"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["I3:J3"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             // CORP >> 4, 5
             ws.Cells["A4:B4"].Value = "Mailing Cont.:";
@@ -109,6 +120,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["I4:J4"].Merge = true;
             ws.Cells["C4:J4"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["c4:J4"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["c4:J4"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["c4:J4"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["C5:F5"].Value = "City";
             ws.Cells["C5:F5"].Merge = true;
@@ -127,6 +140,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["C6:E6"].Merge = true;
             ws.Cells["C6:E6"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["C6:E6"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
+            ws.Cells["C6:E6"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["C6:E6"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["F6:G6"].Value = "# of Employees";
             ws.Cells["F6:G6"].Style.Font.Bold = true;
@@ -134,6 +149,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["H6:J6"].Merge = true;
             ws.Cells["H6:J6"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["H6:J6"].Style.Fill.BackgroundColor.SetColor(Color.Red);
+            ws.Cells["H6:J6"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["H6:J6"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             // CORP >> 7
             ws.Cells["A7:B7"].Value = "Phone Number:";
@@ -143,6 +160,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["C7:E7"].Merge = true;
             ws.Cells["C7:E7"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["C7:E7"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["C7:E7"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["C7:E7"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["F7:G7"].Value = "Email Address";
             ws.Cells["F7:G7"].Style.Font.Bold = true;
@@ -151,6 +170,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["H7:J7"].Merge = true;
             ws.Cells["H7:J7"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["H7:J7"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
+            ws.Cells["H7:J7"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["H7:J7"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             // CORP >> 8
             ws.Cells["A8:B8"].Value = "Type of Entity:";
@@ -160,6 +181,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["C8:E8"].Merge = true;
             ws.Cells["C8:E8"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["C8:E8"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["C8:E8"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["C8:E8"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["F8:G8"].Value = "Email Password";
             ws.Cells["F8:G8"].Style.Font.Bold = true;
@@ -167,6 +190,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["H8:J8"].Merge = true;
             ws.Cells["H8:J8"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["H8:J8"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
+            ws.Cells["H8:J8"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["H8:J8"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             // CORP >> 9
             ws.Cells["A9:B9"].Value = "State of Incorporation:";
@@ -174,6 +199,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["C9:E9"].Merge = true;
             ws.Cells["C9:E9"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["C9:E9"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["C9:E9"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["C9:E9"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["F9:G9"].Value = "Nature of Business";
             ws.Cells["F9:G9"].Style.Font.Bold = true;
@@ -182,6 +209,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["H9:J9"].Merge = true;
             ws.Cells["H9:J9"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["H9:J9"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["H9:J9"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["H9:J9"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             // CORP >> 10
             ws.Cells["A10:B10"].Value = "Business Incorp Date:";
@@ -191,6 +220,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["C10:E10"].Merge = true;
             ws.Cells["C10:E10"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["C10:E10"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
+            ws.Cells["C10:E10"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["C10:E10"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["F10:G10"].Value = "Business Start Date";
             ws.Cells["F10:G10"].Style.Font.Bold = true;
@@ -199,6 +230,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["H10:J10"].Merge = true;
             ws.Cells["H10:J10"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["H10:J10"].Style.Fill.BackgroundColor.SetColor(Color.Red);
+            ws.Cells["H10:J10"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["H10:J10"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
 
 
@@ -210,6 +243,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["C11:E11"].Merge = true;
             ws.Cells["C11:E11"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["C11:E11"].Style.Fill.BackgroundColor.SetColor(Color.Lavender);
+            ws.Cells["C11:E11"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["C11:E11"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["F11:G11"].Value = "# of Locations";
             ws.Cells["F11:G11"].Style.Font.Bold = true;
@@ -217,6 +252,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["H11:J11"].Merge = true;
             ws.Cells["H11:J11"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["H11:J11"].Style.Fill.BackgroundColor.SetColor(Color.Red);
+            ws.Cells["H11:J11"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["H11:J11"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             // CORP >> 12
             ws.Cells["A12:B12"].Value = "Business Gross Income:";
@@ -225,6 +262,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["C12:E12"].Merge = true;
             ws.Cells["C12:E12"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["C12:E12"].Style.Fill.BackgroundColor.SetColor(Color.Red);
+            ws.Cells["C12:E12"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["C12:E12"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["F12:G12"].Value = "Net Profit";
             ws.Cells["F12:G12"].Style.Font.Bold = true;
@@ -232,6 +271,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["H12:J12"].Merge = true;
             ws.Cells["H12:J12"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["H12:J12"].Style.Fill.BackgroundColor.SetColor(Color.Red);
+            ws.Cells["H12:J12"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["H12:J12"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             // ********
             // SECTION: OFFICERS / DIRECTOR
@@ -257,6 +298,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["I14:J14"].Merge = true;
             ws.Cells["I14:J14"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["I14:J14"].Style.Fill.BackgroundColor.SetColor(Color.Red);
+            ws.Cells["I14:J14"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["I14:J14"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             // OFF/DIR >> 15
             ws.Cells["A15:B15"].Value = "Full Name:	";
@@ -265,6 +308,8 @@ namespace Poeteq.FundingAvenue.Services
 
             ws.Cells["C15:J15"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["C15:J15"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["C15:J15"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["C15:J15"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["C15:F15"].Value = form.FirstName;
             ws.Cells["C15:F15"].Merge = true;
@@ -285,17 +330,24 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["C17:G17"].Merge = true;
             ws.Cells["C17:G17"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["C17:G17"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["C17:G17"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["C17:G17"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
 
             ws.Cells["H17"].Value = "Suite #";
             ws.Cells["I17:J17"].Merge = true;
             ws.Cells["I17:J17"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["I17:J17"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["I17:J17"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["I17:J17"].Style.Border.Bottom.Color.SetColor(Color.Black);
+
             // OFF/DIR >> 18
             ws.Cells["A18:B18"].Value = "Mailing Cont.:	";
             ws.Cells["A18:B18"].Merge = true;
             ws.Cells["C18:I18"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["C18:I18"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["C18:I18"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["C18:I18"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["C18:F18"].Value = form.City;
             ws.Cells["C18:F18"].Merge = true;
@@ -319,12 +371,16 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["C20:E20"].Merge = true;
             ws.Cells["C20:E20"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["C20:E20"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
+            ws.Cells["C20:E20"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["C20:E20"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["F20:G20"].Value = "Birth Date & Current Age";
             ws.Cells["F20:G20"].Merge = true;
             ws.Cells["H20:J20"].Merge = true;
             ws.Cells["H20:J20"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["H20:J20"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
+            ws.Cells["H20:J20"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["H20:J20"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             // OFF/DIR >> 21
             ws.Cells["A21:B21"].Value = "Email Address:	";
@@ -333,6 +389,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["C21:E21"].Merge = true;
             ws.Cells["H21:J21"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["H21:J21"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["H21:J21"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["H21:J21"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
 
             ws.Cells["F21:G21"].Value = "Mother's Maiden Name";
@@ -340,6 +398,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["H21:J21"].Merge = true;
             ws.Cells["H21:J21"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["H21:J21"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["H21:J21"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["H21:J21"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             // OFF/DIR >> 22
             ws.Cells["A22:B22"].Value = "Home Phone Number:	";
@@ -347,12 +407,16 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["C22:E22"].Merge = true;
             ws.Cells["C22:E22"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["C22:E22"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["C22:E22"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["C22:E22"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["F22:G22"].Value = "Cell Number";
             ws.Cells["F22:G22"].Merge = true;
             ws.Cells["H22:J22"].Merge = true;
             ws.Cells["H22:J22"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["H22:J22"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["H22:J22"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["H22:J22"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             // OFF/DIR >> 23
             ws.Cells["A23:B23"].Value = "Time at Residence:	";
@@ -360,12 +424,16 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["C23:E23"].Merge = true;
             ws.Cells["C23:E23"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["C23:E23"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["C23:E23"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["C23:E23"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["F23:G23"].Value = "Gross Annual Income";
             ws.Cells["F23:G23"].Merge = true;
             ws.Cells["H23:J23"].Merge = true;
             ws.Cells["H23:J23"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["H23:J23"].Style.Fill.BackgroundColor.SetColor(Color.Red);
+            ws.Cells["H23:J23"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["H23:J23"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             // OFF/DIR >> 24
             ws.Cells["A24:B24"].Value = "Drivers License:	";
@@ -373,32 +441,44 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["C24:E24"].Merge = true;
             ws.Cells["C24:E24"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["C24:E24"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
+            ws.Cells["C24:E24"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["C24:E24"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["F24:G24"].Value = "Gross Household Income";
             ws.Cells["F24:G24"].Merge = true;
             ws.Cells["H24:J24"].Merge = true;
             ws.Cells["H24:J24"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["H24:J24"].Style.Fill.BackgroundColor.SetColor(Color.Red);
+            ws.Cells["H24:J24"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["H24:J24"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
 
             // OFF/DIR >> 25
             ws.Cells["A25"].Value = "State: ";
             ws.Cells["B25"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["B25"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
+            ws.Cells["B25"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["B25"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["C25"].Value = "Issue Date: ";
             ws.Cells["D25"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["D25"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
+            ws.Cells["D25"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["D25"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["E25"].Value = "Expiration: ";
             ws.Cells["F25"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["F25"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
+            ws.Cells["F25"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["F25"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["G25:H25"].Value = "Monthly House Payment: ";
             ws.Cells["G25:H25"].Merge = true;
             ws.Cells["I25:J25"].Merge = true;
             ws.Cells["I25:J25"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["I25:J25"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["I25:J25"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["I25:J25"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             // ********
             // SECTION: BUSINESS QUESTIONS
@@ -416,24 +496,32 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["A29:J29"].Merge = true;
             ws.Cells["A29:J29"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["A29:J29"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
+            ws.Cells["A29:J29"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["A29:J29"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["A30:J30"].Value = "2. Does client have business checking account? What Bank? How much in deposits?";
             ws.Cells["A30:J30"].Merge = true;
             ws.Cells["A31:J31"].Merge = true;
             ws.Cells["A31:J31"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["A31:J31"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["A31:J31"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["A31:J31"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["A32:J32"].Value = "3. Are there business Derrogatories/BK?";
             ws.Cells["A32:J32"].Merge = true;
             ws.Cells["A33:J33"].Merge = true;
             ws.Cells["A33:J33"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["A33:J33"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["A33:J33"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["A33:J33"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["A34:J34"].Value = "4. Are there any existing business accounts?";
             ws.Cells["A34:J34"].Merge = true;
             ws.Cells["A35:J35"].Merge = true;
             ws.Cells["A35:J35"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["A35:J35"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["A35:J35"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["A35:J35"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
 
             ws.Cells["A36:A36"].Value = "5. If Yes, Need name of Bank, Credit Limits, Balances, Average monthly payment being made, current/delinquent on account";
@@ -441,6 +529,8 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["A37:J37"].Merge = true;
             ws.Cells["A37:J37"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["A37:J37"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["A37:J37"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["A37:J37"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             //
             ws.Cells["A38:J38"].Merge = true; // CLEAR
@@ -455,36 +545,48 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["A41:J41"].Merge = true;
             ws.Cells["A41:J41"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["A41:J41"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
+            ws.Cells["A41:J41"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["A41:J41"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["A42:J42"].Value = "2. Personal BK in the past?";
             ws.Cells["A42:J42"].Merge = true;
             ws.Cells["A43:J43"].Merge = true;
             ws.Cells["A43:J43"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["A43:J43"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["A43:J43"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["A43:J43"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["A44:J44"].Value = "3. Personal Checking/Saings? What Banks? Currency Deposit Amounts?";
             ws.Cells["A44:J44"].Merge = true;
             ws.Cells["A45:J45"].Merge = true;
             ws.Cells["A45:J45"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["A45:J45"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["A45:J45"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["A45:J45"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["A46:J46"].Value = "4. Vehicles registered under PG (Year, Model, Color)";
             ws.Cells["A46:J46"].Merge = true;
             ws.Cells["A47:J47"].Merge = true;
             ws.Cells["A47:J47"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["A47:J47"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
+            ws.Cells["A47:J47"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["A47:J47"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["A48:J48"].Value = "5. College graduated at? Any Special Degrees/License? (Example: real estate license)";
             ws.Cells["A48:J48"].Merge = true;
             ws.Cells["A49:J49"].Merge = true;
             ws.Cells["A49:J49"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["A49:J49"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
+            ws.Cells["A49:J49"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["A49:J49"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["A50:J50"].Value = "6. Who else lives in the household? Need First, Middle, Last name for everyone in the household along with Date of Birth";
             ws.Cells["A50:J50"].Merge = true;
             ws.Cells["A51:J51"].Merge = true;
             ws.Cells["A51:J51"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["A51:J51"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
+            ws.Cells["A51:J51"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["A51:J51"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
 
             ws.Cells["A52:J52"].Value = "7. Do they have personal credit cards with BofA/Chase? Last few purchases made (store name)";
@@ -494,12 +596,16 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["A53:J53"].Merge = true;
             ws.Cells["A53:J53"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["A53:J53"].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+            ws.Cells["A53:J53"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["A53:J53"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["A54:E54"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["A54:E54"].Style.Fill.BackgroundColor.SetColor(Color.Black);
             ws.Cells["A54:E54"].Style.Font.Color.SetColor(Color.White);
             ws.Cells["A54:E54"].Style.Font.Bold = true; //Font should be bold
             ws.Cells["A54:E54"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+            ws.Cells["A54:E54"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            ws.Cells["A54:E54"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
             ws.Cells["A54"].Value = "BANK";
             ws.Cells["B54"].Value = "TYPE";
