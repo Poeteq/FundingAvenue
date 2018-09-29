@@ -7,7 +7,7 @@ namespace Poeteq.FundingAvenue.Models
     public class ApplicationForm
     {
         [Required]
-        public string applicationType { get; set; }
+        public string ApplicationType { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]
