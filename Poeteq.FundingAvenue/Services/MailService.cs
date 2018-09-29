@@ -77,16 +77,17 @@ namespace Poeteq.FundingAvenue.Services
             {
                 var success = false;
 
-
                 var message = new MimeMessage();
-                message.From.Add(new MailboxAddress(form.FirstName + form.LastName, form.Email));
-                message.To.Add(new MailboxAddress(form.FirstName, "suzieahn1117@gmail.com"));
+                message.From.Add(new MailboxAddress($"{form.FirstName} {form.LastName}", form.Email));
+                message.To.Add(new MailboxAddress("Suzie", "suzieahn1117@gmail.com"));
                 message.To.Add(new MailboxAddress("Jason", "thejayceace@gmail.com"));
-                message.Subject = "Application Form";
+                //message.To.Add(new MailboxAddress("Michael", "michael@fundingavenue.com"));
+
+                message.Subject = "New Client Profile";
 
                 var body = new TextPart("plain")
                 {
-                    Text = "Business Application Form"
+                    Text = $"{form.Comments}"
                 };
 
                 var attachment = new MimePart("mysheet", "xlsx")
