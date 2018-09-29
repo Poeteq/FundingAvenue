@@ -34,7 +34,7 @@ namespace Poeteq.FundingAvenue.Services
                     var worksheet3 = p.Workbook.Worksheets.Add("Contact Log");
 
                     BuildClientProfile(worksheet1, form);
-                    BuildFundingStatus(worksheet2);
+                    BuildFundingStatus(worksheet2, form);
                     BuildContactLog(worksheet3);
 
                     FileInfo fileInfo = new FileInfo(file);
@@ -675,7 +675,7 @@ namespace Poeteq.FundingAvenue.Services
             return;
         }
 
-        private void BuildFundingStatus(ExcelWorksheet ws)
+        private void BuildFundingStatus(ExcelWorksheet ws, ApplicationForm form)
         {
             Color LightPink = ColorTranslator.FromHtml("#c27ba0");
             Color LightGreen = ColorTranslator.FromHtml("#93c47d");
@@ -698,6 +698,7 @@ namespace Poeteq.FundingAvenue.Services
 
             ws.Cells["E1"].Value = "Client Minimum";
             ws.Cells["E2"].Value = "Client Requested";
+            ws.Cells["F2"].Value = form.AmountRequested;
             ws.Cells["E3"].Value = "Client Maximum";
 
             // ********
