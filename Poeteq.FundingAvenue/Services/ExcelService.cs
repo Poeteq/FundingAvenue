@@ -20,7 +20,7 @@ namespace Poeteq.FundingAvenue.Services
                 string fileName = string.Empty;
 
                 if (form.FirstName != null && form.LastName != null)
-                    fileName = $"{form.FirstName}-{form.LastName}-app.xlsx";
+                    fileName = $"Client_Profile.xlsx";
                 else
                     fileName = Path.GetTempFileName();
 

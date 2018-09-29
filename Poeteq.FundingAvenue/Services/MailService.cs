@@ -78,16 +78,16 @@ namespace Poeteq.FundingAvenue.Services
                 var success = false;
 
                 var message = new MimeMessage();
-                message.From.Add(new MailboxAddress($"{form.FirstName} {form.LastName}", form.Email));
+                message.From.Add(new MailboxAddress($"Automated Bot @ fundingavenue.com", "noreply@fundingavenue.com"));
                 message.To.Add(new MailboxAddress("Suzie", "suzieahn1117@gmail.com"));
                 message.To.Add(new MailboxAddress("Jason", "thejayceace@gmail.com"));
-                //message.To.Add(new MailboxAddress("Michael", "michael@fundingavenue.com"));
+                message.To.Add(new MailboxAddress("Michael", "michael@fundingavenue.com"));
 
-                message.Subject = "New Client Profile";
+                message.Subject = "Hey there, can I have some money?";
 
                 var body = new TextPart("plain")
                 {
-                    Text = $"{form.Comments}"
+                    Text = $"A new application has been completed by your potential customer!. \r\n\r\n {form.Comments}"
                 };
 
                 var attachment = new MimePart("mysheet", "xlsx")
