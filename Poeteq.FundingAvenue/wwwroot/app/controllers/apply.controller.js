@@ -11,20 +11,22 @@
 
 
 
-        $scope.applicationType;
+        $scope.fundingType;
         $scope.toHide;
      
 
         $scope.menuSelected = function (appType) {
 
-            if (appType == "2" || appType == "3" || appType == "6") {
+            if (appType == "Personal Credit Lines" || appType == "Personal Cash Loans" || appType == "Real Estate") {
                
                 $scope.toHide = true;
+                $scope.fundingType = appType;
 
             }
 
-            if ( appType == "1" || appType == "4" || appType == "5") {
+            if ( appType == "Business Credit Lines" || appType == "Business Entity Creation" || appType == "Combo Funding") {
                 $scope.toHide = false;
+                $scope.fundingType = appType;
             }
 
         };
@@ -44,6 +46,7 @@
         };
 
         $scope.applyInfo = {
+            applicationType: '',
             firstName: '',
             lastName: '',
             address: '',
@@ -106,7 +109,8 @@
 
         /////SEND APPLICATION and HTTP POST call//////
         $scope.sendApplication = function () {
-            console.log($scope.applyInfo); 
+            $scope.applyInfo.applicationType = $scope.fundingType;
+         
 
 
             $http.post("Application/Form", $scope.applyInfo)
