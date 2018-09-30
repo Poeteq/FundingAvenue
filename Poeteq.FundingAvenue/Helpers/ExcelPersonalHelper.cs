@@ -1,11 +1,8 @@
 ﻿using OfficeOpenXml;
 using OfficeOpenXml.Style;
-using Poeteq.FundingAvenue.Models;
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Threading.Tasks;
+
+using Poeteq.FundingAvenue.Models;
 
 namespace Poeteq.FundingAvenue.Helpers
 {
@@ -17,7 +14,6 @@ namespace Poeteq.FundingAvenue.Helpers
             // SECTION: CORPORATION
             // CORP >>
             // ********
-
 
             // CORP >> 1
             string CorpProfile = "A1:J1";
@@ -689,7 +685,6 @@ namespace Poeteq.FundingAvenue.Helpers
             ws.Cells["K20:M30"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["K20:M30"].Style.Fill.BackgroundColor.SetColor(Color.Lavender);
             var NEEDED_ITEMS = "K20:M20";
-            //ws.Cells[NEEDED_ITEMS].Style.Font.Color.SetColor(Color.White);
             ws.Cells[NEEDED_ITEMS].Style.Font.Bold = true; //Font should be bold
             ws.Cells[NEEDED_ITEMS].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
             ws.Cells[NEEDED_ITEMS].Merge = true;

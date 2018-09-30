@@ -1,11 +1,8 @@
 ﻿using OfficeOpenXml;
 using OfficeOpenXml.Style;
-using Poeteq.FundingAvenue.Models;
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Threading.Tasks;
+
+using Poeteq.FundingAvenue.Models;
 
 namespace Poeteq.FundingAvenue.Helpers
 {
