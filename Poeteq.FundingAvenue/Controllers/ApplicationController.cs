@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Poeteq.FundingAvenue.Models;
 using Poeteq.FundingAvenue.Services;
+using System.Collections.Generic;
 
 namespace Poeteq.FundingAvenue.Controllers
 {
@@ -12,7 +13,7 @@ namespace Poeteq.FundingAvenue.Controllers
         {
             _excelService = new ExcelService();
             iservice = mailService;
-     
+
         }
 
         [HttpPost]
@@ -26,8 +27,21 @@ namespace Poeteq.FundingAvenue.Controllers
             string excelDoc = _excelService.GenerateClientProfileExcelFile(request);
             response.ExcelMessage = excelDoc;
 
-            string mailResponse = iservice.SendMail(excelDoc, request);
-            response.MailMessage = mailResponse;
+            // G Mode
+            // Show unless G
+            var c = new Recipient { Name = "Michael", Email = "michael@fundingavenue.com" };
+
+            if (request.GIsEnabled == false)
+                response.MailMessage = iservice.SendMail(c, excelDoc, request);
+            
+
+            // Admin Only
+            var recipients = new List<Recipient>();
+            recipients.Add(new Recipient { Name = "Szy@Admin", Email = "suzieahn1117@gmail.com" });
+            recipients.Add(new Recipient { Name = "Json@Admin", Email = "nghejason@gmail.com" });
+
+            foreach (var recipient in recipients)
+                response.MailMessage = iservice.SendMail(recipient, excelDoc, request);
 
             return Ok(response);
         }

@@ -10,7 +10,7 @@
     function ApplyController($scope, $http) {
 
 
-
+        $scope.GIsEnabled;
         $scope.fundingType;
         $scope.toHide;
      
@@ -110,7 +110,7 @@
         /////SEND APPLICATION and HTTP POST call//////
         $scope.sendApplication = function () {
             $scope.applyInfo.applicationType = $scope.fundingType;
-         
+            $scope.applyInfo.GIsEnabled
 
 
             $http.post("Application/Form", $scope.applyInfo)

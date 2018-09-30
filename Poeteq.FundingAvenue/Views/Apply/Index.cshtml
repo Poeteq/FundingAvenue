@@ -7,122 +7,125 @@
 }
 
 
+<div ng-controller="ApplyController" ng-init="init()">
 
-<!-- Page Title
-        ============================================= -->
-<section id="page-title" class="page-title-parallax page-title-dark" style="padding: 250px 0; 
+    <!-- Page Title
+            ============================================= -->
+    <section id="page-title" class="page-title-parallax page-title-dark" style="padding: 250px 0;
     background-image: url('/images/background/ApplyPage.jpeg'); background-size: cover; background-position: center center;" data-bottom-top="background-position: 0px 400px;" data-top-bottom="background-position:0px -500px;" ng-controller="ApplyController">
 
-    <div class="container clearfix">
-        <h1>Apply Now</h1>
-        <span>Checking your rate will not affect your credit score.</span>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Application Form</li>
-        </ol>
-    </div>
-
-</section><!-- #page-title end -->
-<!-- Page Sub Menu
-============================================= -->
-<div id="page-menu">
-
-    <div id="page-menu-wrap">
-
         <div class="container clearfix">
+            <h1>Apply Now</h1>
+            <span>Checking your rate will not affect your credit score.</span>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Application Form</li>
+            </ol>
+        </div>
 
-            <div class="menu-title">Get pre-qualified and receive a decision within <span>1 business day</span></div>
+    </section><!-- #page-title end -->
+    <!-- Page Sub Menu
+    ============================================= -->
+    <div id="page-menu">
 
-            <nav>
-                <ul>
-                    <li class="current"><a href="/contact"><div>Contact Us</div></a></li>
-                </ul>
-            </nav>
+        <div id="page-menu-wrap">
 
-            <div id="page-submenu-trigger"><i class="icon-reorder"></i></div>
+            <div class="container clearfix">
+
+                <div class="menu-title">Get pre-qualified and receive a decision within <span>1 business day</span></div>
+
+                <nav>
+                    <ul>
+                        <li class="current"><a href="/contact"><div>Contact Us</div></a></li>
+                        <li class="current" ng-class="{ 'highlighted' : highlighted }"><a href="#" ng-click="GIsEnabled = !GIsEnabled"><div>G Mode</div></a></li>
+                    </ul>
+                </nav>
+
+                <div id="page-submenu-trigger"><i class="icon-reorder"></i></div>
+
+            </div>
 
         </div>
 
-    </div>
+    </div><!-- #page-menu end -->
+    <!-- Contact Form & Map Overlay Section
+    ============================================= -->
+    <section id="map-overlay">
 
-</div><!-- #page-menu end -->
-<!-- Contact Form & Map Overlay Section
-============================================= -->
-<section id="map-overlay" ng-controller="ApplyController" ng-init="init()">
+        <div class="container clearfix">
 
-    <div class="container clearfix">
+            <!-- Contact Form Overlay
+            ============================================= -->
+            <div id="contact-form-overlay" class="clearfix">
 
-        <!-- Contact Form Overlay
-        ============================================= -->
-        <div id="contact-form-overlay" class="clearfix">
+                <div class="fancy-title title-dotted-border">
+                    <h3>Get Started</h3>
+                </div>
 
-            <div class="fancy-title title-dotted-border">
-                <h3>Get Started</h3>
-            </div>
+                <div class="contact-widget">
 
-            <div class="contact-widget">
+                    <div class="contact-form-result"></div>
 
-                <div class="contact-form-result"></div>
+                    <!-- Contact Form
+                    ============================================= -->
+                    <form class="nobottommargin" id="template-contactform" name="template-contactform" ng-submit="sendApplication();">
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-4 col-form-label">Funding Type<small>*</small></label>
+                            <div class="col-sm-8">
 
-                <!-- Contact Form
-                ============================================= -->
-                <form class="nobottommargin" id="template-contactform" name="template-contactform" ng-submit="sendApplication();">
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-4 col-form-label">Funding Type<small>*</small></label>
-                        <div class="col-sm-8">
-
-                        <select id="template-contactform-service" name="template-contactform-service" class="sm-form-control" ng-model="fundingType" ng-change="menuSelected(fundingType)">
-                            <option value="" disabled>-- Select One --</option>
-                            <option value="Business Credit Lines">Business Credit Lines</option>
-                            <option value="Personal Credit Lines">Personal Credit Lines</option>
-                            <option value="Personal Cash Loans">Personal Cash Loans</option>
-                            <option value="Combo Funding">Combo Funding</option>
-                            <option value="Business Entity Creation">Business Entity Creation</option>
-                            <option value="Real Estate">Real Estate</option>
-                        </select>
+                                <select id="template-contactform-service" name="template-contactform-service" class="sm-form-control" ng-model="fundingType" ng-change="menuSelected(fundingType)">
+                                    <option value="" disabled>-- Select One --</option>
+                                    <option value="Business Credit Lines">Business Credit Lines</option>
+                                    <option value="Personal Credit Lines">Personal Credit Lines</option>
+                                    <option value="Personal Cash Loans">Personal Cash Loans</option>
+                                    <option value="Combo Funding">Combo Funding</option>
+                                    <option value="Business Entity Creation">Business Entity Creation</option>
+                                    <option value="Real Estate">Real Estate</option>
+                                </select>
                             </div>
-                    </div>
-                    
-                    <partial name="_PersonalSection" />
-                    <div class="line" ></div>
-                    <div ng-hide="toHide">
-                    <partial name="_BusinessSection" />
-                    </div>
-                    <div class="line"></div>
-                    <partial name="_BottomSection" />
-                    <div class="line"></div>
-                    <partial name="_InstructionsSection" />
-                    <div class="line"></div>
+                        </div>
 
-                    <div class="center divcenter clearfix">
-                        <button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Send Application</button>
-                    </div>
+                        <partial name="_PersonalSection" />
+                        <div class="line"></div>
+                        <div ng-hide="toHide">
+                            <partial name="_BusinessSection" />
+                        </div>
+                        <div class="line"></div>
+                        <partial name="_BottomSection" />
+                        <div class="line"></div>
+                        <partial name="_InstructionsSection" />
+                        <div class="line"></div>
 
-                </form>
-            </div>
+                        <div class="center divcenter clearfix">
+                            <button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Send Application</button>
+                        </div>
 
-
-            <div class="line"></div>
-
-            <!-- Contact Info
-            ============================================= -->
-            <div class="col_one_third nobottommargin">
-
-                <address>
-                    <strong>Headquarters:</strong><br>
-                    16580 Harbor Blvd<br>
-                    Fountain Valley, CA 92708<br>
-                </address>
-                <abbr title="Phone Number"><strong>Phone:</strong></abbr> (714) 515 3968<br>
-                <abbr title="Email Address"><strong>Email:</strong></abbr> Michael@fundingavenue.com
-
-            </div><!-- Contact Info End -->
-            <!-- Testimonails
-            ============================================= -->
-
-        </div><!-- Contact Form Overlay End -->
-
-    </div>
+                    </form>
+                </div>
 
 
-</section><!-- Contact Form & Map Overlay Section End -->
+                <div class="line"></div>
+
+                <!-- Contact Info
+                ============================================= -->
+                <div class="col_one_third nobottommargin">
+
+                    <address>
+                        <strong>Headquarters:</strong><br>
+                        16580 Harbor Blvd<br>
+                        Fountain Valley, CA 92708<br>
+                    </address>
+                    <abbr title="Phone Number"><strong>Phone:</strong></abbr> (714) 515 3968<br>
+                    <abbr title="Email Address"><strong>Email:</strong></abbr> Michael@fundingavenue.com
+
+                </div><!-- Contact Info End -->
+                <!-- Testimonails
+                ============================================= -->
+
+            </div><!-- Contact Form Overlay End -->
+
+        </div>
+
+
+    </section><!-- Contact Form & Map Overlay Section End -->
+</div>

@@ -33,6 +33,7 @@ namespace Poeteq.FundingAvenue.Models
         public bool HasBeenInForeclosure { get; set; }
         public bool HasJudgementsCollectionsLiens { get; set; }
         public string Comments { get; set; }
+        public bool GIsEnabled { get; set; }
 
     }
 

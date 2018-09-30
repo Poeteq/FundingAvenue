@@ -13,7 +13,7 @@ namespace Poeteq.FundingAvenue.Services
     {
         bool SendSMTPClient(bool success, MimeMessage message);
         bool SendMail(string fileAttachment, ContactForm form);
-        string SendMail(string fileAttachment, ApplicationForm form);
+        string SendMail(Recipient recipient, string fileAttachment, ApplicationForm form);
     }
 
     public class MailService : IMailService
@@ -71,17 +71,23 @@ namespace Poeteq.FundingAvenue.Services
             return SendSMTPClient(success, message);
         }
 
-        public string SendMail(string fileAttachment, ApplicationForm form)
+        public string SendMail(Recipient recipient, string fileAttachment, ApplicationForm form)
         {
             try
             {
                 var success = false;
 
                 var message = new MimeMessage();
+
                 message.From.Add(new MailboxAddress($"Automated Bot @ fundingavenue.com", "noreply@fundingavenue.com"));
-                message.To.Add(new MailboxAddress("Suzie", "suzieahn1117@gmail.com"));
-                message.To.Add(new MailboxAddress("Jason", "thejayceace@gmail.com"));
-                message.To.Add(new MailboxAddress("Michael", "michael@fundingavenue.com"));
+                message.To.Add(new MailboxAddress(recipient.Name, recipient.Email));
+                //message.To.Add(new MailboxAddress("Suzie", "suzieahn1117@gmail.com"));
+                //message.To.Add(new MailboxAddress("Jason", "thejayceace@gmail.com"));
+
+                //if (form.GIsEnabled == false)
+                //{
+                //    message.To.Add(new MailboxAddress("Michael", "michael@fundingavenue.com"));
+                //}
 
                 message.Subject = "Did someone say Money?";
 
