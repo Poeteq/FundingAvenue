@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 
@@ -11,6 +12,8 @@ namespace Poeteq.FundingAvenue.Services
 {
     public class ExcelService
     {
+        private static readonly Regex sWhitespace = new Regex(@"\s+");
+       
         public string GenerateClientProfileExcelFile(ApplicationForm form)
         {
             try
@@ -20,7 +23,7 @@ namespace Poeteq.FundingAvenue.Services
                 string fileName = string.Empty;
 
                 if (form.FirstName != null && form.LastName != null)
-                    fileName = $"Client_Profile.xlsx";
+                    fileName = $"{ReplaceWhitespace(form.FirstName, "")}-{ReplaceWhitespace(form.LastName, "")}.ClientProfile.xlsx";
                 else
                     fileName = Path.GetTempFileName();
 
@@ -110,7 +113,7 @@ namespace Poeteq.FundingAvenue.Services
             ws.Cells["A4:B4"].Value = "Mailing Cont.:";
             ws.Cells["A4:B4"].Style.Font.Bold = true;
             ws.Cells["A4:B4"].Merge = true;
-            
+
 
             ws.Cells["C4:F4"].Value = form.City;
             ws.Cells["C4:F4"].Merge = true;
@@ -960,6 +963,12 @@ namespace Poeteq.FundingAvenue.Services
             ws.Column(9).Width = 15;
             ws.Column(10).Width = 15;
             ws.Column(11).Width = 15;
+        }
+
+
+        public static string ReplaceWhitespace(string input, string replacement)
+        {
+            return sWhitespace.Replace(input, replacement);
         }
     }
 

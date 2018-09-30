@@ -36,8 +36,7 @@
 
                 <nav>
                     <ul>
-                        <li class="current"><a href="/contact"><div>Contact Us</div></a></li>
-                        <li class="current" ng-class="{ 'highlighted' : highlighted }"><a href="#" ng-click="GIsEnabled = !GIsEnabled"><div>G Mode</div></a></li>
+                        <li class="current" ng-hide="GIsEnabled" ng-click="GIsEnabled = true" ng-mouseenter="secretText='G Mode'" ng-mouseleave="secretText='Contact Us'"><a><div>{{secretText}}</div></a></li>
                     </ul>
                 </nav>
 
