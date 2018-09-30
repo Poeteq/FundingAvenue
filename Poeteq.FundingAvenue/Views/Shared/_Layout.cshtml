@@ -6,7 +6,8 @@
     <title>@ViewData["Title"] - Funding Avenue</title>
 
     @RenderSection("styles", false)
-    <partial name="_StylesheetsPartial" />
+    <partial name="_CssLibPartial" />
+    <partial name="_CssPartial" />
 </head>
 <body class="stretched side-push-panel">
 
@@ -16,10 +17,11 @@
         @RenderBody()
         <partial name="_Footer" />
     </div>
-    
+
     <div id="gotoTop" class="icon-angle-up"></div>
     <div id="contact-me" class="icon-line-mail side-panel-trigger bgcolor"></div>
 
+    <partial name="_ScriptsLibPartial" />
     <partial name="_ScriptsPartial" />
     @RenderSection("Scripts", required: false)
 </body>

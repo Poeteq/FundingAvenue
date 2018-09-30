@@ -3,7 +3,7 @@
 *@
 <!-- Header
 ============================================= -->
-<header id="header" class="static-sticky clearfix">
+<header id="header" class="static-sticky clearfix" ng-controller="NavigationController as vm">
 
     <div id="header-wrap">
 
@@ -34,11 +34,11 @@
                         <div class="mega-menu-content style-2 border-top-0 clearfix">
 
                             <!-- Business Credit Lines -->
-                            <ul class="mega-menu-column col-lg-2">
+                            <ul class="mega-menu-column col-lg-2 pointer" ng-click="vm.navigateTo('/product/BusinessCreditLines')">
                                 <li>
                                     <div class="feature-box not-dark fbox-small fbox-center nobottommargin">
-                                        <div class="fbox-icon">
-                                            <img src="~/images/icons/documents.svg" class="noradius nobg tleft" alt="" style="width: 52px;">
+                                        <div class="fbox-icon divcenter">
+                                            <img src="~/images/icons/documents.svg" class="noradius nobg tleft" alt="Business Credit Lines">
                                         </div>
                                         <h3 class="t500"><a href="/product/BusinessCreditLines">Business <br>Credit Lines</a></h3>
                                         <a href="/product/BusinessCreditLines" class="btn btn-link mt-2 color p-0">Learn More &#8250;</a>
@@ -47,11 +47,11 @@
                             </ul>
 
                             <!-- Personal Credit Lines -->
-                            <ul class="mega-menu-column col-lg-2">
+                            <ul class="mega-menu-column col-lg-2 pointer" ng-click="vm.navigateTo('/product/personalcreditlines')">
                                 <li>
                                     <div class="feature-box not-dark fbox-small fbox-center nobottommargin">
-                                        <div class="fbox-icon">
-                                            <img src="~/images/icons/personal-credit-line.svg" class="noradius nobg tleft" alt="" style="width: 52px;">
+                                        <div class="fbox-icon divcenter">
+                                            <img src="~/images/icons/personal-credit-line.svg" class="noradius nobg tleft" alt="Personal Credit Line">
                                         </div>
                                         <h3 class="t500"><a href="/product/personalcreditlines">Personal <br> Credit Lines</a></h3>
                                         <a href="/product/personalcreditlines" class="btn btn-link mt-2 color p-0">Learn More &#8250;</a>
@@ -60,11 +60,11 @@
                             </ul>
 
                             <!-- Personal Cash Loans -->
-                            <ul class="mega-menu-column col-lg-2">
+                            <ul class="mega-menu-column col-lg-2 pointer" ng-click="vm.navigateTo('/product/personalloans')">
                                 <li>
                                     <div class="feature-box not-dark fbox-small fbox-center nobottommargin">
-                                        <div class="fbox-icon">
-                                            <img src="~/images/icons/personalLoan.svg" class="noradius nobg tleft" alt="" style="width: 52px;">
+                                        <div class="fbox-icon divcenter">
+                                            <img src="~/images/icons/personalLoan.svg" class="noradius nobg tleft" alt="Personal Loan">
                                         </div>
                                         <h3 class="t500"><a href="/product/personalloans">Personal <br>Cash Loans</a></h3>
                                         <a href="/product/personalloans" class="btn btn-link mt-2 color p-0">Learn More &#8250;</a>
@@ -73,24 +73,24 @@
                             </ul>
 
                             <!-- Combo Funding -->
-                            <ul class="mega-menu-column col-lg-2">
+                            <ul class="mega-menu-column col-lg-2 pointer" ng-click="vm.navigateTo('/product/combofunding')">
                                 <li>
                                     <div class="feature-box not-dark fbox-small fbox-center nobottommargin">
-                                        <div class="fbox-icon">
-                                            <img src="~/images/icons/alt-funding-3.svg" class="noradius nobg tleft" alt="" style="width: 52px;">
+                                        <div class="fbox-icon divcenter">
+                                            <img src="~/images/icons/alt-funding-3.svg" class="noradius nobg tleft" alt="Combo Funding">
                                         </div>
-                                        <h3 class="t500"><a href="/product/combofunding">Combo Funding</a></h3>
+                                        <h3 class="t500"><a href="/product/combofunding">Combo<br />Funding</a></h3>
                                         <a href="/product/combofunding" class="btn btn-link mt-2 color p-0">Learn More &#8250;</a>
                                     </div>
                                 </li>
                             </ul>
 
                             <!-- Business Entity Creation -->
-                            <ul class="mega-menu-column col-lg-2">
+                            <ul class="mega-menu-column col-lg-2 pointer" ng-click="vm.navigateTo('/product/businessentitycreation')">
                                 <li>
                                     <div class="feature-box not-dark fbox-small fbox-center nobottommargin">
-                                        <div class="fbox-icon">
-                                            <img src="~/images/icons/businessEntity.svg" class="noradius nobg tleft" alt="" style="width: 52px;">
+                                        <div class="fbox-icon divcenter">
+                                            <img src="~/images/icons/businessEntity.svg" class="noradius nobg tleft" alt="Business Entity">
                                         </div>
                                         <h3 class="t500"><a href="/product/businessentitycreation">Business Entity Creation</a></h3>
                                         <a href="/product/businessentitycreation" class="btn btn-link mt-2 color p-0">Learn More &#8250;</a>
@@ -99,11 +99,11 @@
                             </ul>
 
                             <!-- Real Estate Home Loans -->
-                            <ul class="mega-menu-column col-lg-2">
+                            <ul class="mega-menu-column col-lg-2 pointer" ng-click="vm.navigateTo('/product/realestate')">
                                 <li>
                                     <div class="feature-box not-dark fbox-small fbox-center nobottommargin">
-                                        <div class="fbox-icon">
-                                            <img src="~/images/icons/realEstate.svg" class="noradius nobg tleft" alt="" style="width: 52px;">
+                                        <div class="fbox-icon divcenter">
+                                            <img src="~/images/icons/realEstate.svg" class="noradius nobg tleft" alt="Real Estate">
                                         </div>
                                         <h3 class="t500"><a href="/product/realestate">Real Estate <br> Home Loans</a></h3>
                                         <a href="/product/realestate" class="btn btn-link mt-2 color p-0">Learn More &#8250;</a>
