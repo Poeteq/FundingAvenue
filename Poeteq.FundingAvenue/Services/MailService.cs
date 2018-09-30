@@ -83,11 +83,11 @@ namespace Poeteq.FundingAvenue.Services
                 message.To.Add(new MailboxAddress("Jason", "thejayceace@gmail.com"));
                 message.To.Add(new MailboxAddress("Michael", "michael@fundingavenue.com"));
 
-                message.Subject = "Hey there, can I have some money?";
+                message.Subject = "Did someone say Money?";
 
                 var body = new TextPart("plain")
                 {
-                    Text = $"A new application has been completed by your potential customer!. \r\n\r\n {form.Comments}"
+                    Text = $"It's otw. \r\n\r\n Comment:\r\n{form.Comments}"
                 };
 
                 var attachment = new MimePart("mysheet", "xlsx")
