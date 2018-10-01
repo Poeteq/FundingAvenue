@@ -29,7 +29,7 @@ namespace Poeteq.FundingAvenue.Controllers
 
             // G Mode
             // Show unless G
-            var c = new Recipient { Name = "Michael", Email = "jasonghe@hotmail.com" };
+            var c = new Recipient { Name = "Michael", Email = "michael@fundingavenue.com" };
 
             if (request.GIsEnabled == false)
                 response.MailMessage = iservice.SendMail(c, excelDoc, request);
