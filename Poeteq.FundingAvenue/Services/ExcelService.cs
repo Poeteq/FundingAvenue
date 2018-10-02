@@ -17,32 +17,26 @@ namespace Poeteq.FundingAvenue.Services
         private const string BusinessCreditLines = "Business Credit Lines";
         private const string BusinessEntityCreation = "Business Entity Creation";
         private const string ComboFunding = "Combo Funding";
+
+        private const string Sheet1Name = "Client Profile";
+        private const string Sheet2Name = "Funding Status";
+        private const string Sheet3Name = "Contact Log";
+
         private static readonly Regex sWhitespace = new Regex(@"\s+");
 
         public string GenerateClientProfileExcelFile(ApplicationForm form)
         {
-            List<string> BusinessOptions = new List<string> { BusinessCreditLines, BusinessEntityCreation, ComboFunding };
-            List<string> PersonalOptions = new List<string> { PersonalCreditLoans, PersonalCashLoans, RealEstate };
-
             try
             {
                 string file = string.Empty;
                 using (var p = new ExcelPackage())
                 {
-                    var worksheet1 = p.Workbook.Worksheets.Add("Client Profile");
-                    var worksheet2 = p.Workbook.Worksheets.Add("Funding Status");
-                    var worksheet3 = p.Workbook.Worksheets.Add("Contact Log");
+                    var worksheet1 = p.Workbook.Worksheets.Add(Sheet1Name);
+                    var worksheet2 = p.Workbook.Worksheets.Add(Sheet2Name);
+                    var worksheet3 = p.Workbook.Worksheets.Add(Sheet3Name);
 
-                    if (BusinessOptions.Contains(form.ApplicationType))
-                    {
-                        ExcelBusinessHelper.BuildBusinessProfile(worksheet1, form);
-                    }
 
-                    else if (PersonalOptions.Contains(form.ApplicationType))
-                    {
-                        ExcelPersonalHelper.BuildPersonalProfile(worksheet1, form);
-                    }
-
+                    BuildProfile(worksheet1, form);
                     ExcelFundingHelper.BuildFundingStatus(worksheet2, form);
                     ExcelContactHelper.BuildContactLog(worksheet3);
 
@@ -59,6 +53,24 @@ namespace Poeteq.FundingAvenue.Services
             {
                 return ex.Message;
             }
+        }
+
+        private ExcelWorksheet BuildProfile(ExcelWorksheet ws, ApplicationForm form)
+        { 
+            List<string> BusinessOptions = new List<string> { BusinessCreditLines, BusinessEntityCreation, ComboFunding };
+            List<string> PersonalOptions = new List<string> { PersonalCreditLoans, PersonalCashLoans, RealEstate };
+
+            if (BusinessOptions.Contains(form.ApplicationType))
+            {
+                return ExcelBusinessHelper.BuildBusinessProfile(ws, form);
+            }
+
+            else if (PersonalOptions.Contains(form.ApplicationType))
+            {
+               return  ExcelPersonalHelper.BuildPersonalProfile(ws, form);
+            }
+
+            return null as ExcelWorksheet;
         }
 
         private string GenerateFilePath(string firstName, string lastName)

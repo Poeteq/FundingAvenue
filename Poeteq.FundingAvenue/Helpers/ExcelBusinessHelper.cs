@@ -117,8 +117,8 @@ namespace Poeteq.FundingAvenue.Helpers
             ws.Cells["F7:G7"].Value = "Email Address";
             ws.Cells["F7:G7"].Style.Font.Bold = true;
             ws.Cells["F7:G7"].Merge = true;
-            ws.Cells["H7:J7"].Value = form.Email;
             ws.Cells["H7:J7"].Merge = true;
+            ws.Cells["H7:J7"].Value = $"{form.LastName}{form.BirthYear}@gmail.com";
             ws.Cells["H7:J7"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["H7:J7"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
             ws.Cells["H7:J7"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;

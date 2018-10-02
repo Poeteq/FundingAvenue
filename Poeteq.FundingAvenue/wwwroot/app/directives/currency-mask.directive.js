@@ -5,11 +5,11 @@
         .module('FundingAvenue')
         .directive('faCurrencyMask', CurrencyMask);
 
-    function CurrencyMask() {
+    function CurrencyMask($parse) {
         return {
             restrict: 'A',
             require: 'ngModel',
-            link: function (scope, element, attrs, ngModelController) {
+            link: function (scope, element, attrs, ngModel) {
 
                 var formatNumber = function (value) {
 
@@ -49,40 +49,41 @@
                     }
                 });
                 element.bind('blur', function (evt) {
-                    if (angular.isDefined(ngModelController.$modelValue)) {
-                        var val = ngModelController.$modelValue.split('.');
+                    //if (angular.isDefined(attrs.ngModel)) {
+                        if (angular.isDefined(ngModel.$viewValue)) {
+                            var val = ngModel.$viewValue.split('.');
                         if (val && val.length == 1) {
                             if (val != "") {
-                                ngModelController.$setViewValue(val + '.00');
-                                ngModelController.$render();
+                                ngModel.$setViewValue(val + '.00');
+                                ngModel.$render();
                             }
                         } else if (val && val.length == 2) {
                             if (val[1] && val[1].length == 1) {
-                                ngModelController.$setViewValue(val[0] + '.' + val[1] + '0');
-                                ngModelController.$render();
+                                ngModel.$setViewValue(val[0] + '.' + val[1] + '0');
+                                ngModel.$render();
                             } else if (val[1].length == 0) {
-                                ngModelController.$setViewValue(val[0] + '.00');
-                                ngModelController.$render();
+                                ngModel.$setViewValue(val[0] + '.00');
+                                ngModel.$render();
                             }
                             applyFormatting();
                         }
                     }
                 });
-                ngModelController.$parsers.push(function (value) {
-                    if (!value || value.length == 0) {
-                        return value;
-                    }
-                    value = value.toString();
-                    value = value.replace(/[^0-9\.]/g, "");
-                    return value;
-                });
-                ngModelController.$formatters.push(function (value) {
-                    if (!value || value.length == 0) {
-                        return value;
-                    }
-                    value = formatNumber(value);
-                    return value;
-                });
+                //ngModelController.$parsers.push(function (value) {
+                //    if (!value || value.length == 0) {
+                //        return value;
+                //    }
+                //    value = value.toString();
+                //    value = value.replace(/[^0-9\.]/g, "");
+                //    return value;
+                //});
+                //ngModelController.$formatters.push(function (value) {
+                //    if (!value || value.length == 0) {
+                //        return value;
+                //    }
+                //    value = formatNumber(value);
+                //    return value;
+                //});
 
             }
 

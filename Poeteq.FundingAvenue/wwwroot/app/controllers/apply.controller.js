@@ -12,6 +12,7 @@
 
         $scope.GIsEnabled = false;
         $scope.secretText = "Contact Us";
+        $scope.years = [];
         $scope.fundingType;
         $scope.toHide;
      
@@ -55,6 +56,7 @@
             state: '',
             zipCode: '',
             phoneNumber: '',
+            birthYear: new Date().getFullYear(),
             email: '',
             businessName: '',
             businessType: '',
@@ -89,6 +91,19 @@
         ////////////////////////////////////
 
 
+        function initYears() {
+            var year = new Date().getFullYear();
+            var range = [];
+
+            for (var i = 0; i < 50; i++) {
+                range.push({
+                    label: year - i,
+                    value: parseInt(String(year - i).slice(0, 4))
+                });
+            }
+
+            $scope.years = range;
+        }
         
 
 
@@ -99,6 +114,7 @@
 
 
         $scope.init = function () { // runs when the controller/compiler is ready //last step
+            initYears();
             $scope.applyInfo.businessCreditCards.push(angular.copy($scope.creditCard));
             $scope.applyInfo.businessCreditLines.push(angular.copy($scope.linesOfCredit));
             console.log($scope.applyInfo);
@@ -112,7 +128,6 @@
         $scope.sendApplication = function () {
             $scope.applyInfo.applicationType = $scope.fundingType;
             $scope.applyInfo.GIsEnabled = $scope.GIsEnabled;
-
 
             $http.post("Application/Form", $scope.applyInfo)
                 .then(function (response) {
