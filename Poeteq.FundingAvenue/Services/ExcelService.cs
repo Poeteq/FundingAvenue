@@ -40,7 +40,7 @@ namespace Poeteq.FundingAvenue.Services
                     ExcelFundingHelper.BuildFundingStatus(worksheet2, form);
                     ExcelContactHelper.BuildContactLog(worksheet3);
 
-                    file = GenerateFilePath(form.FirstName, form.LastName);
+                    file = GenerateFilePath(form.FirstName, form.LastName, form.BirthYear);
                     FileInfo fileInfo = new FileInfo(file);
 
                     p.SaveAs(fileInfo);
@@ -67,22 +67,22 @@ namespace Poeteq.FundingAvenue.Services
 
             else if (PersonalOptions.Contains(form.ApplicationType))
             {
-               return  ExcelPersonalHelper.BuildPersonalProfile(ws, form);
+               return ExcelPersonalHelper.BuildPersonalProfile(ws, form);
             }
 
             return null as ExcelWorksheet;
         }
 
-        private string GenerateFilePath(string firstName, string lastName)
+        private string GenerateFilePath(string firstName, string lastName, int birthYear)
         {
             string dir = Path.GetTempPath();
             string fileName = string.Empty;
             string file = string.Empty;
             Random rnd = new Random();
             
-            if (firstName != null && lastName != null)
+            if (firstName != null && lastName != null && birthYear > 0)
             {
-                fileName = $"{ReplaceWhitespace(firstName, "")}-{ReplaceWhitespace(lastName, "")}.ClientProfile-{rnd.Next(1, 999)}.xlsx";
+                fileName = $"{ReplaceWhitespace(lastName, "")}{birthYear}.ClientProfile-{rnd.Next(1, 999)}.xlsx";
             }
             else
             {
