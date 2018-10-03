@@ -1,22 +1,19 @@
 ﻿@model ErrorViewModel
 @{
-    ViewData["Title"] = "Error";
+    ViewData["Title"] = "Page Not Found";
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
-
-@if (Model.ShowRequestId)
-{
-    <p>
-        <strong>Request ID:</strong> <code>@Model.RequestId</code>
-    </p>
-}
-
-<h3>Development Mode</h3>
-<p>
-    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
-</p>
-<p>
-    <strong>Development environment should not be enabled in deployed applications</strong>, as it can result in sensitive information from exceptions being displayed to end users. For local debugging, development environment can be enabled by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>, and restarting the application.
-</p>
+<div class="container">
+    <div class="center my-5 py-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="~/images/stock/puppy.png" style="width:100%;height:auto;" />
+            </div>
+            <div class="col-md-6 text-left">
+                <h1 class="text-danger" style="font-size:64px;">Oops!</h1>
+                <h2 class="text-danger">We can't seem to find the page you are looking for.</h2>
+                <h6>Error Code: 404</h6>
+            </div>
+        </div>
+    </div>
+</div>

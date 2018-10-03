@@ -89,7 +89,7 @@ namespace Poeteq.FundingAvenue.Services
                 fileName = Path.GetTempFileName();
             }
 
-            return Path.Combine(dir, fileName); ;
+            return Path.Combine(dir, fileName);
         }
 
         public static string ReplaceWhitespace(string input, string replacement)

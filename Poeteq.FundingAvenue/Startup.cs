@@ -61,6 +61,11 @@ namespace Poeteq.FundingAvenue
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
+                routes.MapRoute(
+                    name: "ErrorHandler",
+                    template: "{*url}",
+                    defaults: new { controller = "Home", action = "Error" });
             });
         }
     }
