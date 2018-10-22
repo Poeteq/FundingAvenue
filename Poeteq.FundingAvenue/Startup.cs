@@ -7,8 +7,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Poeteq.FundingAvenue.Extensions;
 using Poeteq.FundingAvenue.Models;
 using Poeteq.FundingAvenue.Services;
 
@@ -42,6 +44,8 @@ namespace Poeteq.FundingAvenue
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseForwardedHeaders();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -51,6 +55,11 @@ namespace Poeteq.FundingAvenue
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+
+            var options = new RewriteOptions()
+                .AddRedirectToProxiedHttps()
+                .AddRedirect("(.*)/$", "$1");  // remove trailing slash
+            app.UseRewriter(options);
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
