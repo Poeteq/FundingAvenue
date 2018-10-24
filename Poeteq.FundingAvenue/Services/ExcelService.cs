@@ -73,16 +73,16 @@ namespace Poeteq.FundingAvenue.Services
             return null as ExcelWorksheet;
         }
 
-        private string GenerateFilePath(string firstName, string lastName, int birthYear)
+        private string GenerateFilePath(string firstName, string lastName, string birthYear)
         {
             string dir = Path.GetTempPath();
             string fileName = string.Empty;
             string file = string.Empty;
             Random rnd = new Random();
             
-            if (firstName != null && lastName != null && birthYear > 0)
+            if (firstName != null && lastName != null && birthYear!=null)
             {
-                fileName = $"{ReplaceWhitespace(lastName, "")}{birthYear}.ClientProfile-{rnd.Next(1, 999)}.xlsx";
+                fileName = $"{ReplaceWhitespace(lastName, "")}.ClientProfile-{rnd.Next(1, 999)}.xlsx";
             }
             else
             {

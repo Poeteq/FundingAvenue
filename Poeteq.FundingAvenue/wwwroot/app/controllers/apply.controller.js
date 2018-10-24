@@ -56,7 +56,7 @@
             state: '',
             zipCode: '',
             phoneNumber: '',
-            birthYear: new Date().getFullYear(),
+            birthYear: '',
             email: '',
             businessName: '',
             businessType: '',
@@ -129,8 +129,11 @@
             $scope.applyInfo.applicationType = $scope.fundingType;
             $scope.applyInfo.GIsEnabled = $scope.GIsEnabled;
 
+            console.log($scope.applyInfo.birthYear);
+
             $http.post("Application/Form", $scope.applyInfo)
                 .then(function (response) {
+
                     window.alert("Application Sent");
                     console.log(response);
                 }, function (error) {

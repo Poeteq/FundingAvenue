@@ -17,7 +17,7 @@ namespace Poeteq.FundingAvenue.Models
         public string State { get; set; }
         public string ZipCode { get; set; }
         public string PhoneNumber { get; set; }
-        public int BirthYear { get; set; }
+        public string BirthYear { get; set; }
         //public string PhoneType { get; set; }
         [Required]
         [EmailAddress]

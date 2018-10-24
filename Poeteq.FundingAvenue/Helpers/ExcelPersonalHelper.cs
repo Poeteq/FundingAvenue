@@ -324,8 +324,9 @@ namespace Poeteq.FundingAvenue.Helpers
             ws.Cells["C20:E20"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
             ws.Cells["C20:E20"].Style.Border.Bottom.Color.SetColor(Color.Black);
 
-            ws.Cells["F20:G20"].Value = "Birth Date & Current Age";
+            ws.Cells["F20:G20"].Value = "Birth Date:";
             ws.Cells["F20:G20"].Merge = true;
+            ws.Cells["H20:J20"].Value = form.BirthYear;
             ws.Cells["H20:J20"].Merge = true;
             ws.Cells["H20:J20"].Style.Fill.PatternType = ExcelFillStyle.Solid;
             ws.Cells["H20:J20"].Style.Fill.BackgroundColor.SetColor(Color.Cyan);
