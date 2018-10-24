@@ -704,6 +704,9 @@ namespace Poeteq.FundingAvenue.Helpers
             ws.Cells["K29"].Value = "9";
             ws.Cells["K30"].Value = "10";
 
+            ws.Cells["K32"].Value = form.ApplicationType;
+            ws.Cells["K32:L32"].Merge = true;
+
             ws.Cells["L21:M21"].Merge = true;
             ws.Cells["L22:M22"].Merge = true;
             ws.Cells["L23:M23"].Merge = true;
