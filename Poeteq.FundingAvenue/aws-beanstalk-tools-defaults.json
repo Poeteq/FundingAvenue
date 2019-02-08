@@ -1,10 +1,10 @@
 
 {
     "comment" : "This file is used to help set default values when using the dotnet CLI extension Amazon.ElasticBeanstalk.Tools. For more information run \"dotnet eb --help\" from the project root.",
-    "profile" : "default",
+    "profile" : "Poeteq",
     "region"  : "us-west-1",
-    "application" : "FundingAvenue",
-    "environment" : "Fundingavenue-stg",
+    "application" : "fundingavenue",
+    "environment" : "Fundingavenue-env",
     "iis-website" : "Default Web Site",
     "app-path"    : "/",
     "enable-xray" : false
