@@ -17,7 +17,7 @@
                     <div ng-hide="vm.recommendation">
                         <h2 class="divcenter font-body center" style="max-width: 700px; font-size: 40px;">Select a Suite of Products,<br /> and Suit Your Needs</h2>
                         <div class="center bottommargin">
-                            <a href="#" data-scrollto="#description" class="button button-border button-circle t600" style="margin-right: 15px;">Learn More</a>
+                            <a href="{{vm.productLink}}" data-scrollto="#description" class="button button-border button-circle t600" style="margin-right: 15px;">Learn More</a>
                             <a href="/apply" class="hero-action-link" style="margin-left: 15px;">Apply Now <i class="icon-chevron-right" style="position:relative;margin-left:4px;top:2px;"></i></a>
                         </div>
                     </div>
@@ -42,7 +42,13 @@
                                     <h4>Business Credit Lines</h4>
                                     <p>Obtain $20,000 - $150,000</p>
                                 </div>
-                                <div><a href="#" ng-class="{'button-black': vm.products.one}" class="button button-red button-rounded button-small t600">{{ vm.products.one ?  'Remove Me' : 'Add Me' }}</a></div>
+                                <div>
+                                    <a href="#" ng-class="{'button-black': vm.products.one}" class="button button-red button-rounded button-small t600">
+                                        <i ng-show="vm.products.one" class="fas fa-times"></i>
+                                        <i ng-show="!vm.products.one" class="fas fa-cart-plus"></i>
+                                        {{ vm.products.one ?  'Remove Me' : 'Add Me' }}
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
@@ -56,7 +62,13 @@
                                     <h4>Personal Credit Lines</h4>
                                     <p>Obtain $10,000 - $100,000</p>
                                 </div>
-                                <div><a href="#" ng-class="{'button-black': vm.products.two}" class="button button-red button-rounded button-small t600">{{ vm.products.two ?  'Remove Me' : 'Add Me' }}</a></div>
+                                <div>
+                                    <a href="#" ng-class="{'button-black': vm.products.two}" class="button button-red button-rounded button-small t600">
+                                        <i ng-show="vm.products.two" class="fas fa-times"></i>
+                                        <i ng-show="!vm.products.two" class="fas fa-cart-plus"></i>
+                                        {{ vm.products.two ?  'Remove Me' : 'Add Me' }}
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-4">
@@ -68,7 +80,13 @@
                                     <h4>Personal Cash Loans</h4>
                                     <p>Obtain $5,000 - $150,000</p>
                                 </div>
-                                <div><a href="#" ng-class="{'button-black': vm.products.three}" class="button button-red button-rounded button-small t600">{{ vm.products.three ?  'Remove Me' : 'Add Me' }}</a></div>
+                                <div>
+                                    <a href="#" ng-class="{'button-black': vm.products.three}" class="button button-red button-rounded button-small t600">
+                                        <i ng-show="vm.products.three" class="fas fa-times"></i>
+                                        <i ng-show="!vm.products.three" class="fas fa-cart-plus"></i>
+                                        {{ vm.products.three ?  'Remove Me' : 'Add Me' }}
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -107,7 +125,7 @@
         <div class="line nomargin"></div>
 
         <!-- Combo A Section
-    ============================================= -->
+        ============================================= -->
         <div id="alt-a" class="container clearfix">
 
             <div class="row clearfix topmargin bottommargin">
@@ -155,7 +173,7 @@
         <div class="line nomargin"></div>
 
         <!-- Combo B Section
-    ============================================= -->
+        ============================================= -->
         <div id="alt-b" class="container clearfix">
 
             <div class="row clearfix topmargin bottommargin">
@@ -209,7 +227,7 @@
 
 
         <!-- Featured Section
-    ============================================= -->
+        ============================================= -->
         <div id="alt-c" class="section nomargin clearfix" style="background: #FFF url('') left bottom no-repeat; background-size: cover; padding: 140px 0">
             <div class="container clearfix">
                 <div class="row clearfix">
@@ -334,57 +352,57 @@
             </div>
 
             @*<div class="section nomargin" style="background: rgba(0,0,0,0.3);">
+                    <div class="container clearfix">
+                        <div class="heading-block dark nobottomborder nobottommargin center">
+                            <h2 style="font-size: 40px;" class="nott t700 ls1">
+                                Frequently Asked Questions
+                            </h2>
+                            <span style="font-size: 16px;" class="t300 capitalize ls1">Efficiently network state of the art markets for scalable applications. Professionally engineer business e-tailers for resource sucking e-commerce.</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="container clearfix">
-                    <div class="heading-block dark nobottomborder nobottommargin center">
-                        <h2 style="font-size: 40px;" class="nott t700 ls1">
-                            Frequently Asked Questions
-                        </h2>
-                        <span style="font-size: 16px;" class="t300 capitalize ls1">Efficiently network state of the art markets for scalable applications. Professionally engineer business e-tailers for resource sucking e-commerce.</span>
-                    </div>
-                </div>
-            </div>
+                    <div class="row topmargin-lg clearfix">
+                        <div class="col-md-5 offset-md-1 col-sm-6 mb-5">
+                            <div class="media">
+                                <i class="h3 icon-line2-check color mr-3"></i>
+                                <div class="media-body">
+                                    <h4 class="mb-3 font-body">How do I become an author?</h4>
+                                    <p class="mb-0">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-sm-6 mb-5">
+                            <div class="media">
+                                <i class="h3 icon-line2-check color mr-3"></i>
+                                <div class="media-body">
+                                    <h4 class="mb-3 font-body">How do I become an author?</h4>
+                                    <p class="mb-0">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-sm-6 offset-md-1 mb-sm-0 mb-5">
+                            <div class="media">
+                                <i class="h3 icon-line2-check color mr-3"></i>
+                                <div class="media-body">
+                                    <h4 class="mb-3 font-body">How much money can I make?</h4>
+                                    <p class="mb-0 ">Credibly evolve client-focused convergence rather than leveraged quality vectors. Authoritatively provide access to market-driven manufactured products with standardized initiatives.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-sm-6">
+                            <div class="media">
+                                <i class="h3 icon-line2-check color mr-3"></i>
+                                <div class="media-body">
+                                    <h4 class="mb-3 font-body">Can I offer my items for free on a promotional basis?</h4>
+                                    <p class="mb-0">Laboriosam iusto quia nulla ad voluptatibus iste beatae voluptas corrupti facilis accusamus recusandae sequi debitis reprehenderit quibusdam. Facilis eligendi a exercitationem nisi et placeat excepturi velit!</p>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="container clearfix">
-                <div class="row topmargin-lg clearfix">
-                    <div class="col-md-5 offset-md-1 col-sm-6 mb-5">
-                        <div class="media">
-                            <i class="h3 icon-line2-check color mr-3"></i>
-                            <div class="media-body">
-                                <h4 class="mb-3 font-body">How do I become an author?</h4>
-                                <p class="mb-0">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                            </div>
-                        </div>
                     </div>
-                    <div class="col-md-5 col-sm-6 mb-5">
-                        <div class="media">
-                            <i class="h3 icon-line2-check color mr-3"></i>
-                            <div class="media-body">
-                                <h4 class="mb-3 font-body">How do I become an author?</h4>
-                                <p class="mb-0">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-5 col-sm-6 offset-md-1 mb-sm-0 mb-5">
-                        <div class="media">
-                            <i class="h3 icon-line2-check color mr-3"></i>
-                            <div class="media-body">
-                                <h4 class="mb-3 font-body">How much money can I make?</h4>
-                                <p class="mb-0 ">Credibly evolve client-focused convergence rather than leveraged quality vectors. Authoritatively provide access to market-driven manufactured products with standardized initiatives.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-5 col-sm-6">
-                        <div class="media">
-                            <i class="h3 icon-line2-check color mr-3"></i>
-                            <div class="media-body">
-                                <h4 class="mb-3 font-body">Can I offer my items for free on a promotional basis?</h4>
-                                <p class="mb-0">Laboriosam iusto quia nulla ad voluptatibus iste beatae voluptas corrupti facilis accusamus recusandae sequi debitis reprehenderit quibusdam. Facilis eligendi a exercitationem nisi et placeat excepturi velit!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>*@
+                </div>*@
 
             <div class="section dark clearfix nomargin">
                 <div class="container">
