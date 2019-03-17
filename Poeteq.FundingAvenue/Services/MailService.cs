@@ -56,7 +56,7 @@ namespace Poeteq.FundingAvenue.Services
 
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress(form.Name, form.Email));
-            message.To.Add(new MailboxAddress("Suzie", "suzieahn1117@gmail.com"));
+            message.To.Add(new MailboxAddress("Michael", "michael@fundingavenue.com"));
             message.To.Add(new MailboxAddress("Jason", "thejayceace@gmail.com"));
             message.Subject = form.Title;
 
